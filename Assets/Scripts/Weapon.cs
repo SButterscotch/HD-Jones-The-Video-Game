@@ -1,41 +1,59 @@
+/*
+* Filename: Weapon.cs
+* Developer: K Atkinson
+* Purpose: Script used to instantiate and manipulate the player's weapon. Uses singleton pattern.  
+*/
 using System.Collections;
 using UnityEngine;
 using Playerspace;
-
 public class Weapon : MonoBehaviour
 {
-    private static Weapon _instance;
-    public static Weapon Instance { get { return _instance; } }
-    // Reference to the player controller
+    private static Weapon instance;
+
+    // Private class data
     private PlayerController playerController;
+    private GameObject bulletPrefab;
+    private Transform firePoint;
+    private float fireForce = 20f;
+    private float bulletLifetime = 3f;
 
-    //K's weapon class
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-    public float fireForce = 20f;
+    public bool IsFiring { get; private set; }
 
-    //Meghan sound
-    public AudioSource audioSource;
-
-    public bool isFiring = false;
-
-    public float bulletLifetime = 3f;
-
-    // Initialize the weapon with the player controller reference
-    public void Initialize(PlayerController controller)
+    // Ensure only one instance of Weapon exists
+    public static Weapon Instance
     {
-        playerController = controller;
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Weapon>();
+                if (instance == null)
+                {
+                    GameObject obj = new GameObject("Weapon");
+                    instance = obj.AddComponent<Weapon>();
+                }
+            }
+            return instance;
+        }
+    }
+
+    // Initialize the weapon with the necessary references
+    public void Initialize(PlayerController controller, GameObject bulletPrefab, Transform firePoint)
+    {
+        this.playerController = controller;
+        this.bulletPrefab = bulletPrefab;
+        this.firePoint = firePoint;
     }
 
     public void StartFiring()
     {
-        isFiring = true;
+        IsFiring = true;
         playerController.StartCoroutine(FireCoroutine());
     }
 
     public void StopFiring()
     {
-        isFiring = false;
+        IsFiring = false;
     }
 
     public void Fire()
@@ -44,28 +62,71 @@ public class Weapon : MonoBehaviour
         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
 
-        //Meghan sound code
-        // Play bullet sound if AudioSource is not null
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource != null)
-        {
-            audioSource.Play();
-        }
-
-
-        // Destroy bullet after a certain amount of time
+        // Change to: Destroy bullet when it hits boundaries 
         GameObject.Destroy(bullet, bulletLifetime);
     }
 
     private IEnumerator FireCoroutine()
     {
-        while (isFiring)
+        while (IsFiring)
         {
             Fire();
             yield return new WaitForSeconds(0.1f); // Adjust the delay between shots
         }
     }
 }
+
+
+// public class Weapon : MonoBehaviour
+// {
+//     // Reference to the player controller
+//     private PlayerController playerController;
+
+//     //K's weapon class 
+//     public GameObject bulletPrefab;
+//     public Transform firePoint;
+//     public float fireForce = 20f;
+
+//     public bool isFiring = false;
+
+//     public float bulletLifetime = 3f;
+
+//     // Initialize the weapon with the player controller reference
+//     public void Initialize(PlayerController controller)
+//     {
+//         playerController = controller;
+//     }
+
+//     public void StartFiring()
+//     {
+//         isFiring = true;
+//         playerController.StartCoroutine(FireCoroutine());
+//     }
+
+//     public void StopFiring()
+//     {
+//         isFiring = false;
+//     }
+
+//     public void Fire()
+//     {
+//         GameObject bullet = GameObject.Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+//         Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
+//         bulletRb.AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+//         // Change to: Destroy bullet when it hits boundaries 
+//         GameObject.Destroy(bullet, bulletLifetime);
+//     }
+
+//     private IEnumerator FireCoroutine()
+//     {
+//         while (isFiring)
+//         {
+//             Fire();
+//             yield return new WaitForSeconds(0.1f); // Adjust the delay between shots
+//         }
+//     }
+// }
 
 
 // using System.Collections;

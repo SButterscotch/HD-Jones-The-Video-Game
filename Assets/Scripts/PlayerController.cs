@@ -16,16 +16,18 @@ namespace Playerspace
         List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
 
         //For shooting
-        public Weapon weapon = new Weapon();
-        Vector2 moveDirection;
-        Vector2 mousePosition;
-
-
+        // We can no longer directly access Weapon here now that is of Private Class Data 
+        // public Weapon weapon = new Weapon();
+        // Vector2 moveDirection;
+        // Vector2 mousePosition;
+        //Replace with: 
+        public GameObject bulletPrefab; //will need to assign in Inspector 
+        public Transform firePoint; //will need to assign in Inspector 
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            weapon.Initialize(this);
+            Weapon.Instance.Initialize(this, bulletPrefab, firePoint); //Initialize a single instance of a weapon due to singleton pattern 
         }
 
         public bool isFiring = false;
@@ -56,7 +58,7 @@ namespace Playerspace
         {
             while (isFiring)
             {
-                weapon.Fire();
+                Weapon.Instance.Fire();
                 yield return new WaitForSeconds(0.3f); //Adjust the delay between shots 
             }
         }
@@ -74,8 +76,8 @@ namespace Playerspace
             {
                 StopFiring();
             }
-            moveDirection = new Vector2(moveX, moveY).normalized;
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            movementInput = new Vector2(moveX, moveY).normalized;
+            //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
 
         void FixedUpdate()
@@ -89,10 +91,10 @@ namespace Playerspace
                 }
             }
 
-            rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
-            Vector2 aimDirection = mousePosition - rb.position;
-            float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
-            rb.rotation = aimAngle;
+            // rb.velocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+            // Vector2 aimDirection = mousePosition - rb.position;
+            // float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
+            // rb.rotation = aimAngle;
         }
 
         void OnMove(InputValue movementValue)

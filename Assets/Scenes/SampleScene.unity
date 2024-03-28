@@ -927,6 +927,11 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!4 &960606331 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1198002873736723812, guid: 6def5f63ea2ee424f84bb98cf14d3616, type: 3}
+  m_PrefabInstance: {fileID: 466870283692791497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1047274819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1703,6 +1708,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1317715507}
     - target: {fileID: 7721249074905512170, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 960606331}
+    - target: {fileID: 7721249074905512170, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1710,6 +1719,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7721249074905512170, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
     m_RemovedComponents:
     - {fileID: 5666415181076745859, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
     m_RemovedGameObjects: []
