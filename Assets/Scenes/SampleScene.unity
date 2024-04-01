@@ -632,9 +632,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 524757603}
-  - component: {fileID: 524757605}
-  - component: {fileID: 524757604}
-  - component: {fileID: 524757606}
   m_Layer: 0
   m_Name: FireLogic
   m_TagString: Untagged
@@ -657,46 +654,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1183835619}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &524757604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524757602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ecea03a0177cf04e967f4fb50764be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firePosition: {fileID: 1764861397}
-  range: 100
---- !u!114 &524757605
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524757602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e050bde8955ecdf4eb22bdf94ddb2a75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionsMixins:
-  - {fileID: 524757604}
---- !u!114 &524757606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524757602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1de59ec7949841f4b92e23fbe8568706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &743277500
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,6 +826,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3869320712289197520, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
       propertyPath: m_Name
       value: Treevle
@@ -1024,6 +989,14 @@ PrefabInstance:
     - target: {fileID: 1223579684928780655, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 3869320712289197520, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
       propertyPath: m_Name
@@ -1555,6 +1528,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3222696356337982402, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3869320712289197520, guid: 03b6a75a9c5e78f4987197b3ac1fc388, type: 3}
       propertyPath: m_Name
       value: Treevle (1)
@@ -1965,7 +1946,7 @@ PrefabInstance:
     - target: {fileID: 7721249074905512170, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: fireWeapon
       value: 
-      objectReference: {fileID: 524757605}
+      objectReference: {fileID: 0}
     - target: {fileID: 7721249074905512170, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: bulletPrefab
       value: 

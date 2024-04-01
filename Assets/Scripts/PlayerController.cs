@@ -23,17 +23,17 @@ namespace Playerspace
         //Replace with: 
 
         //Reference to Mixin Action for gun prefab 
-        public CallMixinAction fireWeapon;
-        public KeyCode fire1; 
+        // public CallMixinAction fireWeapon;
+        // public KeyCode fire1; 
 
         //Old firing technique 
-        // public GameObject bulletPrefab; //will need to assign in Inspector 
-        // public Transform firePoint; //will need to assign in Inspector 
+        public GameObject bulletPrefab; //will need to assign in Inspector 
+        public Transform firePoint; //will need to assign in Inspector 
 
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
-            //Weapon.Instance.Initialize(this, bulletPrefab, firePoint); //Initialize a single instance of a weapon due to singleton pattern 
+            Weapon.Instance.Initialize(this, bulletPrefab, firePoint); //Initialize a single instance of a weapon due to singleton pattern 
         }
 
         public bool isFiring = false;
@@ -75,19 +75,19 @@ namespace Playerspace
             float moveY = Input.GetAxisRaw("Vertical");
 
             //For old fire weapon 
-            // if (Input.GetKeyDown(KeyCode.Space))
-            // {
-            //     StartFiring();
-            // }
-            // else if (Input.GetKeyUp(KeyCode.Space))
-            // {
-            //     StopFiring();
-            // }
-
-            //For new fire weapon: 
-            if (Input.GetKey(fire1)){ 
-                fireWeapon.CallActions(); //you will need to assign fire1 to a key in the Player inspector window 
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                StartFiring();
             }
+            else if (Input.GetKeyUp(KeyCode.Space))
+            {
+                StopFiring();
+            }
+
+            // //For new fire weapon: 
+            // if (Input.GetKey(fire1)){ 
+            //     fireWeapon.CallActions(); //you will need to assign fire1 to a key in the Player inspector window 
+            // }
             movementInput = new Vector2(moveX, moveY).normalized;
             //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
