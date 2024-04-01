@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Level3_Script : MonoBehaviour
+
+public class Level3 : BaseLevel
 {
-    // Start is called before the first frame update
-    void Start()
+    private void StartLevel()
     {
+        Debug.Log("Initializing Level 3");
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void EndLevel() {
+        Debug.Log("Ending Level 3");
     }
 }
