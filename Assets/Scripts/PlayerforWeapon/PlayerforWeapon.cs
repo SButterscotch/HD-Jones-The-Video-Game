@@ -16,10 +16,11 @@ using System;
 using System.Linq;
 
 namespace Default {
-    public class PlayerforWeapon : MonoBehaviour, CondimentsWeapon.IOwner
+    public class PlayerforWeapon : MonoBehaviour, CondimentsWeapon.IOwner, WeaponAction.IProcessor
     {
         [SerializeField] CondimentsWeapon gun; 
         public CondimentsWeapon.IProcessor[] Processors { get; protected set; }
+        public float Action => Input.GetKey(KeyCode.Space) ? 1f : 0f; //space bar to fire raycast 
         void Start() { 
             Processors = GetComponentsInChildren<CondimentsWeapon.IProcessor>(true); 
             gun.Setup(this); //passing in the player as owner 
