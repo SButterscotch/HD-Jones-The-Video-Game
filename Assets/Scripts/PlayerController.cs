@@ -21,6 +21,12 @@ namespace Playerspace
         // Vector2 moveDirection;
         // Vector2 mousePosition;
         //Replace with: 
+
+        //Reference to Mixin Action for gun prefab 
+        // public CallMixinAction fireWeapon;
+        // public KeyCode fire1; 
+
+        //Old firing technique 
         public GameObject bulletPrefab; //will need to assign in Inspector 
         public Transform firePoint; //will need to assign in Inspector 
 
@@ -68,6 +74,7 @@ namespace Playerspace
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
 
+            //For old fire weapon 
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 StartFiring();
@@ -76,6 +83,11 @@ namespace Playerspace
             {
                 StopFiring();
             }
+
+            // //For new fire weapon: 
+            // if (Input.GetKey(fire1)){ 
+            //     fireWeapon.CallActions(); //you will need to assign fire1 to a key in the Player inspector window 
+            // }
             movementInput = new Vector2(moveX, moveY).normalized;
             //mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
