@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using Default;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,10 +22,6 @@ namespace Playerspace
         // Vector2 moveDirection;
         // Vector2 mousePosition;
         //Replace with: 
-
-        //Reference to Mixin Action for gun prefab 
-        // public CallMixinAction fireWeapon;
-        // public KeyCode fire1; 
 
         //Old firing technique 
         public GameObject bulletPrefab; //will need to assign in Inspector 
