@@ -64,9 +64,27 @@ public class Enemy : MonoBehaviour
     private void RotateTowardsTarget()
     {
         Vector2 targetDirection = target.position - transform.position;
-        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg - 90f;
-        Quaternion q = Quaternion.Euler(new Vector3(0, 0, angle));
-        transform.localRotation = Quaternion.Slerp(transform.localRotation, q, RotateSpeed);
+
+        // Determine whether the target is closer horizontally or vertically
+        bool closerHorizontally = Mathf.Abs(targetDirection.x) > Mathf.Abs(targetDirection.y);
+
+        if (closerHorizontally)
+        {
+            // Align with left or right direction
+            if (targetDirection.x > 0)
+                transform.localRotation = Quaternion.Euler(0, 0, 0); // Right
+            else
+                transform.localRotation = Quaternion.Euler(0, 0, 180); // Left
+        }
+        else
+        {
+            // Align with up or down direction
+            if (targetDirection.y > 0)
+                transform.localRotation = Quaternion.Euler(0, 0, 90); // Up
+            else
+                transform.localRotation = Quaternion.Euler(0, 0, 270); // Down
+        }
+    
     }
 
     private void FixedUpdate() 
