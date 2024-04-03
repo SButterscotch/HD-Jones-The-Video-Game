@@ -15,18 +15,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MousePosition",
+                    "name": "Movement",
                     "type": "PassThrough",
-                    "id": "f0388c79-4473-48b0-8431-74e89e9c3555",
+                    "id": "929a99b2-a7cf-452b-982d-8c1615c63f89",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Movement",
+                    "name": "MousePosition",
                     "type": "PassThrough",
-                    "id": "929a99b2-a7cf-452b-982d-8c1615c63f89",
+                    "id": "6705915a-8926-4c57-8902-cc513515233b",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -42,17 +42,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "750b5d65-7744-4819-816d-b748f13d78e9",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -110,8 +99,25 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "9d9d1a70-50b6-41cf-a39b-7fd27d64cd36",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Gun",
+            "id": "1e7642f7-b15b-4b41-b19b-db18372a8066",
+            "actions": [],
+            "bindings": []
         }
     ],
     "controlSchemes": []
