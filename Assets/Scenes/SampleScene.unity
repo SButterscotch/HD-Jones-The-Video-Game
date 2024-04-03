@@ -967,8 +967,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
-  BulletDirection: {fileID: 1612748737}
-  coolDownTime: 0.5
+  bulletDirection: {fileID: 1612748737}
+  cooldownTime: 0.5
 --- !u!1001 &1047274819
 PrefabInstance:
   m_ObjectHideFlags: 0
