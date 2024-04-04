@@ -122,7 +122,23 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(gameObject);
             } 
-        }
-       
+        }  
     }
+
+    //K's code in David's Enemy.cs script to kill Enemy with weapon after hit by two (changeable) bullets, called in her Bullet.cs script
+    /*Starts here*/ 
+    private int bulletsHit = 0;
+    [SerializeField]
+    private int bulletsToDestroy = 2; //This is changeable, can increase if more bullets need to destroy enemy 
+
+    public void HitByBullet()
+    {
+        bulletsHit++;
+    }
+
+    public bool IsDestroyed()
+    {
+        return bulletsHit >= bulletsToDestroy;
+    }
+    /* Ends here */ 
 }
