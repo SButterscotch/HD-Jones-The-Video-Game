@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1229652462947277773}
   - component: {fileID: 3130840650842951123}
   - component: {fileID: -2026614837291825069}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1912242597
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 900936707, guid: 03499b7d1298f244db886ca6b624083c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,7 +150,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   movementInput: {x: 0, y: 0}
-  weapon: {fileID: 1646991307073721207, guid: 6def5f63ea2ee424f84bb98cf14d3616, type: 3}
+  bulletPrefab: {fileID: 0}
+  firePoint: {fileID: 0}
   isFiring: 0
 --- !u!50 &2593065342016983512
 Rigidbody2D:
