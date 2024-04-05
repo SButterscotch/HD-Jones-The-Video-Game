@@ -12,15 +12,18 @@ public class Enemy : MonoBehaviour
     public static Enemy Instance { get { return _instance; } }
     private Rigidbody2D rb;
     private int EnemyHealth = 3;
+    private Vector3 InitialScale;
     //Meghan codeline
     public AudioSource enemyNoise;
     public AudioSource championSound;
     public static int totalEnemies; //Total number of enemies in the scene
     private static int enemiesDefeated; //Number of enemies defeated
+    
 
 
     private void Start()
     {
+        InitialScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
         //Meghan code
         AudioSource[] audioSources = GetComponents<AudioSource>();
@@ -57,6 +60,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            
             RotateTowardsTarget();
         }
     }
@@ -72,17 +76,17 @@ public class Enemy : MonoBehaviour
         {
             // Align with left or right direction
             if (targetDirection.x > 0)
-                transform.localRotation = Quaternion.Euler(0, 0, 0); // Right
+                transform.rotation = Quaternion.Euler(0, 0, 0); // Right
             else
-                transform.localRotation = Quaternion.Euler(0, 0, 180); // Left
+                transform.rotation = Quaternion.Euler(0, 180, 0); // Left
         }
         else
         {
             // Align with up or down direction
             if (targetDirection.y > 0)
-                transform.localRotation = Quaternion.Euler(0, 0, 90); // Up
+                transform.rotation = Quaternion.Euler(0, 0, 90); // Up
             else
-                transform.localRotation = Quaternion.Euler(0, 0, 270); // Down
+                transform.rotation = Quaternion.Euler(0, 0, -90); // Down
         }
     
     }
