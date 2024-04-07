@@ -1,9 +1,9 @@
-// /*
-// * Filename: Bullet.cs
-// * Developer: K Atkinson
-// * Purpose: Script used to control bullet speed, size, sprite, and lifetime.  
-// * Attached to what in the inspector? Bullet prefab 
-// */
+/*
+* Filename: Bullet.cs
+* Developer: K Atkinson
+* Purpose: Script used to control bullet speed, size, sprite, and lifetime.  
+* Attached to what in the inspector? Bullet prefab 
+*/
 
 using System.Collections;
 using System.Collections.Generic;
