@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal"); 
         movement.y = Input.GetAxisRaw("Vertical");  
+
+        movement.x += Input.acceleration.x;
+        movement.y += Input.acceleration.y; // Andrew: Added this components for haptic movement
     }
 
     //Works like Update, called a bunch of times per second but fixed on timer and good for physics, more reliable 

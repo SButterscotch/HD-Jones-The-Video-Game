@@ -117,16 +117,19 @@ public class IdleState : HotdogState
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
+        float hapticHorizontalInput = Input.acceleration.x;
+        float hapticVerticalInput = Input.acceleration.y;
 
-        if (horizontalInput != 0 || verticalInput != 0)
+        if ((Mathf.Abs(horizontalInput) > 0.1f || Mathf.Abs(verticalInput) > 0.1f) ||
+            (Mathf.Abs(hapticHorizontalInput) > 0.1f || Mathf.Abs(hapticVerticalInput) > 0.1f))
         {
-            if (horizontalInput > 0)
+            if (horizontalInput > 0 || hapticHorizontalInput > 0)
                 controller.SetState(new MovingRightState(controller));
-            else if (horizontalInput < 0)
+            else if (horizontalInput < 0 || hapticHorizontalInput < 0)
                 controller.SetState(new MovingLeftState(controller));
-            else if (verticalInput > 0)
+            else if (verticalInput > 0 || hapticVerticalInput > 0)
                 controller.SetState(new MovingUpState(controller));
-            else if (verticalInput < 0)
+            else if (verticalInput < 0 || hapticVerticalInput < 0)
                 controller.SetState(new MovingDownState(controller));
         }
     }
@@ -148,7 +151,9 @@ public class MovingRightState : HotdogState
     public override void HandleInput()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput == 0)
+        float hapticHorizontalInput = Input.acceleration.x;
+
+        if (Mathf.Abs(horizontalInput) < 0.1f && Mathf.Abs(hapticHorizontalInput) < 0.1f)
             controller.SetState(new IdleState(controller));
     }
 
@@ -176,7 +181,9 @@ public class MovingLeftState : HotdogState
     public override void HandleInput()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (horizontalInput == 0)
+        float hapticHorizontalInput = Input.acceleration.x;
+
+        if (Mathf.Abs(horizontalInput) < 0.1f && Mathf.Abs(hapticHorizontalInput) < 0.1f)
             controller.SetState(new IdleState(controller));
     }
 
@@ -202,7 +209,9 @@ public class MovingUpState : HotdogState
     public override void HandleInput()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        if (verticalInput == 0)
+        float hapticVerticalInput = Input.acceleration.y;
+
+        if (Mathf.Abs(verticalInput) < 0.1f && Mathf.Abs(hapticVerticalInput) < 0.1f)
             controller.SetState(new IdleState(controller));
     }
 
@@ -228,7 +237,9 @@ public class MovingDownState : HotdogState
     public override void HandleInput()
     {
         float verticalInput = Input.GetAxis("Vertical");
-        if (verticalInput == 0)
+        float hapticVerticalInput = Input.acceleration.y;
+
+        if (Mathf.Abs(verticalInput) < 0.1f && Mathf.Abs(hapticVerticalInput) < 0.1f)
             controller.SetState(new IdleState(controller));
     }
 

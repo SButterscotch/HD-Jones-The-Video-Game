@@ -391,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593065342016983512, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2593065342016983512, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_Constraints
@@ -403,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2593065342016983512, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_CollisionDetection
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6350906605182305268, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_Camera
@@ -1321,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e16d3d706d890c4aa3e4138f97534a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
   rb: {fileID: 955766598}
 --- !u!95 &955766593
 Animator:
