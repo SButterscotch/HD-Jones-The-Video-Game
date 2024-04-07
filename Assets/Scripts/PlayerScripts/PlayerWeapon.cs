@@ -1,11 +1,5 @@
-/*
-* Filename: PlayerWeapon.cs
-* Developer: K Atkinson
-* Purpose: Script used to instantiate and manipulate the player's weapon, aiming with mouse and shooting with mouse click. 
-* Private Class Data Pattern used - see comments 
-* Singleton Pattern used - see comments   
-*/
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
@@ -13,11 +7,13 @@ public class PlayerWeapon : MonoBehaviour
 {
     //Used for the singleton pattern instance 
     public static PlayerWeapon Instance { get; private set; }
-    [SerializeField] private GameObject bullet; 
+    [SerializeField] private GameObject normalBulletPrefab;
+    [SerializeField] private GameObject relishBulletPrefab;
     [SerializeField] private Transform bulletDirection;
     [SerializeField] private float cooldownTime = 0.5f;
 
     private PrivateData privateData; //Used for PCD pattern 
+    private GameObject currentBulletPrefab;
 
     private void Awake()
     {
@@ -36,6 +32,7 @@ public class PlayerWeapon : MonoBehaviour
         }
         Instance = this; 
         privateData = new PrivateData(transform);
+        currentBulletPrefab = normalBulletPrefab; // Start with normal bullet by default
     }
 
     private void Update()
@@ -43,7 +40,26 @@ public class PlayerWeapon : MonoBehaviour
         privateData.HandleAiming();
         if (Input.GetMouseButtonDown(0))
         {
-            privateData.PlayerShoot(bullet, bulletDirection, cooldownTime);
+            privateData.PlayerShoot(currentBulletPrefab, bulletDirection, cooldownTime);
+        }
+
+        // Toggle between bullet types (for example, press 'B' key)
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            ToggleBulletType();
+        }
+    }
+
+    // Method to toggle between normal and relish bullet types
+    private void ToggleBulletType()
+    {
+        if (currentBulletPrefab == normalBulletPrefab)
+        {
+            currentBulletPrefab = relishBulletPrefab;
+        }
+        else
+        {
+            currentBulletPrefab = normalBulletPrefab;
         }
     }
 
@@ -67,6 +83,7 @@ public class PlayerWeapon : MonoBehaviour
             main = Camera.main;
         }
 
+        //This function uses the mouse position for aiming the weapon 
         public void HandleAiming()
         {
             Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
@@ -110,74 +127,3 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 }
-
-//   using System.Collections;
-// using UnityEngine;
-// using CodeMonkey.Utils;
-// using UnityEngine.Diagnostics;
-
-// public class PlayerWeapon : MonoBehaviour
-// {
-//     [SerializeField] private GameObject bullet; 
-//     [SerializeField] 
-//     private Transform BulletDirection;
-//     private Transform aimTransform;
-//     private Camera main;
-//     private bool canShoot = true;
-//     [SerializeField] private float coolDownTime = 0.5f;
-
-//     private void Awake()
-//     {
-//         aimTransform = transform.Find("Aim");
-//         main = Camera.main;
-//     }
-
-//     private void Update()
-//     {
-//         HandleAiming();
-//         if (Input.GetMouseButtonDown(0))
-//         {
-//             PlayerShoot();
-//         }
-//     }
-
-//     private void HandleAiming()
-//     {
-//         Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
-//         Vector3 aimDirection = (mousePosition - transform.position).normalized;
-//         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-//         //float adjustedAngle = angle - 90f; 
-//         aimTransform.eulerAngles = new Vector3(0, 0, angle);
-
-//                 //To keep weapon from going upside down when facing left 
-//         Vector3 aimLocalScale = Vector3.one; 
-//         if (angle > 90 || angle < -90) { 
-//             aimLocalScale.y = -1f; 
-//         } else { 
-//             aimLocalScale.y = +1f; 
-//         }
-//         aimTransform.localScale = aimLocalScale; 
-//     }
-
-//     private void PlayerShoot()
-//     {
-//         if (!canShoot)
-//         {
-//             return;
-//         } 
-//         Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
-//         Vector3 aimDirection = (mousePosition - transform.position).normalized;
-//         float angle = (Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg) - 90f;
-//         GameObject g = Instantiate(bullet, BulletDirection.position, Quaternion.Euler(0, 0, angle)); //aimTransform second, BulletDirection.positon 
-//         g.SetActive(true);
-//         StartCoroutine(CanShoot());
-//     }
-
-//     private IEnumerator CanShoot()
-//     {
-//         canShoot = false;
-//         yield return new WaitForSeconds(coolDownTime);
-//         canShoot = true;
-//     }
-// }
-

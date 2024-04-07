@@ -12,6 +12,7 @@ TagManager:
   - PowerUp
   - Weapon
   - obstacle
+  - FinalBoss
   layers:
   - Default
   - TransparentFX
