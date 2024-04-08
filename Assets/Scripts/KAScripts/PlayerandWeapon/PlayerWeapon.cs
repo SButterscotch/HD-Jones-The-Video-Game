@@ -1,8 +1,22 @@
+/*
+* Filename: PlayerWeapon.cs
+* 
+* Developer: K Atkinson
+* 
+* Purpose: Script used to aim and shoot different bullet prefabs using mouse 
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
 
+/* 
+* Summary: Class to aim a weapon at the mouse and fire a weapon upon mouse click        
+* 
+* Member variables: 
+* Instance, normalBulletPrefab, relishBulletPrefab, bulletDirection, cooldownTime, privateData, currentBulletPrefab
+* 
+*/ 
 public class PlayerWeapon : MonoBehaviour
 {
     //Used for the singleton pattern instance 
@@ -12,7 +26,8 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Transform bulletDirection;
     [SerializeField] private float cooldownTime = 0.5f;
 
-    private PrivateData privateData; //Used for PCD pattern 
+    //Used for PCD pattern 
+    private PrivateData privateData; 
     private GameObject currentBulletPrefab;
 
     private void Awake()
@@ -38,6 +53,7 @@ public class PlayerWeapon : MonoBehaviour
     private void Update()
     {
         privateData.HandleAiming();
+        //Hit mouse button to shoot bullets 
         if (Input.GetMouseButtonDown(0))
         {
             privateData.PlayerShoot(currentBulletPrefab, bulletDirection, cooldownTime);
@@ -50,7 +66,13 @@ public class PlayerWeapon : MonoBehaviour
         }
     }
 
-    // Method to toggle between normal and relish bullet types
+    /* 
+    * Summary: Method to toggle between normal and relish bullet types
+    * 
+    * Parameters: None    
+    * 
+    * Returns: None, toggles the currentBulletPrefab from normal to relish  
+    */
     private void ToggleBulletType()
     {
         if (currentBulletPrefab == normalBulletPrefab)
@@ -71,26 +93,49 @@ public class PlayerWeapon : MonoBehaviour
     * abstracting away the implementation details of aiming and shooting. 
     * This improves the modularity and maintainability of the codebase bc we can easily change and read the codebase. 
     */ 
+
+    /* 
+    * Summary: Class to handle private class data 
+    * 
+    * Member variables:     
+    * aimTransform, main, canShoot, 
+    * 
+    */
     private class PrivateData
     {
         private Transform aimTransform;
         private Camera main;
         private bool canShoot = true;
 
+        /* 
+        * Summary: Method to find the game object called "Aim" and assign aimTransform to it 
+        * 
+        * Parameters: None    
+        * 
+        * Returns: None   
+        */
         public PrivateData(Transform parentTransform)
         {
             aimTransform = parentTransform.Find("Aim");
             main = Camera.main;
         }
 
-        //This function uses the mouse position for aiming the weapon 
+        /* 
+        * Summary: This function uses the mouse position for aiming the weapon 
+        * 
+        * Parameters: None    
+        * 
+        * Returns: None, adjusts aimTransform so that the gun orients correctly   
+        */
         public void HandleAiming()
         {
+            // This uses the mouse's position to aim the weapon 
             Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
             Vector3 aimDirection = (mousePosition - aimTransform.position).normalized;
             float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
             aimTransform.eulerAngles = new Vector3(0, 0, angle);
 
+            // This block of code turns the weapon on the y-axis so that it does not flip upside down 
             Vector3 aimLocalScale = Vector3.one; 
             if (angle > 90 || angle < -90) { 
                 aimLocalScale.y = -1f; 
@@ -99,7 +144,15 @@ public class PlayerWeapon : MonoBehaviour
             }
             aimTransform.localScale = aimLocalScale;
         }
-
+        
+       /* 
+        * Summary: This function shoots the bullet upon mouse click  
+        * 
+        * Parameters: 
+        * bulletPrefab, bulletDirection, cooldownTime    
+        * 
+        * Returns: None, used as break/check   
+        */
         public void PlayerShoot(GameObject bulletPrefab, Transform bulletDirection, float cooldownTime)
         {
             if (!canShoot)
@@ -107,10 +160,12 @@ public class PlayerWeapon : MonoBehaviour
                 return;
             }
 
+            // Added this code because the axis needed to be flipped by -90 to shoot straight  
             Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
             Vector3 aimDirection = (mousePosition - aimTransform.position).normalized;
             float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
 
+            // Create and fire bullet prefab 
             GameObject g = Instantiate(bulletPrefab, bulletDirection.position, Quaternion.Euler(0, 0, angle));
             g.SetActive(true);
 
@@ -119,6 +174,13 @@ public class PlayerWeapon : MonoBehaviour
             coroutineOwner.StartCoroutine(CanShootCoroutine(cooldownTime));
         }
 
+        /* 
+        * Summary: IEnum function used to "cool down" the weapon  
+        * 
+        * Parameters: cooldownTime    
+        * 
+        * Returns:  IEnumerator   
+        */
         private IEnumerator CanShootCoroutine(float cooldownTime)
         {
             canShoot = false;

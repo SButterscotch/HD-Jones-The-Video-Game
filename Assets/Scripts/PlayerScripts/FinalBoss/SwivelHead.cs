@@ -1,18 +1,5 @@
-/* This codebase serves to create a customizable side to side automatic shooter player for a top-down 2D game.*/ 
-/* 
-* Filename: SwivelHead.cs 
-* Developer: Kay Atkinson
-* Purpose: Script to swivel the weapon between certain angles   
-*/ 
 using UnityEngine;
 
-/* 
-* Summary: Class used to swivel a game object (weapon) between two angle coordinates      
-* 
-* Member variables: 
-* minAngle, maxAngle, swivelSpeed, swivelingClockwise 
-* 
-*/ 
 public class SwivelBetweenAngles : MonoBehaviour
 {
     [SerializeField] private float minAngle = 100f; // Minimum angle
@@ -21,12 +8,10 @@ public class SwivelBetweenAngles : MonoBehaviour
 
     private bool swivelingClockwise = true; // Flag to track swiveling direction
 
-
-    //Update function called normally to perform the swivel action every frame 
     void Update()
     {
         // Calculate the target angle based on the current swivel direction
-        float targetAngle = -(swivelingClockwise ? maxAngle : minAngle);
+        float targetAngle = swivelingClockwise ? maxAngle : minAngle;
 
         // Calculate the new rotation angle using LerpAngle for smooth transition
         float newAngle = Mathf.LerpAngle(transform.eulerAngles.z, targetAngle, swivelSpeed * Time.deltaTime);

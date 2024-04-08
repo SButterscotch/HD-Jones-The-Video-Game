@@ -1,18 +1,5 @@
-/* This codebase serves to create a customizable side to side automatic shooter player for a top-down 2D game.*/ 
-/* 
-* Filename: FBWeapon.cs 
-* Developer: Kay Atkinson
-* Purpose: A parent class of AutomaticWeapon using private and protected class data to build a firing weapon 
-*/ 
 using UnityEngine;
 
-/* 
-* Summary: Class that creates variables and functions used for modular design in subclasses   
-* 
-* Member variables: 
-* _fireSpeed, _roundsPerMinute, _canFire, _bulletVelocity, _obstacleTags, firePoint, bulletPrefab 
-* 
-*/ 
 public class FBWeapon : MonoBehaviour
 {
     // Private class and other data
@@ -39,32 +26,22 @@ public class FBWeapon : MonoBehaviour
         InvokeRepeating(nameof(AutoFire), 0f, _fireSpeed);
     }
 
-    /* 
-    * Summary: Function used for dynamic binding in subclasses, fires bullets 
-    * 
-    * Parameters: None   
-    * 
-    * Returns: None, uses Invoke and Instantiate to perform its actions   
-    */
     public virtual void Fire()
     {
         if (_canFire)
         {
-            GameObject bullet = Instantiate(bulletPrefab, (-firePoint.position), firePoint.rotation);
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
             if (rb != null)
             {
                 rb.velocity = _bulletVelocity * (-transform.right);
             }
-            // Destroy bullet after lifespan
-            Destroy(bullet, _bulletLifespan); 
+            Destroy(bullet, _bulletLifespan); // Destroy bullet after lifespan
 
             _canFire = false;
             Invoke(nameof(ResetFire), _fireSpeed);
         }
     }
-
-    //Unused functions that may be used for additionaly functionality or dynamic binding 
 
     protected void AutoFire()
     {

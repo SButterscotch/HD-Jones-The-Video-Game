@@ -1,24 +1,31 @@
 /*
 * Filename: Bullet.cs
+*
 * Developer: K Atkinson
+*
 * Purpose: Script used to control bullet speed, size, sprite, and lifetime.  
-* Attached to what in the inspector? Bullet prefab 
+* Attached to what in the inspector? Bullet prefab
+* Note: Uses protected variables and functions so that methods and vars stay isolated to the class and subclasses - works with virtual for later overrides!   
 */
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/* 
+* Summary: Parent class for customizing bullets and handling their collisions       
+* 
+* Member variables: 
+* speed, bulletTimetoLive
+* 
+*/ 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] 
-    protected float speed = 4f; 
-    [SerializeField]
-    protected float bulletTimetoLive = 3f; 
+    [SerializeField] protected float speed = 4f; //How fast the bullet can move 
+    [SerializeField] protected float bulletTimetoLive = 3f; //how long the bullet lives before it's destroyed
 
     protected virtual void Start()
     {
-        StartCoroutine(DestroyBulletAfterTime()); 
+        StartCoroutine(DestroyBulletAfterTime()); //Uses bulletTimetoLive
     }
 
     protected virtual void Update()
@@ -26,11 +33,25 @@ public class Bullet : MonoBehaviour
         Move();
     }
 
+    /* 
+    * Summary: Protected virtual function for moving the bullet across the screen  
+    * 
+    * Parameters: None    
+    * 
+    * Returns: None, just translates using vectors, speed and constant time 
+    */
     protected virtual void Move()
     {
         transform.Translate(Vector3.up * speed * Time.deltaTime); 
     }
 
+    /* 
+    * Summary: Protected virtual function for handling bullet collisions in the game  
+    * 
+    * Parameters: "other", a game object with a 2D Collider component     
+    * 
+    * Returns: None, destroys the game object based on certain conditions  
+    */
     protected virtual void OnTriggerEnter2D(Collider2D other)
     { 
         if (other.gameObject.GetComponent<Enemy>() != null)
@@ -49,6 +70,13 @@ public class Bullet : MonoBehaviour
         }       
     }
 
+    /* 
+    * Summary: IEnum function used to wait for a certain amount of time before destroying bullet   
+    * 
+    * Parameters: None     
+    * 
+    * Returns: None, destroys the game object based on certain conditions  
+    */
     protected virtual IEnumerator DestroyBulletAfterTime()
     { 
         yield return new WaitForSeconds(bulletTimetoLive); 
@@ -56,6 +84,7 @@ public class Bullet : MonoBehaviour
     }
 }
 
+//This code works too, keep in case something breaks:
 // using System.Collections;
 // using System.Collections.Generic;
 // using UnityEngine;

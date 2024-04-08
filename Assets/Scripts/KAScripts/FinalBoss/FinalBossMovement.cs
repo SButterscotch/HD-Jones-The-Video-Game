@@ -1,6 +1,19 @@
+/* This codebase serves to create a customizable side to side automatic shooter player for a top-down 2D game.*/ 
+/* 
+* Filename: FinalBossMovement.cs 
+* Developer: Kay Atkinson
+* Purpose: Script to move the character (aka: Final Boss) between two points on the game screen  
+*/ 
 using UnityEngine;
 using System.Collections;
 
+/* 
+* Summary: Class used to move character game object between two points    
+* 
+* Member variables: 
+* moveSpeed, topPoint, bottomPoint, bottomPointY, rb, pointB 
+* 
+*/ 
 public class FinalBossMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f; // Movement speed
@@ -21,6 +34,13 @@ public class FinalBossMovement : MonoBehaviour
         StartCoroutine(MoveBetweenPoints());
     }
 
+    /* 
+    * Summary: IEnum Function to move to an object between two points smoothly over time 
+    * 
+    * Parameters: None   
+    * 
+    * Returns: IEnumerator from MoveObject 
+    */
     private IEnumerator MoveBetweenPoints()
     {
         Vector3 pointA = transform.position;
@@ -32,6 +52,14 @@ public class FinalBossMovement : MonoBehaviour
         }
     }
 
+    /* 
+    * Summary: IEnum Function to move to an object smoothly from one position to another over time 
+    * 
+    * Parameters: 
+    * thisTransform, startPos, endPos, speed    
+    * 
+    * Returns: IEnumerator (none)
+    */
     private IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float speed)
     {
         float journeyLength = Vector3.Distance(startPos, endPos);

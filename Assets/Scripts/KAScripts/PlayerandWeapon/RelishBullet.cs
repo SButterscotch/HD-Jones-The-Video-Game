@@ -1,18 +1,35 @@
 /*
-* Filename: SubClassBullet.cs
+* Filename: RelishBullet.cs
+* 
 * Developer: K Atkinson
-* Purpose: Script used to .  
-* Attached to what in the inspector? 
+* 
+* Purpose: Script used for dynamic binding of the OnTriggerEnter2D function bound in Bullet parent class 
 */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+/* 
+* Summary: Subclass of Bullet used to augment the OnTriggerEnter2D function with override with bouncing bullet        
+* 
+* Member variables: 
+* maxBounces, currentBounces 
+*
+*/ 
 public class RelishBullet : Bullet
 {
     [SerializeField]
     private int maxBounces = 3; // Maximum number of times the bullet can bounce
     private int currentBounces = 0; // Current number of bounces
 
+
+    /* 
+    * Summary: Override method to shoot a bullet that bounces off things a set number of times 
+    * 
+    * Parameters: "other" game object with 2D collider     
+    * 
+    * Returns:  None  
+    */
     protected override void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.GetComponent<Enemy>() != null)
