@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class Level4 : BaseLevel
 {
-    private void StartLevel()
+    protected override void StartLevel()
     {
         Debug.Log("Initializing Level 4");
         
     }
-    private void EndLevel() {
+    protected override void EndLevel() {
         Debug.Log("Ending Level 4");
     }
 }
