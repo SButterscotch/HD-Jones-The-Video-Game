@@ -1,3 +1,8 @@
+/*
+* Filename: HealthBarManager.cs
+* Developer: Rebecca Smith
+* Purpose: 
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +13,7 @@ public class HealthBarManager : MonoBehaviour
     public int maxHealth = 100;
     public int minHealth = 0;
     public int currentHealth;
-    public healthbar healthBar;
+    public HealthBar healthBar;
     public HotdogAnimatorController player; 
 
 
@@ -31,6 +36,17 @@ public class HealthBarManager : MonoBehaviour
         {
             TakeDamage(10);
             Destroy(collision.gameObject); // Destroy the obstacle
+            if (currentHealth <= 0)
+            {
+               LeaveTheGame();
+               //SceneManager.LoadScene("GameOver"); // Load the "GameOver" scene when health is 0 or below
+            }
+        }
+
+         if (collision.transform.tag == "Enemy")
+        {
+            TakeDamage(10);
+            //Destroy(collision.gameObject); // Destroy the obstacle
             if (currentHealth <= 0)
             {
                LeaveTheGame();
