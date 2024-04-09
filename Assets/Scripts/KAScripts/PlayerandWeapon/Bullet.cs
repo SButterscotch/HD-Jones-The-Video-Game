@@ -3,7 +3,7 @@
 *
 * Developer: K Atkinson
 *
-* Purpose: Script used to control bullet speed, size, sprite, and lifetime.  
+* Purpose: Script used to control bullet speed, size, sprite, and lifetime. Also counts enemies killed. 
 * Attached to what in the inspector? Bullet prefab
 * Note: Uses protected variables and functions so that methods and vars stay isolated to the class and subclasses - works with virtual for later overrides!   
 */
@@ -12,16 +12,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /* 
-* Summary: Parent class for customizing bullets and handling their collisions       
+* Summary: Parent class for customizing bullets and handling their collisions, as well as counting enemies shot       
 * 
 * Member variables: 
-* speed, bulletTimetoLive
+* speed, bulletTimetoLive, enemiesShotCount 
 * 
 */ 
 public class Bullet : MonoBehaviour
 {
     [SerializeField] protected float speed = 4f; //How fast the bullet can move 
     [SerializeField] protected float bulletTimetoLive = 3f; //how long the bullet lives before it's destroyed
+    public int enemiesShotCount = 0; //Public integer to count how many enemies were killed (in parent class for all subclasses to access)
+    //^this will also be handled a function applied to all subclasses 
 
     protected virtual void Start()
     {
@@ -60,6 +62,7 @@ public class Bullet : MonoBehaviour
             enemy.HitByBullet(); 
             if (enemy.IsDestroyed()) 
             {
+                CountEnemiesShot(); 
                 Destroy(other.gameObject); 
             }
             Destroy(gameObject); 
@@ -81,6 +84,18 @@ public class Bullet : MonoBehaviour
     { 
         yield return new WaitForSeconds(bulletTimetoLive); 
         Destroy(gameObject); 
+    }
+
+    /* 
+    * Summary: Function to keep count of how many enemies our player's bullets have killed    
+    * 
+    * Parameters: None     
+    * 
+    * Returns: None? enemiesShotCount   
+    */
+    protected void CountEnemiesShot() { 
+        enemiesShotCount++; 
+        Debug.Log($"Enemy count is {enemiesShotCount}"); 
     }
 }
 
