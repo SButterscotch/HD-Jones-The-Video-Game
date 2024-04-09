@@ -8,7 +8,7 @@
 using UnityEngine;
 
 /* 
-* Summary: Subclass of FBWeapon to fire bullet objects automatically 
+* Summary: Subclass of FBWeapon to fire bullet objects automatically and destroy after lifetime  
 * 
 * Member variables: 
 * Instance, _canFire boolean, _fireSpeed, bulletPrefab, firePoint, _bulletVelocity 
@@ -35,7 +35,7 @@ public class AutomaticWeapon : FBWeapon
     }
 
     /* 
-    * Summary:  Override Fire method to destroy bullets on collision with obstacles 
+    * Summary:  Override Fire method to destroy bullets after a lifetime  
     * 
     * Parameters: None 
     * 

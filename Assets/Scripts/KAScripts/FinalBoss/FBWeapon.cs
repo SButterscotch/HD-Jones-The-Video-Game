@@ -57,7 +57,7 @@ public class FBWeapon : MonoBehaviour
                 rb.velocity = _bulletVelocity * (-transform.right);
             }
             // Destroy bullet after lifespan
-            Destroy(bullet, _bulletLifespan); 
+            //Destroy(bullet, _bulletLifespan); 
 
             _canFire = false;
             Invoke(nameof(ResetFire), _fireSpeed);
