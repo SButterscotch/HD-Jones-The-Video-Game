@@ -56,3 +56,6 @@ TagManager:
   - name: Foreground
     uniqueID: 1912242597
     locked: 0
+  - name: Pause
+    uniqueID: 109201845
+    locked: 0
