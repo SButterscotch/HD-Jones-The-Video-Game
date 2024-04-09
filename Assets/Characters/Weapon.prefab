@@ -74,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1912242597
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.7207546, g: 0.6622783, b: 0.6622783, a: 1}
@@ -100,12 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa929528599c34c92eeac3baffdece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
-  firePoint: {fileID: 1198002873736723812}
-  fireForce: 20
-  audioSource: {fileID: 0}
-  isFiring: 0
-  bulletLifetime: 5
 --- !u!114 &1194216831590983563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,12 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6fa929528599c34c92eeac3baffdece, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
-  firePoint: {fileID: 1198002873736723812}
-  fireForce: 20
-  audioSource: {fileID: 0}
-  isFiring: 0
-  bulletLifetime: 3
 --- !u!82 &-626213235615268593
 AudioSource:
   m_ObjectHideFlags: 0
