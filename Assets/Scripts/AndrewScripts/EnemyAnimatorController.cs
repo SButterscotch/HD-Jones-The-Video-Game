@@ -4,6 +4,7 @@ public class EnemyAnimatorController : MonoBehaviour
 {
     private Rigidbody2D rb;
     private Animator animator;
+    private Transform player;
 
     // Bool parameters in the Animator Controller
     private bool MovingUp;
@@ -11,51 +12,47 @@ public class EnemyAnimatorController : MonoBehaviour
     private bool MovingLeft;
     private bool MovingRight;
 
-    private Transform playerTransform; // Reference to the player's transform
-    public float detectionRange = 10f; // Distance within which the enemy detects the player
+    private EnemyState currentState;
+
+    public float detectionDistance = 0.01f; // Distance to detect the player
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player has a "Player" tag
 
-        // Assuming you have a reference to the player's transform, set it here
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        // Initialize the state machine with the Idle state
+        currentState = new IdleState(this);
     }
 
     void FixedUpdate()
     {
-        // Update the movement direction based on player's position
-        UpdateMovementDirection();
-        // Update the bool parameters in the Animator Controller
-        UpdateAnimatorParams();
+        // Update the current state
+        currentState.UpdateState();
+
+        // Check if player is within detection distance
+        if (Vector2.Distance(transform.position, player.position) < detectionDistance)
+        {
+            // Get the direction towards the player
+            Vector2 direction = (player.position - transform.position).normalized;
+
+            // Set bool parameters based on direction towards the player
+            MovingUp = direction.y > 0;
+            MovingDown = direction.y < 0;
+            MovingLeft = direction.x < 0;
+            MovingRight = direction.x > 0;
+
+            // Update Animator parameters
+            UpdateAnimatorParams();
+        }
     }
 
-    // Method to update the movement direction based on player's position
-    private void UpdateMovementDirection()
+    // Method to transition to a new state
+    public void TransitionToState(EnemyState newState)
     {
-        if (playerTransform != null)
-        {
-            Vector3 direction = (playerTransform.position - transform.position).normalized;
-
-            // Check if the player is within detection range
-            if (Vector3.Distance(transform.position, playerTransform.position) < detectionRange)
-            {
-                // Set bool parameters based on movement direction
-                MovingUp = direction.y > 0;
-                MovingDown = direction.y < 0;
-                MovingLeft = direction.x < 0;
-                MovingRight = direction.x > 0;
-            }
-            else
-            {
-                // Player is not within detection range, set all movement bools to false (idle)
-                MovingUp = false;
-                MovingDown = false;
-                MovingLeft = false;
-                MovingRight = false;
-            }
-        }
+        currentState = newState;
+        currentState.EnterState();
     }
 
     // Update bool parameters in the Animator Controller
@@ -65,5 +62,45 @@ public class EnemyAnimatorController : MonoBehaviour
         animator.SetBool("MovingDown", MovingDown);
         animator.SetBool("MovingLeft", MovingLeft);
         animator.SetBool("MovingRight", MovingRight);
+    }
+
+    // Define the base class for all states
+    public abstract class EnemyState
+    {
+        protected EnemyAnimatorController controller;
+
+        public EnemyState(EnemyAnimatorController controller)
+        {
+            this.controller = controller;
+        }
+
+        // Method called when entering the state
+        public abstract void EnterState();
+
+        // Method called to update the state
+        public abstract void UpdateState();
+    }
+
+    // Define state classes for each movement direction
+    public class IdleState : EnemyState
+    {
+        public IdleState(EnemyAnimatorController controller) : base(controller) { }
+
+        public override void EnterState()
+        {
+            // Reset all bool parameters for idle animation
+            controller.MovingUp = false;
+            controller.MovingDown = false;
+            controller.MovingLeft = false;
+            controller.MovingRight = false;
+
+            // Update Animator parameters
+            controller.UpdateAnimatorParams();
+        }
+
+        public override void UpdateState()
+        {
+            // No specific action needed for Idle state
+        }
     }
 }
