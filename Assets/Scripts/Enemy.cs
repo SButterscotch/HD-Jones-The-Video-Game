@@ -6,8 +6,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public Transform target;
+    private float Distance;
+    [SerializeField] public float DistanceBetween = 10f;
     [SerializeField] public float speed = 3f;
-    [SerializeField] private float RotateSpeed = 0.0025f;
     private static Enemy _instance;
     public static Enemy Instance { get { return _instance; } }
     private Rigidbody2D rb;
@@ -25,6 +26,8 @@ public class Enemy : MonoBehaviour
     {
         InitialScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
+        GetTarget(); // Finds player upon entry
+        DistanceBetween = 4f;
         //Meghan code
         AudioSource[] audioSources = GetComponents<AudioSource>();
         if (audioSources.Length >= 2)
@@ -53,50 +56,19 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        //get the target
-        if (!target)
+        if (target == null)
         {
             GetTarget();
         }
-        else
-        {
-            
-            RotateTowardsTarget();
+
+        Distance = Vector2.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+        Vector2 Direction = target.transform.position - transform.position;
+
+        if (Distance < DistanceBetween) {
+            transform.position = Vector2.MoveTowards(this.transform.position, target.transform.position, speed = Time.deltaTime);
         }
     }
-
-    private void RotateTowardsTarget()
-    {
-        Vector2 targetDirection = target.position - transform.position;
-
-        // Determine whether the target is closer horizontally or vertically
-        bool closerHorizontally = Mathf.Abs(targetDirection.x) > Mathf.Abs(targetDirection.y);
-
-        if (closerHorizontally)
-        {
-            // Align with left or right direction
-            if (targetDirection.x > 0)
-                transform.rotation = Quaternion.Euler(0, 0, 0); // Right
-            else
-                transform.rotation = Quaternion.Euler(0, 180, 0); // Left
-        }
-        else
-        {
-            // Align with up or down direction
-            if (targetDirection.y > 0)
-                transform.rotation = Quaternion.Euler(0, 0, 90); // Up
-            else
-                transform.rotation = Quaternion.Euler(0, 0, -90); // Down
-        }
     
-    }
-
-    private void FixedUpdate() 
-    {
-        // Move forwards
-        rb.velocity = transform.up * speed;
-    }
-
     private void GetTarget()
     {
         if (GameObject.FindGameObjectWithTag("Player"))
