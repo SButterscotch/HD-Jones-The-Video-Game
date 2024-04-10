@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6150064688583503263}
   - component: {fileID: 3951344987978285449}
   - component: {fileID: -547554756092294230}
-  - component: {fileID: 264429206845259812}
+  - component: {fileID: -4838311571855556030}
   m_Layer: 0
   m_Name: Treevle
   m_TagString: Enemy
@@ -166,7 +166,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &5000547110902671103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,8 +180,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 3
-  RotateSpeed: 0.0025
+  DistanceBetween: 1
+  speed: 5
   enemyNoise: {fileID: 6150064688583503263}
   championSound: {fileID: 3951344987978285449}
   bulletsToDestroy: 2
@@ -398,7 +398,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &264429206845259812
+--- !u!114 &-4838311571855556030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -410,3 +410,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab44bfc4c216f944d912081cb1aacbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectionRange: 10
