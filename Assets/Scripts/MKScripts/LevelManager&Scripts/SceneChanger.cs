@@ -24,10 +24,11 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
+            Debug.Log("Destroyed the object");
             Destroy(gameObject);
         }
 
-        // Your existing scene change logic can remain here
+        
         string currentScene = SceneManager.GetActiveScene().name;
 
         if (currentScene == "Level1")
@@ -44,7 +45,7 @@ public class SceneChanger : MonoBehaviour
         }
         else if (currentScene == "Level4")
         {
-            nextScene = "MainMenu"; // You can change this to your final menu/credits scene
+            nextScene = "MainMenu"; 
         }
     }
 
