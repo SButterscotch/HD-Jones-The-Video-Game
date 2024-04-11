@@ -35,7 +35,7 @@ public class HealthBarManager : MonoBehaviour
         if (collision.transform.tag == "Bullet")
         {
             TakeDamage(10);
-            Destroy(collision.gameObject); // Destroy the obstacle
+            //Destroy(collision.gameObject); // Destroy the obstacle
             if (currentHealth <= 0)
             {
                LeaveTheGame();
@@ -55,9 +55,9 @@ public class HealthBarManager : MonoBehaviour
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        if (currentHealth < 20)
+        if (currentHealth < 10)
         {
             currentHealth = 0;
             healthBar.SetHealth(currentHealth);
