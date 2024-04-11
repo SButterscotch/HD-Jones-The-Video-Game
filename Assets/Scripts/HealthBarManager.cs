@@ -1,99 +1,144 @@
 /*
 * Filename: HealthBarManager.cs
 * Developer: Rebecca Smith
-* Purpose: 
+* Purpose: Maintains the state of the healthbar, subject for Observer (HealthBar.cs)
 */
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+// maybe implement in the hud manager an object that can access the fill and slider so that the player inspector doesn't see it
+/*
+* Summary: Initializes max and min health values, checks if player is dead, and plays the death animations
+* Member Variables:
+* maxHealth - max health value
+* minHealth - min health value
+* currentHealth - current health of player
+* playerDead - true if player is dead, false if player is alive
+*/
 public class HealthBarManager : MonoBehaviour
 {
+    // Event to notify observers of health changes
+    public event Action<int> OnHealthChanged; 
     public int maxHealth = 100;
     public int minHealth = 0;
-    public int currentHealth;
+    public int currentHealth = 100;
+    public bool playerDead;
     public HealthBar healthBar;
     public HotdogAnimatorController player; 
 
-
-    public void Start()
+    /*
+    * Summary: Initalizes health bar at the start of the game
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    protected virtual void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
 
-    public void FixedUpdate()
+
+    /*
+    * Summary: Regularly calls isPlayerDead() and performs an action based on T/F
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    public void Update()
     {
-        // You can handle other player input or events here if needed
-
-    }
-
-    // Call this function to apply damage and handle collisions with obstacles
-    public void HandleCollisions(Collision2D collision)
-    {
-        if (collision.transform.tag == "Bullet")
+        playerDead = IsPlayerDead(currentHealth);
+        
+        if (playerDead == true)
         {
-            TakeDamage(10);
-            //Destroy(collision.gameObject); // Destroy the obstacle
-            if (currentHealth <= 0)
-            {
-               LeaveTheGame();
-               //SceneManager.LoadScene("GameOver"); // Load the "GameOver" scene when health is 0 or below
-            }
-        }
-
-         if (collision.transform.tag == "Enemy")
-        {
-            TakeDamage(10);
-            //Destroy(collision.gameObject); // Destroy the obstacle
-            if (currentHealth <= 0)
-            {
-               LeaveTheGame();
-               //SceneManager.LoadScene("GameOver"); // Load the "GameOver" scene when health is 0 or below
-            }
+            DeathAnimation();
         }
     }
 
-    public void TakeDamage(int damage)
+
+    /*
+    * Summary: Checks if the player is dead or not
+    * Parameters: currentHealth - current health of the player
+    * Returns: true or false
+    */
+    private bool IsPlayerDead(int currentHealth)
     {
-        if (currentHealth < 10)
+        if (currentHealth == 0)
         {
-            currentHealth = 0;
-            healthBar.SetHealth(currentHealth);
-
-            // Access the Entity script to change the state to deadState
-            HotdogAnimatorController player = GetComponent<HotdogAnimatorController>();
-            if (player != null)
-            {
-                //player.currentState = player.deadState;
-            }
-
-            // Additional logic if needed, e.g., play death animation, disable controls, etc.
-            Animator animator = GetComponent<Animator>();
-            if (animator != null)
-            {
-                //animator.runtimeAnimatorController = player.MushrioDead as RuntimeAnimatorController;
-            }
-
-            // Wait for 5 seconds before loading the game over scene
-            StartCoroutine(LoadGameOverSceneAfterDelay(2.5f));
-        }
+            return true;
+        } 
         else
         {
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-        }
+            return false;
+        } 
     }
+
+    /*
+    * Summary: Decreases the players health when they contact an enemy
+    * Parameters: damage - how much the health bar will decrease
+    * Returns: N/A
+    */
+    public void TakeDamage(int damage)
+    {
+        // Call function to see if player is dead
+        playerDead = IsPlayerDead(currentHealth);
+        
+        if (playerDead == false)
+        {
+            currentHealth -= damage;
+            // Notify observers (if any) that the health has changed
+            OnHealthChanged?.Invoke(currentHealth);
+            //healthBar.SetHealth(currentHealth); //EVENT??
+        } 
+        
+    }
+
+
+    /*
+    * Summary: Starts the death animation when the player dies
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    private void DeathAnimation()
+    {
+        // Access the Entity script to change the state to deadState
+        HotdogAnimatorController player = GetComponent<HotdogAnimatorController>();
+        if (player != null)
+        {
+            //player.currentState = player.deadState;
+        }
+
+        // Additional logic if needed, e.g., play death animation, disable controls, etc.
+        Animator animator = GetComponent<Animator>();
+        if (animator != null)
+        {
+            //animator.runtimeAnimatorController = player.MushrioDead as RuntimeAnimatorController;
+        }
+
+        // Wait for 5 seconds before loading the game over scene
+        //StartCoroutine(LoadGameOverSceneAfterDelay(2.5f));
+        LeaveTheGame();
+    }
+
+
+    /*
+    * Summary: Loads game over scene when player dies
+    * Parameters: delay - float that contains the amount of seconds the game over screen will be delayed before it loads
+    * Returns: IEnumerator (coroutine)
+    */
     private IEnumerator LoadGameOverSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        
         // Load the game over scene
         //SceneManager.LoadScene("GameOver"); 
     }
 
+
     //using this instead of game over scene for now
-     public void LeaveTheGame(){
+    private void LeaveTheGame(){
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #else
