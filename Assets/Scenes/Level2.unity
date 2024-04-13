@@ -1593,6 +1593,7 @@ MonoBehaviour:
   maxHealth: 100
   minHealth: 0
   currentHealth: 0
+  playerDead: 0
   healthBar: {fileID: 236363619}
   player: {fileID: 417777553}
 --- !u!1 &983208499
@@ -4603,12 +4604,20 @@ PrefabInstance:
       value: NextLevelTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.14254843
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13592961
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.36
+      value: 8.48
       objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.46
+      value: -4.48
       objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.z
