@@ -37,11 +37,10 @@ public class BaseLevel : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // This method will be called whenever a scene is loaded
-        // You can perform any necessary initialization here
         StartLevel();
     }
 
-    protected virtual void StartLevel() //virtual goes here
+    protected void StartLevel() //virtual goes here
     {
         Debug.Log("BASE LEVEL Starting Level");
 
