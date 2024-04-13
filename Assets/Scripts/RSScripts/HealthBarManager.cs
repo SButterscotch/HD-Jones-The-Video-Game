@@ -10,7 +10,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-// maybe implement in the hud manager an object that can access the fill and slider so that the player inspector doesn't see it
 /*
 * Summary: Initializes max and min health values, checks if player is dead, and plays the death animations
 * Member Variables:
@@ -22,7 +21,7 @@ using UnityEngine.SceneManagement;
 public class HealthBarManager : MonoBehaviour
 {
     // Event to notify observers of health changes
-    public event Action<int> OnHealthChanged; 
+    public static event Action<int> OnHealthChanged; 
     public int maxHealth = 100;
     public int minHealth = 0;
     public int currentHealth = 100;
@@ -74,6 +73,7 @@ public class HealthBarManager : MonoBehaviour
             return false;
         } 
     }
+
 
     /*
     * Summary: Decreases the players health when they contact an enemy

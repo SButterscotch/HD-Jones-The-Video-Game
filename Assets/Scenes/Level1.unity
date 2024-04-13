@@ -323,6 +323,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2979375197913914421, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
       insertIndex: -1
       addedObject: {fileID: 568108153}
+    - targetCorrespondingSourceObject: {fileID: 2979375197913914421, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 568108155}
   m_SourcePrefab: {fileID: 100100000, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
 --- !u!1 &319787939
 GameObject:
@@ -798,8 +801,63 @@ MonoBehaviour:
   minHealth: 0
   currentHealth: 100
   playerDead: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 568108155}
   player: {fileID: 1174114196}
+--- !u!114 &568108155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66876560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d877aa22d9784f04b1565658d5e45e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 568108156}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 0.99215686, g: 0.04490429, b: 0, a: 1}
+    key1: {r: 1, g: 0.9806008, b: 0, a: 1}
+    key2: {r: 0.04460168, g: 1, b: 0, a: 1}
+    key3: {r: 0, g: 0, b: 0, a: 1}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 22166
+    ctime1: 43646
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 22166
+    atime2: 43646
+    atime3: 65535
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 1
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 4
+  fill: {fileID: 1490610836}
+--- !u!114 &568108156 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9131865982078253420, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
+  m_PrefabInstance: {fileID: 189224696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66876560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &582633291
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,7 +5530,7 @@ MonoBehaviour:
   minHealth: 0
   currentHealth: 0
   playerDead: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 568108155}
   player: {fileID: 1174114196}
 --- !u!1 &1208522854
 GameObject:
@@ -6025,6 +6083,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8909760550704730656, guid: 6def5f63ea2ee424f84bb98cf14d3616, type: 3}
   m_PrefabInstance: {fileID: 411587887}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1490610836 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1211334599862904677, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
+  m_PrefabInstance: {fileID: 189224696}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1540277252
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,26 +14,23 @@ using UnityEngine.UI;
 * gradient - gradient value inside of Unity inspector
 * fill - color of the bar inside of game
 */
-public class HealthBar : HealthBarManager
+public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public Gradient gradient;
     public Image fill;
 
-
-    // Override the Start method to add subclass-specific initialization
-    protected override void Start()
+    /*
+    * Summary: Invokes everytime an event takes place
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    private void Start()
     {
-        // Call HealthBarManager's Start
-        base.Start(); 
-
-        // Find the HealthBar component and subscribe to its OnHealthChanged event
-        //HealthBarManager healthBarManager = FindObjectOfType<HealthBarManager>();
-        //if (healthBarManager != null)
-        //{
-        OnHealthChanged += SetHealth;
-        //}
+        HealthBarManager.OnHealthChanged += SetHealth;
     }
+
+
     /*
     * Summary: Updates health for player
     * Parameters: health - value for health for player
