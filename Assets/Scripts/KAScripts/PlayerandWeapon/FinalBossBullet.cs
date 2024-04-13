@@ -13,7 +13,7 @@ using UnityEngine;
 * Summary: Subclass of Bullet used to augment the OnTriggerEnter2D function with override with bouncing bullet        
 * 
 * Member variables: 
-* maxBounces, currentBounces 
+* hitsToKillFB, currentHits 
 *
 */ 
 public class FinalBossBullet : Bullet
