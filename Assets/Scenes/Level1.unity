@@ -2686,13 +2686,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: NextLevelTrigger
       objectReference: {fileID: 0}
+    - target: {fileID: 6193278571133710924, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 183135e61810d4b0db56c98b0a2dddd1, type: 3}
+    - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.115577735
+      objectReference: {fileID: 0}
+    - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.13153604
+      objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.36
+      value: 8.18
       objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.46
+      value: -4.37
       objectReference: {fileID: 0}
     - target: {fileID: 8654757924643608424, guid: b4420e404e7614031948e24bf0ed3954, type: 3}
       propertyPath: m_LocalPosition.z
