@@ -37,3 +37,8 @@ public class PowerBar : MonoBehaviour
         SetHealth(powerHealth);
     }
 }
+
+public class PrivatePowerData
+{
+
+}

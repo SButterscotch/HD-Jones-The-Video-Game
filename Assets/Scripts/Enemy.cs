@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     public AudioSource championSound;
     public static int totalEnemies; //Total number of enemies in the scene
     private static int enemiesDefeated; //Number of enemies defeated
+    // Rebecca Code for pattern
+    public static event Action<int> EnemyEffectHealth;
 
     private void Start()
     {
@@ -80,9 +82,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             // Rebecca's Code for health bar
-            HealthBarManager healthBarManager = other.gameObject.GetComponent<HealthBarManager>();
-            healthBarManager.TakeDamage(10);
-            //Destroy(other.gameObject);
+            EnemyEffectHealth?.Invoke(10);
             target = null;
 
         }

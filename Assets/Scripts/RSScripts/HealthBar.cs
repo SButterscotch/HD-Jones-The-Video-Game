@@ -4,6 +4,7 @@
 * Purpose: This file initializes the health bar
 */
 
+using CodeMonkey.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ public class HealthBar : MonoBehaviour
     public Slider slider;
     public Gradient gradient;
     public Image fill;
+
 
     /*
     * Summary: Invokes everytime an event takes place
@@ -42,13 +44,15 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue); //normalized changes slider value so it's on the same scale 0-1
     }
 
+
     /*
     * Summary: Sets max health for player
     * Parameters: health - value for max health
     * Returns: N/A
     */
-    public void SetMaxHealth(int maxHealth)
+    public void SetHealth(int maxHealth, int currentHealth)
     {
+        Debug.LogError("Current health is: " + currentHealth);
         slider.maxValue = maxHealth;
         slider.value = maxHealth;
 

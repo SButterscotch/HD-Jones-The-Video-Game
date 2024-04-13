@@ -19,8 +19,9 @@ public class BeccaPower : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
             Destroy(gameObject); // Destroy the Coin object
+
             //powerBar.UpdateHealth(10);
         } 
     }

@@ -1,7 +1,7 @@
 /*
 * Filename: HealthBarManager.cs
 * Developer: Rebecca Smith
-* Purpose: Maintains the state of the healthbar, subject for Observer (HealthBar.cs)
+* Purpose: Maintains the state of the healthbar, subject for Observer (HealthBar.cs) and observer for Subject (Enemy.cs)
 */
 using System;
 using System.Collections;
@@ -20,7 +20,9 @@ using UnityEngine.SceneManagement;
 */
 public class HealthBarManager : MonoBehaviour
 {
-    // Event to notify observers of health changes
+    /* Observer Pattern: 
+    
+    */
     public static event Action<int> OnHealthChanged; 
     public int maxHealth = 100;
     public int minHealth = 0;
@@ -37,7 +39,8 @@ public class HealthBarManager : MonoBehaviour
     protected virtual void Start()
     {
         currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(maxHealth, currentHealth);
+        Enemy.EnemyEffectHealth += TakeDamage;
     }
 
 
@@ -88,10 +91,13 @@ public class HealthBarManager : MonoBehaviour
         if (playerDead == false)
         {
             currentHealth -= damage;
-            // Notify observers (if any) that the health has changed
+            // Notify observers that the health has changed
             OnHealthChanged?.Invoke(currentHealth);
-            //healthBar.SetHealth(currentHealth); //EVENT??
         } 
+        else 
+        {
+            Debug.LogError("Player is dead.");
+        }
         
     }
 
