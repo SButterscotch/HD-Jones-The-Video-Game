@@ -41,7 +41,7 @@ public class RelishBullet : Bullet
         {
             // Apply damage to the enemy
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            CountEnemiesShot(); //Update enemyShotCount 
+            //CountEnemiesShot(); //Update enemyShotCount 
             Destroy(other.gameObject);
 
             // Proceed with destroying the bullet as usual
