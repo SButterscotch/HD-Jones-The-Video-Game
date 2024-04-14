@@ -2,105 +2,76 @@ using UnityEngine;
 
 public class EnemyAnimatorController : MonoBehaviour
 {
+    private enum EnemyState
+    {
+        Idle,
+        Moving
+    }
+
     private Rigidbody2D rb;
     private Animator animator;
-    private Transform player;
+    private EnemyState currentState = EnemyState.Idle;
 
-    // Bool parameters in the Animator Controller
-    private bool MovingUp;
-    private bool MovingDown;
-    private bool MovingLeft;
-    private bool MovingRight;
-
-    private EnemyState currentState;
-
-    public float detectionDistance = 0.01f; // Distance to detect the player
+    private Transform playerTransform; // Reference to the player's transform
+    public float detectionRange = 0.01f; // Distance within which the enemy detects the player
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player").transform; // Assuming player has a "Player" tag
 
-        // Initialize the state machine with the Idle state
-        currentState = new IdleState(this);
+        // Assuming you have a reference to the player's transform, set it here
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void FixedUpdate()
     {
-        // Update the current state
-        currentState.UpdateState();
-
-        // Check if player is within detection distance
-        if (Vector2.Distance(transform.position, player.position) < detectionDistance)
+        switch (currentState)
         {
-            // Get the direction towards the player
-            Vector2 direction = (player.position - transform.position).normalized;
-
-            // Set bool parameters based on direction towards the player
-            MovingUp = direction.y > 0;
-            MovingDown = direction.y < 0;
-            MovingLeft = direction.x < 0;
-            MovingRight = direction.x > 0;
-
-            // Update Animator parameters
-            UpdateAnimatorParams();
+            case EnemyState.Idle:
+                UpdateIdleState();
+                break;
+            case EnemyState.Moving:
+                UpdateMovingState();
+                break;
         }
     }
 
-    // Method to transition to a new state
-    public void TransitionToState(EnemyState newState)
+    // Update method for the Idle state
+    private void UpdateIdleState()
     {
-        currentState = newState;
-        currentState.EnterState();
-    }
-
-    // Update bool parameters in the Animator Controller
-    private void UpdateAnimatorParams()
-    {
-        animator.SetBool("MovingUp", MovingUp);
-        animator.SetBool("MovingDown", MovingDown);
-        animator.SetBool("MovingLeft", MovingLeft);
-        animator.SetBool("MovingRight", MovingRight);
-    }
-
-    // Define the base class for all states
-    public abstract class EnemyState
-    {
-        protected EnemyAnimatorController controller;
-
-        public EnemyState(EnemyAnimatorController controller)
+        // Check if player is within detection range and transition to Moving state if true
+        if (playerTransform != null && Vector3.Distance(transform.position, playerTransform.position) < detectionRange)
         {
-            this.controller = controller;
+            currentState = EnemyState.Moving;
         }
 
-        // Method called when entering the state
-        public abstract void EnterState();
-
-        // Method called to update the state
-        public abstract void UpdateState();
+        // Set animator parameters for Idle state
+        animator.SetBool("MovingUp", false);
+        animator.SetBool("MovingDown", false);
+        animator.SetBool("MovingLeft", false);
+        animator.SetBool("MovingRight", false);
+        animator.SetBool("Idle", true);
     }
 
-    // Define state classes for each movement direction
-    public class IdleState : EnemyState
+    // Update method for the Moving state
+    private void UpdateMovingState()
     {
-        public IdleState(EnemyAnimatorController controller) : base(controller) { }
-
-        public override void EnterState()
+        // Check if player is no longer within detection range and transition to Idle state if true
+        if (playerTransform == null || Vector3.Distance(transform.position, playerTransform.position) >= detectionRange)
         {
-            // Reset all bool parameters for idle animation
-            controller.MovingUp = false;
-            controller.MovingDown = false;
-            controller.MovingLeft = false;
-            controller.MovingRight = false;
-
-            // Update Animator parameters
-            controller.UpdateAnimatorParams();
+            currentState = EnemyState.Idle;
+            return;
         }
 
-        public override void UpdateState()
-        {
-            // No specific action needed for Idle state
-        }
+        // Update movement direction
+        Vector3 direction = (playerTransform.position - transform.position).normalized;
+
+        // Set animator parameters based on movement direction
+        animator.SetBool("MovingUp", direction.y > 0);
+        animator.SetBool("MovingDown", direction.y < 0);
+        animator.SetBool("MovingLeft", direction.x < 0);
+        animator.SetBool("MovingRight", direction.x > 0);
+        animator.SetBool("Idle", false);
     }
 }

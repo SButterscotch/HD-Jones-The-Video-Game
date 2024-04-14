@@ -413,19 +413,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.x
-      value: 0.44267532
+      value: 0.38157976
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.y
-      value: 0.5139141
+      value: 0.26061812
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.083662346
+      value: -0.053114563
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0156086385
+      value: -0.1422566
       objectReference: {fileID: 0}
     - target: {fileID: 5341832535184394410, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1311,19 +1311,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.x
-      value: 0.44267532
+      value: 0.38157988
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.y
-      value: 0.5139141
+      value: 0.2302227
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.083662346
+      value: -0.053114623
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0156086385
+      value: -0.15745434
       objectReference: {fileID: 0}
     - target: {fileID: 5341832535184394410, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1444,11 +1444,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.7
+      value: -8.34
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.28
+      value: 4.05
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4323,19 +4323,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.x
-      value: 0.44267532
+      value: 0.38158
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.y
-      value: 0.5139141
+      value: 0.26061812
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.083662346
+      value: -0.053114682
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0156086385
+      value: -0.14225663
       objectReference: {fileID: 0}
     - target: {fileID: 5341832535184394410, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4567,6 +4567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalBulletPrefab: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
   relishBulletPrefab: {fileID: 3105283455844647785, guid: 9727594f4aa7d3a42913aa8ce3cf6e28, type: 3}
+  finalbossBulletPrefab: {fileID: 0}
   bulletDirection: {fileID: 1351923563}
   cooldownTime: 0.5
 --- !u!114 &2143182066
