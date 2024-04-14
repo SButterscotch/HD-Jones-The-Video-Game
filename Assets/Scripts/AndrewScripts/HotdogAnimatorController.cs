@@ -1,11 +1,19 @@
+/*
+* HotdogAnimatorController.cs
+* Andrew Bonilla
+* This script controls player animations depending on movement
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class HotdogAnimatorController : MonoBehaviour
 {
+    // Public variable for movement speed
     public float moveSpeed = 5f; // Speed of movement
 
+    // Private variables for Rigidbody, Animator, and current state
     private Rigidbody2D rb;
     private Animator animator;
     private HotdogState currentState;
@@ -16,40 +24,51 @@ public class HotdogAnimatorController : MonoBehaviour
     private bool RunningLeft;
     private bool RunningRight;
 
+    // Called when the script is initialized
     void Start()
     {
+        // Getting references to Rigidbody and Animator components
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        // Setting the initial state to Idle
         currentState = new IdleState(this);
     }
 
+    // Called every frame
     void Update()
     {
+        // Handling input for the current state
         currentState.HandleInput();
     }
 
+    // Called at a fixed interval for physics calculations
     void FixedUpdate()
     {
+        // Updating the current state and animator parameters
         currentState.Update();
         UpdateAnimatorParams();
     }
 
+    // Method to set the current state
     public void SetState(HotdogState state)
     {
         currentState = state;
         currentState.EnterState();
     }
 
+    // Getter method for Rigidbody
     public Rigidbody2D GetRigidbody()
     {
         return rb;
     }
 
+    // Getter method for Animator
     public Animator GetAnimator()
     {
         return animator;
     }
 
+    // Getter method for movement speed
     public float GetMoveSpeed()
     {
         return moveSpeed;
@@ -86,24 +105,42 @@ public class HotdogAnimatorController : MonoBehaviour
     }
 }
 
+// Abstract class representing different states of the hotdog
+// Example for dynamic binding 
+//----------------------------------------------------------//
+/* Static binding example
+HotdogState staticState = new IdleState(); // Static type is HotdogState
+staticState.EnterState(); // Calls EnterState() method of HotdogState
+
+   Dynamic binding example
+HotdogState dynamicState = new MovingRightState(); // Dynamic type is MovingRightState
+dynamicState.EnterState(); // Calls EnterState() method of MovingRightState
+*/
 public abstract class HotdogState
 {
     protected HotdogAnimatorController controller;
 
+    // Constructor
     public HotdogState(HotdogAnimatorController controller)
     {
         this.controller = controller;
     }
 
+    // Methods to be overridden by subclasses
+    // Virtual methods - a function that can be overridden by a derived class. 
+    // - If a function is declard as a virtual base class, it allows a subclass to provide a specific implementation of that function. 
     public virtual void EnterState() { }
     public virtual void HandleInput() { }
     public virtual void Update() { }
 }
 
+// Subclass representing the idle state of the hotdog
 public class IdleState : HotdogState
 {
+    // Constructor
     public IdleState(HotdogAnimatorController controller) : base(controller) { }
 
+    // Method called when entering the state
     public override void EnterState()
     {
         // Set bool parameter for idle animation
@@ -113,8 +150,10 @@ public class IdleState : HotdogState
         controller.SetRunningRight(false);
     }
 
+    // Method to handle input
     public override void HandleInput()
     {
+        // Check for input to transition to other states
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         float hapticHorizontalInput = Input.acceleration.x;
@@ -135,10 +174,13 @@ public class IdleState : HotdogState
     }
 }
 
+// Subclass representing the state of moving right
 public class MovingRightState : HotdogState
 {
+    // Constructor
     public MovingRightState(HotdogAnimatorController controller) : base(controller) { }
 
+    // Method called when entering the state
     public override void EnterState()
     {
         // Set bool parameter for running right animation
@@ -148,8 +190,10 @@ public class MovingRightState : HotdogState
         controller.SetRunningLeft(false);
     }
 
+    // Method to handle input
     public override void HandleInput()
     {
+        // Check for input to transition to idle state
         float horizontalInput = Input.GetAxis("Horizontal");
         float hapticHorizontalInput = Input.acceleration.x;
 
@@ -157,18 +201,20 @@ public class MovingRightState : HotdogState
             controller.SetState(new IdleState(controller));
     }
 
+    // Method to update movement
     public override void Update()
     {
         controller.GetRigidbody().velocity = Vector2.right * controller.GetMoveSpeed();
     }
 }
 
-// Similarly implement MovingLeftState, MovingUpState, and MovingDownState
 
 public class MovingLeftState : HotdogState
 {
+    // Constructor
     public MovingLeftState(HotdogAnimatorController controller) : base(controller) { }
 
+    // Method called when entering the state
     public override void EnterState()
     {
         // Set bool parameter for running left animation
@@ -178,8 +224,10 @@ public class MovingLeftState : HotdogState
         controller.SetRunningLeft(true);
     }
 
+    // Method to handle input
     public override void HandleInput()
     {
+        // Check for input to transition to idle state
         float horizontalInput = Input.GetAxis("Horizontal");
         float hapticHorizontalInput = Input.acceleration.x;
 
@@ -187,6 +235,7 @@ public class MovingLeftState : HotdogState
             controller.SetState(new IdleState(controller));
     }
 
+    // Method to update movement
     public override void Update()
     {
         controller.GetRigidbody().velocity = Vector2.left * controller.GetMoveSpeed();
@@ -195,8 +244,10 @@ public class MovingLeftState : HotdogState
 
 public class MovingUpState : HotdogState
 {
+    // Constructor
     public MovingUpState(HotdogAnimatorController controller) : base(controller) { }
 
+    // Method called when entering the state
     public override void EnterState()
     {
         // Set bool parameter for running up animation
@@ -206,8 +257,10 @@ public class MovingUpState : HotdogState
         controller.SetRunningLeft(false);
     }
 
+    // Method to handle input
     public override void HandleInput()
     {
+        // Check for input to transition to idle state
         float verticalInput = Input.GetAxis("Vertical");
         float hapticVerticalInput = Input.acceleration.y;
 
@@ -215,6 +268,7 @@ public class MovingUpState : HotdogState
             controller.SetState(new IdleState(controller));
     }
 
+    // Method to update movement
     public override void Update()
     {
         controller.GetRigidbody().velocity = Vector2.up * controller.GetMoveSpeed();
@@ -223,8 +277,10 @@ public class MovingUpState : HotdogState
 
 public class MovingDownState : HotdogState
 {
+    // Constructor
     public MovingDownState(HotdogAnimatorController controller) : base(controller) { }
 
+    // Method called when entering the state
     public override void EnterState()
     {
         // Set bool parameter for running down animation
@@ -234,8 +290,10 @@ public class MovingDownState : HotdogState
         controller.SetRunningLeft(false);
     }
 
+    // Method to handle input
     public override void HandleInput()
     {
+        // Check for input to transition to idle state
         float verticalInput = Input.GetAxis("Vertical");
         float hapticVerticalInput = Input.acceleration.y;
 
@@ -243,6 +301,7 @@ public class MovingDownState : HotdogState
             controller.SetState(new IdleState(controller));
     }
 
+    // Method to update movement
     public override void Update()
     {
         controller.GetRigidbody().velocity = Vector2.down * controller.GetMoveSpeed();
