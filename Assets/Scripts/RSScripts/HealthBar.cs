@@ -4,7 +4,6 @@
 * Purpose: This file initializes the health bar, observer for HeathBarManager
 */
 
-using CodeMonkey.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,7 +22,7 @@ public class HealthBar : MonoBehaviour
 
 
     /*
-    * Summary: Invokes everytime an event takes place
+    * Summary: Invokes SetHealth everytime an event takes place
     * Parameters: N/A
     * Returns: N/A
     */
@@ -41,7 +40,8 @@ public class HealthBar : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
-        fill.color = gradient.Evaluate(slider.normalizedValue); //normalized changes slider value so it's on the same scale 0-1
+        // Normalized changes slider value so it's on the same scale 0-1
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
 

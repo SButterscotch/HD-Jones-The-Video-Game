@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5c487f5bd5b6b7b4a8dabae0cedd9688
+guid: 7a1a463d133bb294b9cc15538990b9c1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -94,6 +94,32 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -110,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Running_0
+      name: Mario_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 795
-        width: 90
-        height: 165
+        x: 150
+        y: 601
+        width: 180
+        height: 240
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70ba1ed3496704d438a7bf579cf27986
-      internalID: -1943046967
+      spriteID: 4a1e574635726804ea4e666cc4433f33
+      internalID: -577275075
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Running_1
+      name: Mario_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 315
-        width: 90
-        height: 165
+        x: 120
+        y: 210
+        width: 225
+        height: 210
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dec413a619653074d8009f3567985e9c
-      internalID: -484894777
+      spriteID: 6f7a294305911834e9cff3fbd7ac3ca3
+      internalID: 998052949
       vertices: []
       indices: 
       edges: []
@@ -162,8 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Running_0: -1943046967
-      Running_1: -484894777
+      Mario_0: -577275075
+      Mario_1: 998052949
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

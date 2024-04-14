@@ -475,11 +475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.43
+      value: -8.33
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.74
+      value: 4.03
       objectReference: {fileID: 0}
     - target: {fileID: 1856390443957254240, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1343,19 +1343,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.x
-      value: 0.44267532
+      value: 0.37139738
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Size.y
-      value: 0.5139141
+      value: 0.24035455
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.x
-      value: -0.083662346
+      value: -0.048023373
       objectReference: {fileID: 0}
     - target: {fileID: 252713421561608284, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0156086385
+      value: -0.15238844
       objectReference: {fileID: 0}
     - target: {fileID: 5341832535184394410, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1483,6 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   normalBulletPrefab: {fileID: 3105283455844647785, guid: c771de000f7dcb54598ccd7a26e77c3a, type: 3}
   relishBulletPrefab: {fileID: 3105283455844647785, guid: 9727594f4aa7d3a42913aa8ce3cf6e28, type: 3}
+  finalbossBulletPrefab: {fileID: 0}
   bulletDirection: {fileID: 682728575}
   cooldownTime: 0.5
 --- !u!114 &955766592

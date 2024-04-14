@@ -20,7 +20,7 @@ using UnityEngine.SceneManagement;
 */
 public class HealthBarManager : MonoBehaviour
 {
-    /* Observer Pattern: 
+    /* Observer Pattern:  !!!!!!!!!!!!!!!!!!
     
     */
     public static event Action<int> OnHealthChanged; 
@@ -36,10 +36,11 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: N/A
     * Returns: N/A
     */
-    protected virtual void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth, currentHealth);
+        // Observs the subject (Enemy.cs) and subscribes to TakeDamage() so it will call it everytime there is an event
         Enemy.EnemyEffectHealth += TakeDamage;
     }
 
@@ -65,7 +66,7 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: currentHealth - current health of the player
     * Returns: true or false
     */
-    private bool IsPlayerDead(int currentHealth)
+    public virtual bool IsPlayerDead(int currentHealth)
     {
         if (currentHealth == 0)
         {
