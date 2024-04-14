@@ -52,7 +52,7 @@ public class HealthBar : MonoBehaviour
     */
     public void SetHealth(int maxHealth, int currentHealth)
     {
-        Debug.LogError("Current health is: " + currentHealth);
+        //Debug.LogError("Current health is: " + currentHealth); // Matthew commented this out to help run his tests properly
         slider.maxValue = maxHealth;
         slider.value = maxHealth;
 

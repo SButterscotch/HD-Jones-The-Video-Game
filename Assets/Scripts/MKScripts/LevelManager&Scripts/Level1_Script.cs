@@ -1,3 +1,8 @@
+/*
+* Filename: Level1_Script.cs
+* Developer: Matthew K
+* Purpose: Individual script for Level 1 with dynamic binding
+*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
 

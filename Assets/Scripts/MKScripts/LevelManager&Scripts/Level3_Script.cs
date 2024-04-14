@@ -1,3 +1,8 @@
+/*
+* Filename: Level3_Script.cs
+* Developer: Matthew K
+* Purpose: Individual script for Level 3 with dynamic binding
+*/
 using UnityEngine;
 
 

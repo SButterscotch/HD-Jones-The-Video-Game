@@ -1,3 +1,9 @@
+/*
+* EnemyAnimatorController.cs
+* Andrew Bonilla
+* Controls enemy animations based on movement direction towards player
+*/
+
 using UnityEngine;
 
 public class EnemyAnimatorController : MonoBehaviour
