@@ -326,10 +326,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2979375197913914421, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 568108153}
+      addedObject: {fileID: 568108155}
     - targetCorrespondingSourceObject: {fileID: 2979375197913914421, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 568108155}
+      addedObject: {fileID: 568108158}
   m_SourcePrefab: {fileID: 100100000, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
 --- !u!1001 &223423355
 PrefabInstance:
@@ -1002,24 +1002,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 954e19d63cb714f1f975dc326e7542f4, type: 3}
---- !u!114 &568108153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 66876560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5c82d339bc7fc4c9fb5e2af1c13df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  minHealth: 0
-  currentHealth: 100
-  playerDead: 0
-  healthBar: {fileID: 568108155}
-  player: {fileID: 1174114196}
 --- !u!114 &568108155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1075,6 +1057,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &568108158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66876560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 947bdae6b82b2a54c88a04e66532a9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  minHealth: 0
+  currentHealth: 100
+  playerDead: 0
+  healthBar: {fileID: 568108155}
+  player: {fileID: 1174114196}
 --- !u!1 &582633291
 GameObject:
   m_ObjectHideFlags: 0

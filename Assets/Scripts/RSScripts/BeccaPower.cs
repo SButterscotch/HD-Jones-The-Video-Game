@@ -1,27 +1,38 @@
 /*
 * Filename: BeccaPower.cs
 * Developer: Rebecca Smith
-* Purpose: This file handles power up collsions with player so I can create the power up bar before the oral exam
+* Purpose: This file handles power up collsions with player 
 */
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeccaPower : PowerBar
+/* 
+* Summary: Handles collisions with the player and power up objects
+* Member Variables: N/A
+*/
+public class BeccaPower : MonoBehaviour
 {
     public PowerBar powerBar = new PowerBar(); // needed for PowerBarManager to work, needs a definition to assign the powerup bar to each powerup
     private HealthBarManager healthBarManager;
   
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip audioClip;
+    //[SerializeField] private AudioSource audioSource;
+    //[SerializeField] private AudioClip audioClip;
 
+    /* 
+    * Summary: Handles collisions with the player and power up objects
+    * Parameters: other - collider object
+    * Returns: N/A
+    */
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             //audioSource.PlayOneShot(audioClip);
-            Destroy(gameObject); // Destroy the powerup object
+
+            // Destroy the powerup object
+            Destroy(gameObject);
             healthBarManager.AddHealth(5);
 
             powerBar = other.GetComponent<PowerBar>();
