@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Level3 : BaseLevel
 {
-    protected override void StartLevel()
+    protected void StartLevel() // removed override here
     {
         Debug.Log("Initializing Level 3");
         

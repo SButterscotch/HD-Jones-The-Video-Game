@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using UnityEngine.SceneManagement; 
 
 /* 
 * Summary: Class to aim a weapon at the mouse and fire a weapon upon mouse click        
@@ -23,6 +24,8 @@ public class PlayerWeapon : MonoBehaviour
     public static PlayerWeapon Instance { get; private set; }
     [SerializeField] private GameObject normalBulletPrefab;
     [SerializeField] private GameObject relishBulletPrefab;
+
+    [SerializeField] private GameObject finalbossBulletPrefab;
     [SerializeField] private Transform bulletDirection;
     [SerializeField] private float cooldownTime = 0.5f;
 
@@ -63,6 +66,10 @@ public class PlayerWeapon : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
             ToggleBulletType();
+        }
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            currentBulletPrefab = finalbossBulletPrefab;
         }
     }
 
