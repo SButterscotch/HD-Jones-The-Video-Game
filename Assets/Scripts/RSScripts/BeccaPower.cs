@@ -8,9 +8,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeccaPower : MonoBehaviour
+public class BeccaPower : PowerBar
 {
-    public PowerBar powerBar;
+    public PowerBar powerBar = new PowerBar(); // needed for PowerBarManager to work, needs a definition to assign the powerup bar to each powerup
+    private HealthBarManager healthBarManager;
   
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip audioClip;
@@ -20,9 +21,14 @@ public class BeccaPower : MonoBehaviour
         if (other.tag == "Player")
         {
             //audioSource.PlayOneShot(audioClip);
-            Destroy(gameObject); // Destroy the Coin object
+            Destroy(gameObject); // Destroy the powerup object
+            healthBarManager.AddHealth(5);
 
-            //powerBar.UpdateHealth(10);
+            powerBar = other.GetComponent<PowerBar>();
+            if (powerBar != null)
+            {
+                powerBar.CallPrivateMethodFromOutside();
+            }
         } 
     }
 }

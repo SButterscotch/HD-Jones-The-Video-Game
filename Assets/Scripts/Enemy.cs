@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     public AudioSource enemyNoise;
     public AudioSource championSound;
     public static int totalEnemies; //Total number of enemies in the scene
+
+    public static int enemiesKilledCount = 0; //Total number of enemies destroyed - K's code 
     private static int enemiesDefeated; //Number of enemies defeated
     // Rebecca Code for pattern
     public static event Action<int> EnemyEffectHealth;
@@ -42,6 +44,11 @@ public class Enemy : MonoBehaviour
     {
         // Decrement totalEnemies when an enemy is destroyed
         totalEnemies--;
+
+        /****Added by K: public static integer to keep track of how many enemies were destroyed****/ 
+        enemiesKilledCount++; 
+        Debug.Log($"enemies killed is {enemiesKilledCount}"); 
+        /***********end of K's code****************************************************************/ 
 
         // Check if all enemies are defeated
         if (totalEnemies == 0)

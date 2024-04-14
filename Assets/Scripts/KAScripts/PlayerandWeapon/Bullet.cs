@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(Vector3.up * speed * Time.deltaTime); 
     }
 
-    /* 
+    /**************DYNAMIC BINDING*****************************
     * Summary: Protected virtual function for handling bullet collisions in the game  
     * 
     * Parameters: "other", a game object with a 2D Collider component     
@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
             enemy.HitByBullet(); 
             if (enemy.IsDestroyed()) 
             {
-                CountEnemiesShot(); 
+                //CountEnemiesShot(); 
                 Destroy(other.gameObject); 
             }
             Destroy(gameObject); 
@@ -86,14 +86,16 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject); 
     }
 
+    
+
     /* 
     * Summary: Function to keep count of how many enemies our player's bullets have killed    
     * 
     * Parameters: None     
     * 
-    * Returns: None? enemiesShotCount   
+    * Returns: None, increases enemiesShotCount   
     */
-    protected void CountEnemiesShot() { 
+    public void CountEnemiesShot() { 
         enemiesShotCount++; 
         Debug.Log($"Enemy count is {enemiesShotCount}"); 
     }

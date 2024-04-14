@@ -103,6 +103,20 @@ public class HealthBarManager : MonoBehaviour
 
 
     /*
+    * Summary: Increases the players health when they contact an enemy
+    * Parameters: addHealth - how much the health bar will increase
+    * Returns: N/A
+    */
+    public void AddHealth(int addHealth)
+    {
+        if (currentHealth != 100)
+        {
+            currentHealth += addHealth;
+            OnHealthChanged?.Invoke(currentHealth);
+        }
+    }
+
+    /*
     * Summary: Starts the death animation when the player dies
     * Parameters: N/A
     * Returns: N/A

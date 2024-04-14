@@ -1,7 +1,7 @@
 /*
 * Filename: HealthBar.cs
 * Developer: Rebecca Smith
-* Purpose: This file initializes the health bar
+* Purpose: This file initializes the health bar, observer for HeathBarManager
 */
 
 using CodeMonkey.Utils;
