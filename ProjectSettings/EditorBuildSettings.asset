@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level4.unity
     guid: dc87fd927156a47459a91ce09ef02f7e
+  - enabled: 1
+    path: Assets/Scenes/KTestingScene.unity
+    guid: d9c4416db9a78604f8eb7891da4a2329
   m_configObjects: {}

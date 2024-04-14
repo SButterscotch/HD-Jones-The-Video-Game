@@ -21,7 +21,7 @@ public class KAPlayerSpeedTest
     public void Setup()
     {
         // load dummy scene
-        SceneManager.LoadScene("TestingScene");
+        SceneManager.LoadScene("KTestingScene");
     }
 
     //Act 
