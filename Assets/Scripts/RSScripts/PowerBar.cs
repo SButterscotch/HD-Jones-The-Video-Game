@@ -19,6 +19,9 @@ public class PowerBar : MonoBehaviour
     private PrivatePowerData privatePowerData; 
     [SerializeField] private Slider slider; 
     [SerializeField] private Image fill;
+    private float pubCurrentPower;
+    public HotdogAnimatorController player; 
+    [SerializeField] private GameObject powerUpBar;
     
 
     /*
@@ -28,7 +31,7 @@ public class PowerBar : MonoBehaviour
     */
     public void Start() 
     { 
-        privatePowerData = new PrivatePowerData(slider, fill); // Pass references to slider and fill
+        privatePowerData = new PrivatePowerData(slider, fill, powerUpBar); // Pass references to slider and fill
         privatePowerData.SetUpPowerBar();
     }
 
@@ -38,9 +41,20 @@ public class PowerBar : MonoBehaviour
     * Parameters: N/A
     * Returns: N/A
     */
-    public void CallPrivateMethodFromOutside()
+    public void CallCountdownFromOutside()
     {
         privatePowerData.CountdownPowerUp();
+    }
+
+
+    /*
+    * Summary: Public method to access currentPower from PrivatePowerData
+    * Parameters: N/A
+    * Returns: privatePowerData.GetCurrentPowerFromInside(); 
+    */
+    public float GetCurrentPowerFromOutside()
+    {
+        return privatePowerData.GetCurrentPowerFromInside();
     }
 
     // TALK ABOUT PCD !!!!!!!!!!!!
@@ -60,17 +74,18 @@ public class PowerBar : MonoBehaviour
         private float currentPower = 100f;
         private float decreasePower = 1f;
         private GameObject powerUpBar;
-        private Gradient gradient;
+        private Gradient gradient = new Gradient(); // Initialize gradient
 
 
         /*
         * Summary: Public class to initialize the slider and fill objects
         * Member methods: N/A
         */
-        public PrivatePowerData(Slider slider, Image fill)
+        public PrivatePowerData(Slider slider, Image fill, GameObject powerUpBar)
         {
             this.slider = slider;
             this.fill = fill;
+            this.powerUpBar = powerUpBar;
         }
 
 
@@ -87,9 +102,9 @@ public class PowerBar : MonoBehaviour
                 slider.maxValue = maxPower;
                 slider.value = currentPower; 
                 fill.color = gradient.Evaluate(1f); 
+                // Initially disable the power-up bar so it's not viewable
+                powerUpBar.SetActive(false);
             }
-            // Initially disable the power-up bar so it's not viewable
-            powerUpBar.SetActive(false);
         }
 
 
@@ -123,5 +138,17 @@ public class PowerBar : MonoBehaviour
         {
             powerUpBar.SetActive(value);
         }
+
+
+        /*
+        * Summary: Method to return the value for currentPower
+        * Parameters: N/A
+        * Returns: N/A
+        */
+        public float GetCurrentPowerFromInside()
+        {
+            return currentPower;
+        }
+
     }
 }

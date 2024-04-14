@@ -13,6 +13,8 @@ TagManager:
   - Weapon
   - obstacle
   - FinalBoss
+  - PowerBar
+  - HealthBar
   layers:
   - Default
   - TransparentFX
