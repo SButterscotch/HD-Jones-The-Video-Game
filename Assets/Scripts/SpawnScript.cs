@@ -36,6 +36,11 @@ public class SpawnScript : MonoBehaviour
     public GameObject[] spawnObjects;
     public Transform[] spawnLocations;
 
+    /* Pattern: iterator
+     * Chose because It perfectly fit the code I needed.
+     * Nothing would've worked better, only a bunch of if/for loops
+     * A bad time to use the pattern would be the opposite of my scenario, would be useless. 
+     */
     HashSet<Transform> usedLocations = new HashSet<Transform>();
 
     // Start is called before the first frame update
@@ -49,7 +54,7 @@ public class SpawnScript : MonoBehaviour
     {
         List<Transform> availableLocations = GetAvailableLocations();
 
-        // Ensure we don't spawn more objects than available locations
+        // Ensure we don't spawn more objects than available locations - stolen code!
         numberOfObjects = Mathf.Min(numberOfObjects, availableLocations.Count);
 
         for (int i = 0; i < numberOfObjects; i++)

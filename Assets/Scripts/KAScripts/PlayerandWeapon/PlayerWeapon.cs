@@ -177,8 +177,8 @@ public class PlayerWeapon : MonoBehaviour
             g.SetActive(true);
 
             // Start cooldown coroutine
-            MonoBehaviour coroutineOwner = bulletPrefab.GetComponent<MonoBehaviour>();
-            coroutineOwner.StartCoroutine(CanShootCoroutine(cooldownTime));
+            //MonoBehaviour coroutineOwner = bulletPrefab.GetComponent<MonoBehaviour>();
+           // coroutineOwner.StartCoroutine(CanShootCoroutine(cooldownTime));
         }
 
         /* 

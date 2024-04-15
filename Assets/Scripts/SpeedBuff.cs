@@ -10,6 +10,6 @@ public class SpeedBuff : PowerUpEffect
 
     public override void Apply(GameObject target)
     {
-        //target.GetComponent<MoveSpeed>().health.value += amount;
+        //target.GetComponent<PlayerMovement>().moveSpeed += amount;
     }
 }

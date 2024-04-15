@@ -13,6 +13,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    /* Singleton pattern 
+     * Chose because I cannot have the level load in and have an instance of the pause menu running.
+     * I don't think anything would've worked better to tell
+     * A bad time to use the singleton pattern would be if you are spawning in items and are checking them for no reason. 
+    */
     void Awake()
     {
         if (Instance == null)
@@ -40,6 +45,7 @@ public class PauseMenu : MonoBehaviour
 
         }
     }
+    //Stolen Code! 1000 to 25000 dollars! Or up to a year!
     public void Resume ()
     {
         pauseMenuUI.SetActive(false);
