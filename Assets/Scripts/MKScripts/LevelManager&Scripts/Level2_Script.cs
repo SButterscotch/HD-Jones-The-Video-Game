@@ -1,3 +1,9 @@
+/*
+* Filename: Level2_Script.cs
+* Developer: Matthew K
+* Purpose: Individual script for Level 2 with dynamic binding
+*/
+
 using UnityEngine;
 
 

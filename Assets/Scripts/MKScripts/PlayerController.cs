@@ -1,3 +1,9 @@
+/*
+* Filename: PlayerController.cs
+* Developer: Matthew K & K Atkinson
+* Purpose: Have the player shoot, move, and interact with objects/boundaries
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 //using Default;

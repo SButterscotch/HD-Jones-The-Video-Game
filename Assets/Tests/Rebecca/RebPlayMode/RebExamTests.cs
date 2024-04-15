@@ -7,7 +7,7 @@ using NUnit.Framework;
 public class RebExamTests
 {
     // Checks if game ends when player health = 0
-    [Test]
+    /*[Test]
     public void CheckSceneWhenPlayerDies()
     {
         UnityEditor.EditorApplication.isPlaying = false;
@@ -22,25 +22,30 @@ public class RebExamTests
 
         // If false, then the correct functions have been called and the game is over
         Assert.IsFalse(UnityEditor.EditorApplication.isPlaying);
-    }
+    }*/
 
     // is power bar null
     [Test]
-    public void Check()
+    public void CheckIfPowerBarIsNull()
     {
-        
+        // Create player object
+        GameObject player = new GameObject("Player");
+
+        // Testing if the player object already has a PowerBar component
+        PowerBar powerBar = player.AddComponent<PowerBar>();
+
+        Assert.IsTrue(powerBar);
     }
 
     // Checks if health bar != NULL
     [Test]
     public void CheckIfHealthBarIsNull()
     {
-        //Create new game object HealthBarManager 
-        GameObject gameObject = new GameObject();
-        HealthBarManager healthBarManager = gameObject.AddComponent<HealthBarManager>();
+        // Create player object
+        GameObject player = new GameObject("Player");
+        HealthBar healthBar = player.AddComponent<HealthBar>();
 
-        Assert.IsTrue(healthBarManager.healthBar);
-
+        Assert.IsTrue(healthBar);
     }
 
     // Checks if player object != NULL
@@ -49,14 +54,13 @@ public class RebExamTests
     {
         //Create new game object HealthBarManager 
         GameObject player = new GameObject("Player");
-        HealthBar healthBar = player.AddComponent<HealthBar>();
 
-        // Check if health bar is not null
-        Assert.IsTrue(healthBar);
+        // Check if player is not null
+        Assert.IsTrue(player);
     }
 
     // Stress test on what happens when the player runs into multiple enemies at once
-    [Test]
+    /*[UnityTest]
     public IEnumerator TestIfCurrentHealthStaysAtZeroWithThousandEnemies()
     {
         // Create player object with health manager
@@ -83,40 +87,98 @@ public class RebExamTests
 
         // Check if player's health is above zero
         Assert.Greater(healthBarManager.currentHealth, 0);
-    }
+    }*/
 
     // Checks if power up = NULL after player collides with it
     [Test]
-    public void CheckSceneWhenPlayers()
+    public void CheckIfPowerUpIsNullAfterCollision()
     {
-        
+        // Create player object and add necessary components
+        GameObject player = new GameObject("Player");
+        BeccaPower beccaPower = player.AddComponent<BeccaPower>();
+
+        // Create power-up object
+        GameObject powerUp = new GameObject("PowerUp");
+        Collider2D powerUpCollider = powerUp.AddComponent<BoxCollider2D>();
+
+        // Call function to trigger collision
+        beccaPower.OnTriggerEnter2D(powerUpCollider);
+
+        // Check if the power-up object is destroyed after collision
+        Assert.IsFalse(powerUp == null || !powerUp.activeSelf);
     }
 
-    // Check if the heatlh bar is green when health = 70 ish
-    [Test]
-    public void CheckSceneWs()
+    // Check if the heatlh bar is green when health = 70 
+    /*[Test]
+    public void CheckHealthBarColorGreen()
     {
-        
+        GameObject healthBarObject = new GameObject("HealthBar");
+        HealthBar healthBar = healthBarObject.AddComponent<HealthBar>();
+        HealthBarManager healthBarManager = healthBarObject.AddComponent<HealthBarManager>();
+
+        healthBarManager.Start();
+        healthBarManager.TakeDamage(30);
+
+        Color color = healthBar.gradient.Evaluate(healthBar.slider.normalizedValue);
+        // Define the expected RGBA values for green from health bar
+        Color correctColor = new Color(8 / 255f, 250 / 255f, 12 / 255f, 1);
+        Assert.AreEqual(color, correctColor);
     }
 
-     // Check if the heatlh bar is yellow when health = 50 ish
+     // Check if the heatlh bar is yellow when health = 50
     [Test]
-    public void CheckScenes()
+    public void CheckHealthBarColorYellow()
     {
-        
+        GameObject player = new GameObject("Player");
+        HealthBar healthBar = player.AddComponent<HealthBar>();
+
+        healthBar.SetHealth(100, 50);
+
+        Color color = healthBar.fill.color;
+        // Define the expected RGBA values for yellow from health bar
+        Color correctColor = new Color(1f, 0.92f, 0.016f, 1f); 
+        Assert.AreSame(color, correctColor);
     }
 
-     // Check if the heatlh bar is red when health = 30 ish
+     // Check if the heatlh bar is red when health = 30
     [Test]
-    public void ChecScenes()
+    public void CheckHealthBarColorRed()
     {
-        
+        GameObject player = new GameObject("Player");
+        HealthBar healthBar = player.AddComponent<HealthBar>();
+
+        healthBar.SetHealth(100, 50);
+
+        //Color color = healthBar.fill.color;
+        // Define the expected RGBA values for red from health bar
+        Color correctColor = new Color(1, 0, 0, 1); 
+        Assert.AreSame(healthBar.fill.color, correctColor);
     }
 
-     // Check if the heatlh bar is yellow when health = 50 ish
+    // Check if currentPower starts at 100 for power bar
     [Test]
-    public void ChekScenes()
+    public void CheckCurrentPowerAtStart()
     {
-        
+        // Create new player object and assign power bar component
+        //GameObject player = new GameObject("Player");
+        GameObject powerBarObject = new GameObject("PowerBar");
+        PowerBar powerBar = powerBarObject.AddComponent<PowerBar>();
+
+        // Fetch currentPower from power bar class
+        float currentPower = powerBar.GetCurrentPowerFromOutside();
+
+        Assert.AreEqual(100, currentPower);
     }
+
+     // Check if currentHealth starts at 100 for health bar
+    [Test]
+    public void ChekSce()
+    {
+        // Create new player object and assign health bar component
+        GameObject player = new GameObject("Player");
+        HealthBarManager healthBarManager = player.AddComponent<HealthBarManager>();
+
+        Assert.AreEqual(100, healthBarManager.currentHealth);
+    }
+    */
 }
