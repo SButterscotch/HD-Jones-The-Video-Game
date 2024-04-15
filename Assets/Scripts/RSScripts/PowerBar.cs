@@ -57,7 +57,19 @@ public class PowerBar : MonoBehaviour
         return privatePowerData.GetCurrentPowerFromInside();
     }
 
-    // TALK ABOUT PCD !!!!!!!!!!!!
+    /* Private Class Data Pattern:
+    Why use this pattern?
+        - This pattern allows for great encapsulation of methods and attributes so they cannot be directly accessed or changed. All methods must be accessed through a public
+        itteration of the private class. This added layer of security ensure the integrity of the state of the power bar. It also reduces the coupling between classes because 
+        changes made on the inside of the private class will not effect the external interface.
+    Would something else have worked better? 
+        - Yes, I think the Observer pattern would have worked better for this scenario. It has been challenging to update other classes because of data I need to broadcast is 
+        hidden. It has also been annoying to create tests for anything in this class.
+    When would be a bad time to use this pattern?
+        - This would be a bad example to use this pattern. There are multiple instances that will end up depending on this class, which will increase the amount of public
+        instances I have to make for this class. This just adds complexity and maintance that could be avoided with other patterns.
+    */
+
 
     /*
     * Summary: Initializes max and min power bar values, allows the player to view the power bar, and starts the countdown

@@ -20,7 +20,7 @@ public class SubHealthManager : HealthBarManager
     public override bool IsPlayerDead(int currentHealth)
     {
         // Changes the color of the health bar to blue when overriding HealthBarManager's IsPlayerDead
-        healthBar.fill.color = Color.blue;
+        //healthBar.fill.color = Color.blue;
         if (currentHealth == 0)
         {
             return true;

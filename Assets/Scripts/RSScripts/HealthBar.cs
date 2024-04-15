@@ -22,7 +22,7 @@ public class HealthBar : MonoBehaviour
 
 
     /*
-    * Summary: Invokes SetHealth everytime an event takes place
+    * Summary: Subscribes to OnHealthChanged event to invoke SetHealth everytime an event takes place
     * Parameters: N/A
     * Returns: N/A
     */
@@ -58,5 +58,15 @@ public class HealthBar : MonoBehaviour
 
         // Sets health bar to green at start
         fill.color = gradient.Evaluate(1f);
+    }
+
+    /*
+    * Summary: Unsubscribes from OnHealthChanged event 
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    public void OnDestroy()
+    {
+        HealthBarManager.OnHealthChanged -= SetHealth;
     }
 }
