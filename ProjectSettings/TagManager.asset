@@ -14,7 +14,7 @@ TagManager:
   - obstacle
   - FinalBoss
   - PowerBar
-  - HealthBar
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX
