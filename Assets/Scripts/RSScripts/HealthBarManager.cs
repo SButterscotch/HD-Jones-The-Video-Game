@@ -53,6 +53,7 @@ public class HealthBarManager : MonoBehaviour
 
         // Observes the subject (Enemy.cs) and subscribes to the EnemyEffectHealth event using TakeDamage() as the handler for this event
         Enemy.EnemyEffectHealth += TakeDamage;
+        EnemyBullet.EnemyEffectHealth += TakeDamage;
     }
 
 
