@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 746
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Hierarchy
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 31401
+  controlID: 22
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 31402
+  controlID: 23
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,11 +165,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1158
-    height: 400
+    height: 427
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 31403
+  controlID: 24
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -188,12 +188,12 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 189.5
-    height: 400
+    height: 427
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 13}
+  m_ActualView: {fileID: 14}
   m_Panes:
-  - {fileID: 13}
+  - {fileID: 14}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &9
@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: GameView
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -214,16 +214,16 @@ MonoBehaviour:
     x: 189.5
     y: 0
     width: 968.5
-    height: 400
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 12}
+    height: 427
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 15}
   m_Panes:
-  - {fileID: 14}
-  - {fileID: 12}
   - {fileID: 15}
-  m_Selected: 1
-  m_LastSelected: 0
+  - {fileID: 13}
+  - {fileID: 16}
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,25 +234,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 400
+    y: 427
     width: 1158
-    height: 296
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 16}
+    height: 269
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 18}
   m_Panes:
-  - {fileID: 16}
   - {fileID: 17}
   - {fileID: 18}
   - {fileID: 19}
-  m_Selected: 0
-  m_LastSelected: 1
+  - {fileID: 20}
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -272,14 +272,1696 @@ MonoBehaviour:
     y: 0
     width: 282
     height: 696
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 20}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 21}
   m_Panes:
-  - {fileID: 20}
+  - {fileID: 21}
+  - {fileID: 12}
   m_Selected: 0
-  m_LastSelected: 0
+  m_LastSelected: 1
 --- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1158
+    y: 83
+    width: 281
+    height: 675
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 41230
+    splitterInitialOffset: 0
+    currentActiveSplitter: -1
+    realSizes:
+    - 453.5
+    - 151.5
+    relativeSizes:
+    - 0.75
+    - 0.25
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 605
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1006
+      uniqueId: '[Hotdog Jones: The Video Game][suite]'
+      name: 'Hotdog Jones: The Video Game'
+      fullName: 'Hotdog Jones: The Video Game'
+      resultStatus: 2
+      duration: 0.4094496
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1017
+      uniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+      name: Andrew.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1007
+      uniqueId: Andrew.dll/[Andrew][AnimationStressTest][suite]
+      name: AnimationStressTest
+      fullName: AnimationStressTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1008
+      uniqueId: Andrew.dll/AnimationStressTest/[Andrew][AnimationStressTest.AnimationStress]
+      name: AnimationStress
+      fullName: AnimationStressTest.AnimationStress
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1007
+      parentUniqueId: Andrew.dll/[Andrew][AnimationStressTest][suite]
+    - id: 1009
+      uniqueId: Andrew.dll/[Andrew][RunningDownTestScript][suite]
+      name: RunningDownTestScript
+      fullName: RunningDownTestScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1010
+      uniqueId: Andrew.dll/RunningDownTestScript/[Andrew][RunningDownTestScript.RunningDownAnimatorParameterIsSetCorrectly]
+      name: RunningDownAnimatorParameterIsSetCorrectly
+      fullName: RunningDownTestScript.RunningDownAnimatorParameterIsSetCorrectly
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1009
+      parentUniqueId: Andrew.dll/[Andrew][RunningDownTestScript][suite]
+    - id: 1011
+      uniqueId: Andrew.dll/[Andrew][RunningLeftTestScript][suite]
+      name: RunningLeftTestScript
+      fullName: RunningLeftTestScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1012
+      uniqueId: Andrew.dll/RunningLeftTestScript/[Andrew][RunningLeftTestScript.RunningLeftAnimatorParameterIsSetCorrectly]
+      name: RunningLeftAnimatorParameterIsSetCorrectly
+      fullName: RunningLeftTestScript.RunningLeftAnimatorParameterIsSetCorrectly
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1011
+      parentUniqueId: Andrew.dll/[Andrew][RunningLeftTestScript][suite]
+    - id: 1013
+      uniqueId: Andrew.dll/[Andrew][RunningRightTestScript][suite]
+      name: RunningRightTestScript
+      fullName: RunningRightTestScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1014
+      uniqueId: Andrew.dll/RunningRightTestScript/[Andrew][RunningRightTestScript.RunningRightAnimatorParameterIsSetCorrectly]
+      name: RunningRightAnimatorParameterIsSetCorrectly
+      fullName: RunningRightTestScript.RunningRightAnimatorParameterIsSetCorrectly
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1013
+      parentUniqueId: Andrew.dll/[Andrew][RunningRightTestScript][suite]
+    - id: 1015
+      uniqueId: Andrew.dll/[Andrew][RunningUpTestScript][suite]
+      name: RunningUpTestScript
+      fullName: RunningUpTestScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1017
+      parentUniqueId: '[Andrew][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1016
+      uniqueId: Andrew.dll/RunningUpTestScript/[Andrew][RunningUpTestScript.RunningUpAnimatorParameterIsSetCorrectly]
+      name: RunningUpAnimatorParameterIsSetCorrectly
+      fullName: RunningUpTestScript.RunningUpAnimatorParameterIsSetCorrectly
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1015
+      parentUniqueId: Andrew.dll/[Andrew][RunningUpTestScript][suite]
+    - id: 1025
+      uniqueId: '[DTPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
+      name: DTPlayMode.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1021
+      uniqueId: DTPlayMode.dll/[DTPlayMode][DTEnemySpawnStress][suite]
+      name: DTEnemySpawnStress
+      fullName: DTEnemySpawnStress
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1025
+      parentUniqueId: '[DTPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
+    - id: 1022
+      uniqueId: DTPlayMode.dll/DTEnemySpawnStress/[DTPlayMode][DTEnemySpawnStress.StressTestEnemy]
+      name: StressTestEnemy
+      fullName: DTEnemySpawnStress.StressTestEnemy
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1021
+      parentUniqueId: DTPlayMode.dll/[DTPlayMode][DTEnemySpawnStress][suite]
+    - id: 1019
+      uniqueId: DTPlayMode.dll/[DTPlayMode][EnemyKillTest][suite]
+      name: EnemyKillTest
+      fullName: EnemyKillTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1025
+      parentUniqueId: '[DTPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
+    - id: 1020
+      uniqueId: DTPlayMode.dll/EnemyKillTest/[DTPlayMode][EnemyKillTest.StressTestEnemy]
+      name: StressTestEnemy
+      fullName: EnemyKillTest.StressTestEnemy
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1019
+      parentUniqueId: DTPlayMode.dll/[DTPlayMode][EnemyKillTest][suite]
+    - id: 1023
+      uniqueId: DTPlayMode.dll/[DTPlayMode][PlayerTargetTest][suite]
+      name: PlayerTargetTest
+      fullName: PlayerTargetTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1025
+      parentUniqueId: '[DTPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
+    - id: 1024
+      uniqueId: DTPlayMode.dll/PlayerTargetTest/[DTPlayMode][PlayerTargetTest.TestPlayerTarget]
+      name: TestPlayerTarget
+      fullName: PlayerTargetTest.TestPlayerTarget
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1023
+      parentUniqueId: DTPlayMode.dll/[DTPlayMode][PlayerTargetTest][suite]
+    - id: 1037
+      uniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+      name: JWPlayMode.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll
+      resultStatus: 2
+      duration: 0.3901954
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1019
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JW10SecCheck][suite]
+      name: JW10SecCheck
+      fullName: JW10SecCheck
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1038
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1021
+      uniqueId: JWPlayMode.dll/JW10SecCheck/[JWPlayMode][JW10SecCheck.JW10SecCheckWithEnumeratorPasses]
+      name: JW10SecCheckWithEnumeratorPasses
+      fullName: JW10SecCheck.JW10SecCheckWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1019
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JW10SecCheck][suite]
+    - id: 1027
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWBoundIn][suite]
+      name: JWBoundIn
+      fullName: JWBoundIn
+      resultStatus: 2
+      duration: 0.0517926
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1028
+      uniqueId: JWPlayMode.dll/JWBoundIn/[JWPlayMode][JWBoundIn.AllPrefabsWithinBoundsTest]
+      name: AllPrefabsWithinBoundsTest
+      fullName: JWBoundIn.AllPrefabsWithinBoundsTest
+      resultStatus: 2
+      duration: 0.0206274
+      messages: 'SetUp : Unhandled log message: ''[Error] Scene ''Level 1'' couldn''t
+        be loaded because it has not been added to the build settings or the AssetBundle
+        has not been loaded.
+
+        To add a scene to the build settings use the
+        menu File->Build Settings...''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'Scene ''Level 1'' couldn''t be loaded because it has not been added
+        to the build settings or the AssetBundle has not been loaded.
+
+        To
+        add a scene to the build settings use the menu File->Build Settings...
+
+'
+      stacktrace: 'UnityEngine.SceneManagement.SceneManager:LoadScene (string)
+
+        JWBoundIn:Setup
+        () (at Assets/Tests/Jon/JWPlayMode/JWBoundIn.cs:16)
+
+        System.Reflection.MethodBase:Invoke
+        (object,object[])
+
+        NUnit.Framework.Internal.Reflect:InvokeMethod
+        (System.Reflection.MethodInfo,object,object[])
+
+        NUnit.Framework.Internal.Reflect:InvokeMethod
+        (System.Reflection.MethodInfo,object)
+
+        UnityEngine.SetupCoroutine:InvokeMoveNext
+        (System.Collections.IEnumerator,intptr)
+
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1027
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWBoundIn][suite]
+    - id: 1029
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWBoundOut][suite]
+      name: JWBoundOut
+      fullName: JWBoundOut
+      resultStatus: 2
+      duration: 0.3838715
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1030
+      uniqueId: JWPlayMode.dll/JWBoundOut/[JWPlayMode][JWBoundOut.JWBoundOutWithEnumeratorPasses]
+      name: JWBoundOutWithEnumeratorPasses
+      fullName: JWBoundOut.JWBoundOutWithEnumeratorPasses
+      resultStatus: 2
+      duration: 0.351759
+      messages: 'Unhandled log message: ''[Exception] UnassignedReferenceException:
+        The variable powerUpBar of PowerBar has not been assigned.
+
+        You probably
+        need to assign the powerUpBar variable of the PowerBar script in the inspector.''.
+        Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        UnassignedReferenceException: The variable powerUpBar of
+        PowerBar has not been assigned.
+
+        You probably need to assign the
+        powerUpBar variable of the PowerBar script in the inspector.
+
+        Parameter
+        ''Idle'' does not exist.
+
+'
+      stacktrace: 'PowerBar+PrivatePowerData.SetUpPowerBar () (at Assets/Scripts/RSScripts/PowerBar.cs:118)
+
+        PowerBar.Start
+        () (at Assets/Scripts/RSScripts/PowerBar.cs:35)
+
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1029
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWBoundOut][suite]
+    - id: 1023
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWDisCheck][suite]
+      name: JWDisCheck
+      fullName: JWDisCheck
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1038
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1025
+      uniqueId: JWPlayMode.dll/JWDisCheck/[JWPlayMode][JWDisCheck.JWDisCheckWithEnumeratorPasses]
+      name: JWDisCheckWithEnumeratorPasses
+      fullName: JWDisCheck.JWDisCheckWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1023
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWDisCheck][suite]
+    - id: 1031
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWMax][suite]
+      name: JWMax
+      fullName: JWMax
+      resultStatus: 2
+      duration: 0.3743016
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1032
+      uniqueId: JWPlayMode.dll/JWMax/[JWPlayMode][JWMax.JWMaxWithEnumeratorPasses]
+      name: JWMaxWithEnumeratorPasses
+      fullName: JWMax.JWMaxWithEnumeratorPasses
+      resultStatus: 2
+      duration: 0.3428772
+      messages: 'Unhandled log message: ''[Exception] UnassignedReferenceException:
+        The variable powerUpBar of PowerBar has not been assigned.
+
+        You probably
+        need to assign the powerUpBar variable of the PowerBar script in the inspector.''.
+        Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'You are trying to create a MonoBehaviour using the ''new'' keyword. 
+        This is not allowed.  MonoBehaviours can only be added using AddComponent().
+        Alternatively, your script can inherit from ScriptableObject or no base class
+        at all
+
+        UnassignedReferenceException: The variable powerUpBar of
+        PowerBar has not been assigned.
+
+        You probably need to assign the
+        powerUpBar variable of the PowerBar script in the inspector.
+
+        Parameter
+        ''Idle'' does not exist.
+
+'
+      stacktrace: 'PowerBar+PrivatePowerData.SetUpPowerBar () (at Assets/Scripts/RSScripts/PowerBar.cs:118)
+
+        PowerBar.Start
+        () (at Assets/Scripts/RSScripts/PowerBar.cs:35)
+
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1031
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWMax][suite]
+    - id: 1033
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWMin][suite]
+      name: JWMin
+      fullName: JWMin
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1034
+      uniqueId: JWPlayMode.dll/JWMin/[JWPlayMode][JWMin.JWMinWithEnumeratorPasses]
+      name: JWMinWithEnumeratorPasses
+      fullName: JWMin.JWMinWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1033
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWMin][suite]
+    - id: 1030
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWPauseTest][suite]
+      name: JWPauseTest
+      fullName: JWPauseTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1031
+      uniqueId: JWPlayMode.dll/JWPauseTest/[JWPlayMode][JWPauseTest.JWPauseWithEnumeratorPasses]
+      name: JWPauseWithEnumeratorPasses
+      fullName: JWPauseTest.JWPauseWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1030
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWPauseTest][suite]
+    - id: 1035
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWStressTest][suite]
+      name: JWStressTest
+      fullName: JWStressTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1037
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1036
+      uniqueId: JWPlayMode.dll/JWStressTest/[JWPlayMode][JWStressTest.JWStressWithEnumeratorPasses]
+      name: JWStressWithEnumeratorPasses
+      fullName: JWStressTest.JWStressWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1035
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWStressTest][suite]
+    - id: 1034
+      uniqueId: JWPlayMode.dll/[JWPlayMode][JWUnpauseTest][suite]
+      name: JWUnpauseTest
+      fullName: JWUnpauseTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1036
+      parentUniqueId: '[JWPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1035
+      uniqueId: JWPlayMode.dll/JWUnpauseTest/[JWPlayMode][JWUnpauseTest.JWUnpauseWithEnumeratorPasses]
+      name: JWUnpauseWithEnumeratorPasses
+      fullName: JWUnpauseTest.JWUnpauseWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1034
+      parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWUnpauseTest][suite]
+    - id: 1049
+      uniqueId: '[MattPlayTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+      name: MattPlayTests.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1039
+      uniqueId: MattPlayTests.dll/[MattPlayTests][Level1toSampleScene][suite]
+      name: Level1toSampleScene
+      fullName: Level1toSampleScene
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1049
+      parentUniqueId: '[MattPlayTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+    - id: 1040
+      uniqueId: MattPlayTests.dll/Level1toSampleScene/[MattPlayTests][Level1toSampleScene.Level1toSample]
+      name: Level1toSample
+      fullName: Level1toSampleScene.Level1toSample
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1039
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][Level1toSampleScene][suite]
+    - id: 1041
+      uniqueId: MattPlayTests.dll/[MattPlayTests][ScenetoLevel1][suite]
+      name: ScenetoLevel1
+      fullName: ScenetoLevel1
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1049
+      parentUniqueId: '[MattPlayTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+    - id: 1042
+      uniqueId: MattPlayTests.dll/ScenetoLevel1/[MattPlayTests][ScenetoLevel1.SampletoLevel1]
+      name: SampletoLevel1
+      fullName: ScenetoLevel1.SampletoLevel1
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1041
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][ScenetoLevel1][suite]
+    - id: 1043
+      uniqueId: MattPlayTests.dll/[MattPlayTests][SceneTransitionTests][suite]
+      name: SceneTransitionTests
+      fullName: SceneTransitionTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1049
+      parentUniqueId: '[MattPlayTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+    - id: 1044
+      uniqueId: MattPlayTests.dll/SceneTransitionTests/[MattPlayTests][SceneTransitionTests.Level1toLevel2]
+      name: Level1toLevel2
+      fullName: SceneTransitionTests.Level1toLevel2
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1043
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][SceneTransitionTests][suite]
+    - id: 1045
+      uniqueId: MattPlayTests.dll/SceneTransitionTests/[MattPlayTests][SceneTransitionTests.Level2toLevel3]
+      name: Level2toLevel3
+      fullName: SceneTransitionTests.Level2toLevel3
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1043
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][SceneTransitionTests][suite]
+    - id: 1046
+      uniqueId: MattPlayTests.dll/SceneTransitionTests/[MattPlayTests][SceneTransitionTests.Level3toLevel4]
+      name: Level3toLevel4
+      fullName: SceneTransitionTests.Level3toLevel4
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1043
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][SceneTransitionTests][suite]
+    - id: 1047
+      uniqueId: MattPlayTests.dll/[MattPlayTests][StressTestSceneSwitch][suite]
+      name: StressTestSceneSwitch
+      fullName: StressTestSceneSwitch
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1049
+      parentUniqueId: '[MattPlayTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+    - id: 1048
+      uniqueId: MattPlayTests.dll/StressTestSceneSwitch/[MattPlayTests][StressTestSceneSwitch.StressTestSceneSwitchWithEnumeratorPasses]
+      name: StressTestSceneSwitchWithEnumeratorPasses
+      fullName: StressTestSceneSwitch.StressTestSceneSwitchWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1047
+      parentUniqueId: MattPlayTests.dll/[MattPlayTests][StressTestSceneSwitch][suite]
+    - id: 1056
+      uniqueId: '[MeghanTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
+      name: MeghanTests.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1050
+      uniqueId: MeghanTests.dll/[MeghanTests][MaxBoundMeg][suite]
+      name: MaxBoundMeg
+      fullName: MaxBoundMeg
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1056
+      parentUniqueId: '[MeghanTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
+    - id: 1051
+      uniqueId: MeghanTests.dll/MaxBoundMeg/[MeghanTests][MaxBoundMeg.Meg_Max]
+      name: Meg_Max
+      fullName: MaxBoundMeg.Meg_Max
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1050
+      parentUniqueId: MeghanTests.dll/[MeghanTests][MaxBoundMeg][suite]
+    - id: 1054
+      uniqueId: MeghanTests.dll/[MeghanTests][MegobstacleTest][suite]
+      name: MegobstacleTest
+      fullName: MegobstacleTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1056
+      parentUniqueId: '[MeghanTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
+    - id: 1055
+      uniqueId: MeghanTests.dll/MegobstacleTest/[MeghanTests][MegobstacleTest.MegStressTest]
+      name: MegStressTest
+      fullName: MegobstacleTest.MegStressTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1054
+      parentUniqueId: MeghanTests.dll/[MeghanTests][MegobstacleTest][suite]
+    - id: 1052
+      uniqueId: MeghanTests.dll/[MeghanTests][MinBoundMeg][suite]
+      name: MinBoundMeg
+      fullName: MinBoundMeg
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1056
+      parentUniqueId: '[MeghanTests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
+    - id: 1053
+      uniqueId: MeghanTests.dll/MinBoundMeg/[MeghanTests][MinBoundMeg.Meg_Min]
+      name: Meg_Min
+      fullName: MinBoundMeg.Meg_Min
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1052
+      parentUniqueId: MeghanTests.dll/[MeghanTests][MinBoundMeg][suite]
+    - id: 1072
+      uniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+      name: PlayMode.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1057
+      uniqueId: PlayMode.dll/[PlayMode][BulletSpeedTest][suite]
+      name: BulletSpeedTest
+      fullName: BulletSpeedTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1058
+      uniqueId: PlayMode.dll/BulletSpeedTest/[PlayMode][BulletSpeedTest.TestBulletSpeed]
+      name: TestBulletSpeed
+      fullName: BulletSpeedTest.TestBulletSpeed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1057
+      parentUniqueId: PlayMode.dll/[PlayMode][BulletSpeedTest][suite]
+    - id: 1068
+      uniqueId: PlayMode.dll/[PlayMode][BulletStressTest][suite]
+      name: BulletStressTest
+      fullName: BulletStressTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1069
+      uniqueId: PlayMode.dll/BulletStressTest/[PlayMode][BulletStressTest.StressTestBullet]
+      name: StressTestBullet
+      fullName: BulletStressTest.StressTestBullet
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1068
+      parentUniqueId: PlayMode.dll/[PlayMode][BulletStressTest][suite]
+    - id: 1062
+      uniqueId: PlayMode.dll/[PlayMode][FinalBossSpeed][suite]
+      name: FinalBossSpeed
+      fullName: FinalBossSpeed
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1063
+      uniqueId: PlayMode.dll/FinalBossSpeed/[PlayMode][FinalBossSpeed.TestFinalBossSpeedOnCollision]
+      name: TestFinalBossSpeedOnCollision
+      fullName: FinalBossSpeed.TestFinalBossSpeedOnCollision
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1062
+      parentUniqueId: PlayMode.dll/[PlayMode][FinalBossSpeed][suite]
+    - id: 1059
+      uniqueId: PlayMode.dll/[PlayMode][KAFinalBossMovement][suite]
+      name: KAFinalBossMovement
+      fullName: KAFinalBossMovement
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1060
+      uniqueId: PlayMode.dll/KAFinalBossMovement/[PlayMode][KAFinalBossMovement.KAFinalBossMovementSimplePasses]
+      name: KAFinalBossMovementSimplePasses
+      fullName: KAFinalBossMovement.KAFinalBossMovementSimplePasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1059
+      parentUniqueId: PlayMode.dll/[PlayMode][KAFinalBossMovement][suite]
+    - id: 1061
+      uniqueId: PlayMode.dll/KAFinalBossMovement/[PlayMode][KAFinalBossMovement.KAFinalBossMovementWithEnumeratorPasses]
+      name: KAFinalBossMovementWithEnumeratorPasses
+      fullName: KAFinalBossMovement.KAFinalBossMovementWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1059
+      parentUniqueId: PlayMode.dll/[PlayMode][KAFinalBossMovement][suite]
+    - id: 1064
+      uniqueId: PlayMode.dll/[PlayMode][KAPlayerGrowthTest][suite]
+      name: KAPlayerGrowthTest
+      fullName: KAPlayerGrowthTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1065
+      uniqueId: PlayMode.dll/KAPlayerGrowthTest/[PlayMode][KAPlayerGrowthTest.TestPlayerGrowth]
+      name: TestPlayerGrowth
+      fullName: KAPlayerGrowthTest.TestPlayerGrowth
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1064
+      parentUniqueId: PlayMode.dll/[PlayMode][KAPlayerGrowthTest][suite]
+    - id: 1066
+      uniqueId: PlayMode.dll/[PlayMode][KAPlayerSpeedTest][suite]
+      name: KAPlayerSpeedTest
+      fullName: KAPlayerSpeedTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1067
+      uniqueId: PlayMode.dll/KAPlayerSpeedTest/[PlayMode][KAPlayerSpeedTest.TestPlayerSpeedOnCollision]
+      name: TestPlayerSpeedOnCollision
+      fullName: KAPlayerSpeedTest.TestPlayerSpeedOnCollision
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1066
+      parentUniqueId: PlayMode.dll/[PlayMode][KAPlayerSpeedTest][suite]
+    - id: 1070
+      uniqueId: PlayMode.dll/[PlayMode][SwivelHeadTest][suite]
+      name: SwivelHeadTest
+      fullName: SwivelHeadTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1072
+      parentUniqueId: '[PlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1071
+      uniqueId: PlayMode.dll/SwivelHeadTest/[PlayMode][SwivelHeadTest.TestSwivelAngles]
+      name: TestSwivelAngles
+      fullName: SwivelHeadTest.TestSwivelAngles
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1070
+      parentUniqueId: PlayMode.dll/[PlayMode][SwivelHeadTest][suite]
+    - id: 1084
+      uniqueId: '[RebeccaPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+      name: RebeccaPlayMode.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1082
+      uniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][NewTestScript][suite]
+      name: NewTestScript
+      fullName: NewTestScript
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: '[RebeccaPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+    - id: 1083
+      uniqueId: RebeccaPlayMode.dll/NewTestScript/[RebeccaPlayMode][NewTestScript.PlayerHealthDoesNotExceedMax]
+      name: PlayerHealthDoesNotExceedMax
+      fullName: NewTestScript.PlayerHealthDoesNotExceedMax
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1082
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][NewTestScript][suite]
+    - id: 1073
+      uniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebExamTests][suite]
+      name: RebExamTests
+      fullName: RebExamTests
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: '[RebeccaPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+    - id: 1075
+      uniqueId: RebeccaPlayMode.dll/RebExamTests/[RebeccaPlayMode][RebExamTests.CheckIfHealthBarIsNull]
+      name: CheckIfHealthBarIsNull
+      fullName: RebExamTests.CheckIfHealthBarIsNull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1073
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebExamTests][suite]
+    - id: 1076
+      uniqueId: RebeccaPlayMode.dll/RebExamTests/[RebeccaPlayMode][RebExamTests.CheckIfPlayerObjectIsNull]
+      name: CheckIfPlayerObjectIsNull
+      fullName: RebExamTests.CheckIfPlayerObjectIsNull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1073
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebExamTests][suite]
+    - id: 1074
+      uniqueId: RebeccaPlayMode.dll/RebExamTests/[RebeccaPlayMode][RebExamTests.CheckIfPowerBarIsNull]
+      name: CheckIfPowerBarIsNull
+      fullName: RebExamTests.CheckIfPowerBarIsNull
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1073
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebExamTests][suite]
+    - id: 1077
+      uniqueId: RebeccaPlayMode.dll/RebExamTests/[RebeccaPlayMode][RebExamTests.CheckIfPowerUpIsNullAfterCollision]
+      name: CheckIfPowerUpIsNullAfterCollision
+      fullName: RebExamTests.CheckIfPowerUpIsNullAfterCollision
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1073
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebExamTests][suite]
+    - id: 1078
+      uniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebHealthBarTest][suite]
+      name: RebHealthBarTest
+      fullName: RebHealthBarTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: '[RebeccaPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+    - id: 1079
+      uniqueId: RebeccaPlayMode.dll/RebHealthBarTest/[RebeccaPlayMode][RebHealthBarTest.HealthStressTestWithEnumeratorPasses]
+      name: HealthStressTestWithEnumeratorPasses
+      fullName: RebHealthBarTest.HealthStressTestWithEnumeratorPasses
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1078
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebHealthBarTest][suite]
+    - id: 1080
+      uniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebLowBoundryTest][suite]
+      name: RebLowBoundryTest
+      fullName: RebLowBoundryTest
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1084
+      parentUniqueId: '[RebeccaPlayMode][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+    - id: 1081
+      uniqueId: RebeccaPlayMode.dll/RebLowBoundryTest/[RebeccaPlayMode][RebLowBoundryTest.PlayerHealthDoesNotExceedMin]
+      name: PlayerHealthDoesNotExceedMin
+      fullName: RebLowBoundryTest.PlayerHealthDoesNotExceedMin
+      resultStatus: 0
+      duration: 0
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1080
+      parentUniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][RebLowBoundryTest][suite]
+    m_ResultText: 'JWBoundOut (0.384s)
+
+      ---
+
+      One or more child tests
+      had errors'
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: bea8f1e8
+      m_LastClickedID: -386815810
+      m_ExpandedIDs: 6e75f684477d79931f526595d6cf8d965efbdf9730da069e4d8094a5ab820ea6ff9090a71c9c52b0137b68b2c99a2cc96a84e2e2bea8f1e805511ae9d02bf3eb8e871bec9cefe00c2d5c060f4c8ab8119b840b15d9171d2356b59b2eb5959a3cd52d0841e576694989bff24eea614d560fcf825643fc7772b5552f7d186f0a7fd980747fffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[Hotdog Jones: The Video Game][suite]'
+      name: 'Hotdog Jones: The Video Game'
+      fullName: 'Hotdog Jones: The Video Game'
+      resultStatus: 1
+      duration: 0.0674932
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1004
+      uniqueId: '[Tests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Tests.dll][suite]'
+      name: Tests.dll
+      fullName: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Tests.dll
+      resultStatus: 1
+      duration: 0.0474901
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[Hotdog Jones: The Video Game][suite]'
+    - id: 1001
+      uniqueId: Tests.dll/[Tests][NewTestScript][suite]
+      name: NewTestScript
+      fullName: NewTestScript
+      resultStatus: 1
+      duration: 0.0457346
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[Tests][/Users/jonathanw20/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Tests.dll][suite]'
+    - id: 1002
+      uniqueId: Tests.dll/NewTestScript/[Tests][NewTestScript.NewTestScriptSimplePasses]
+      name: NewTestScriptSimplePasses
+      fullName: NewTestScript.NewTestScriptSimplePasses
+      resultStatus: 1
+      duration: 0.0001166
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/[Tests][NewTestScript][suite]
+    - id: 1003
+      uniqueId: Tests.dll/NewTestScript/[Tests][NewTestScript.NewTestScriptWithEnumeratorPasses]
+      name: NewTestScriptWithEnumeratorPasses
+      fullName: NewTestScript.NewTestScriptWithEnumeratorPasses
+      resultStatus: 1
+      duration: 0.0407528
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Tests.dll/[Tests][NewTestScript][suite]
+    m_ResultText: 
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 4c8ab81122524b3a4445c27dffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 1
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: -1
+      availableCategories:
+      - Uncategorized
+--- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,7 +1984,7 @@ MonoBehaviour:
     x: 189.5
     y: 83
     width: 966.5
-    height: 379
+    height: 406
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -319,7 +2001,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 636, y: 358}
+  m_TargetSize: {x: 684, y: 385}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -334,10 +2016,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -159
-    m_HBaseRangeMax: 159
-    m_VBaseRangeMin: -89.5
-    m_VBaseRangeMax: 89.5
+    m_HBaseRangeMin: -171
+    m_HBaseRangeMax: 171
+    m_VBaseRangeMin: -96.25
+    m_VBaseRangeMax: 96.25
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -346,7 +2028,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -356,9 +2038,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 966.5
-      height: 358
+      height: 385
     m_Scale: {x: 2, y: 2}
-    m_Translation: {x: 483.25, y: 179}
+    m_Translation: {x: 483.25, y: 192.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -366,18 +2048,18 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -241.625
-      y: -89.5
+      y: -96.25
       width: 483.25
-      height: 179
+      height: 192.5
     m_MinimalGUI: 1
   m_defaultScale: 2
-  m_LastWindowPixelSize: {x: 1933, y: 758}
+  m_LastWindowPixelSize: {x: 1933, y: 812}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
---- !u!114 &13
+--- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,7 +2082,7 @@ MonoBehaviour:
     x: 0
     y: 83
     width: 188.5
-    height: 379
+    height: 406
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -413,10 +2095,10 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 250}
-      m_SelectedIDs: 3c6b0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 14fffeff4c0dffff500dffff520dffff540dffffc60effff0610ffff0211ffff6e12ffff1013ffffde14ffff4e15fffff877fffffa77fffffc77fffffe77ffff0078ffff1c78ffff367affff827affff267bffff8e7dffffd67effffd27fffff1e80ffff6480ffffe882ffffec83ffffaa85ffff768affffde8bffff3a8dffffa68dffff0c8effff088fffffaa8fffff4091ffffa893ffffa696ffff8299ffff3aaeffffdaafffff42b0ffffccb2ffffb8b3ffffecbeffffd4c0ffff42c2ffffa8c3ffff0ac6ffffd2c8ffff26caffff4cccffff2cceffff4ecfffff7ed1ffff86d2ffffc4d8ffff70d9ffffdad9ffff48dffffff0e0ffffe4e2ffff30ebffff9eebffff7aeeffffc0f0ffff40f4ffff8ef6ffff886c0000aa6d0000a8710000807300000a74000014740000f877000024780000027c0000107c0000687d0000847e0000927e00009c7f0000ea7f0000dc810000ea810000dc82000048830000e8860000f68600007689000084890000768a0000bc8a0000e28a000002910000109100000292000076a500006ea6000056b70000b8b900004ce40000c0e800002ee90000f6e90000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 34d30000
+      m_LastClickedID: 54068
+      m_ExpandedIDs: 866dffff1070ffffbc72ffffa675ffff7879ffff32a2ffff34a2ffff5ea4ffff5aa7ffff12aafffff0aeffff08b0ffffd6baffff08bfffffd8cbffff0eccffff44ceffffa0cfffff54d1ffff44d2ffff68d5ffffbee3ffffc6e7ffff94e8ffff08eaffff0ceaffff9aebffffb4eeffff04f0ffff7cf1ffff64f2ffff0af4ffffbcf5ffff34f7ffff7ef8ffffdef9ffff04fbffff0e700000c07b0000e8800000f280000046840000f4840000ae860000c8870000268a0000308a00002c8c0000888c0000948c0000b68c0000229700009ca60000a4a600002ca70000e0ca0000f4ca00004acd0000bccd0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -440,7 +2122,7 @@ MonoBehaviour:
       m_IsLocked: 0
     m_CurrentSortingName: TransformSorting
   m_WindowGUID: 4c969a2b90040154d917609493e03593
---- !u!114 &14
+--- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -463,7 +2145,7 @@ MonoBehaviour:
     x: 189.5
     y: 83
     width: 966.5
-    height: 379
+    height: 406
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -809,9 +2491,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.5679996, y: -1.4714826, z: 121868.44}
+    m_Target: {x: 7.8283033, y: -1.1019065, z: -0.14375657}
     speed: 2
-    m_Value: {x: 3.5679996, y: -1.4714826, z: 121868.44}
+    m_Value: {x: 7.8283033, y: -1.1019065, z: -0.14375657}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -861,9 +2543,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 4.7249265
+    m_Target: 10.3574095
     speed: 2
-    m_Value: 4.7249265
+    m_Value: 10.3574095
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -888,7 +2570,7 @@ MonoBehaviour:
   m_SceneVisActive: 1
   m_LastLockedObject: {fileID: 0}
   m_ViewIsLockedToObject: 0
---- !u!114 &15
+--- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -922,7 +2604,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &16
+--- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -943,9 +2625,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 483
+    y: 510
     width: 1157
-    height: 275
+    height: 248
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -956,7 +2638,7 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
---- !u!114 &17
+--- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -977,9 +2659,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 483
+    y: 510
     width: 1157
-    height: 275
+    height: 248
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1001,7 +2683,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Jon
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1009,30 +2691,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Resources/Jon
+  - Assets/Scenes
   m_LastFoldersGridSize: 65
   m_LastProjectPath: /Users/jonathanw20/Desktop/HD-Jones-The-Video-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 40840000
-    m_LastClickedID: 33856
-    m_ExpandedIDs: 000000002c6b00002e6b0000306b0000326b0000346b0000aa6b000000ca9a3b
+    scrollPos: {x: 0, y: 117.99963}
+    m_SelectedIDs: 08680000
+    m_LastClickedID: 26632
+    m_ExpandedIDs: 00000000de670000e0670000e2670000e4670000e6670000ea6700000a68000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: JWScripts
+      m_OriginalName: JWScripts
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 43316
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -1046,7 +2728,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000002c6b00002e6b0000306b0000326b0000346b000000ca9a3b
+    m_ExpandedIDs: 00000000de670000e0670000e2670000e4670000e6670000e8670000ea670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1071,10 +2753,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3c6b0000
-    m_LastClickedInstanceID: 27452
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000072670000ea62000068660000f29fffffac98ffff986600004a670000987d0000
+    m_ExpandedInstanceIDs: c623000072670000ea62000068660000f29fffffac98ffff986600004a670000987d0000ca010000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1090,7 +2772,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
+      m_ClientGUIView: {fileID: 0}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1102,7 +2784,7 @@ MonoBehaviour:
     m_GridSize: 65
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
---- !u!114 &18
+--- !u!114 &19
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1191,9 +2873,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 9aef288b95b06e54abd33ed15d3f159f, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 2ffe0ad32d30be7448332419a5454a04, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 4768460931755797087, guid: 9aef288b95b06e54abd33ed15d3f159f, type: 2}
+  - m_Target: {fileID: -2583308790556631551, guid: 2ffe0ad32d30be7448332419a5454a04, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1206,7 +2888,7 @@ MonoBehaviour:
   m_CurrentEditor: 1
   m_LayerEditor:
     m_SelectedLayerIndex: 0
---- !u!114 &19
+--- !u!114 &20
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1242,8 +2924,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -34790
---- !u!114 &20
+  m_LastSelectedObjectID: 42868
+--- !u!114 &21
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1284,7 +2966,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 595
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

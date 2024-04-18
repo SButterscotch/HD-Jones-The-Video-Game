@@ -39,7 +39,8 @@ public class HealthBarManager : MonoBehaviour
     public int currentHealth = 100;
     public bool playerDead;
     public HealthBar healthBar;
-    public HotdogAnimatorController player; 
+    public HotdogAnimatorController player;
+    public GameOver GameOverScr;
 
     /*
     * Summary: Initalizes health bar at the start of the game
@@ -69,6 +70,7 @@ public class HealthBarManager : MonoBehaviour
         if (playerDead == true)
         {
             DeathAnimation();
+            GameOverScr.gameOver();
         }
     }
 

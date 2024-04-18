@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Powerups/HealthBuff")]
+[CreateAssetMenu(menuName = "Powerups/SpeedBuff")]
 
-public class HealthBuff : PowerUpEffect
+public class SpeedBuff : PowerUpEffect
 {
     public float amount;
 
     public override void Apply(GameObject target)
     {
-        //target.GetComponent<Health>().health.value += amount;
+        target.GetComponent<PlayerMovement>().moveSpeed += amount;
     }
 }

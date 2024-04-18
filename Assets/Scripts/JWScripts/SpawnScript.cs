@@ -54,7 +54,7 @@ public class SpawnScript : MonoBehaviour
     {
         List<Transform> availableLocations = GetAvailableLocations();
 
-        // Ensure we don't spawn more objects than available locations - stolen code!
+        // Ensure we don't spawn more objects than available locations
         numberOfObjects = Mathf.Min(numberOfObjects, availableLocations.Count);
 
         for (int i = 0; i < numberOfObjects; i++)
@@ -68,7 +68,7 @@ public class SpawnScript : MonoBehaviour
             availableLocations.RemoveAt(randomLocationIndex); // Remove the used location
         }
     }
-
+    // THis code was taken from a book I found online, this violated copyright
     List<Transform> GetAvailableLocations()
     {
         List<Transform> availableLocations = new List<Transform>();

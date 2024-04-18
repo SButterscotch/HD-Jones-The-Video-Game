@@ -45,7 +45,7 @@ public class PauseMenu : MonoBehaviour
 
         }
     }
-    //Stolen Code! 1000 to 25000 dollars! Or up to a year!
+    
     public void Resume ()
     {
         pauseMenuUI.SetActive(false);
