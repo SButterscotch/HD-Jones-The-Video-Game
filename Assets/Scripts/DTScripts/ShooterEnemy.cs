@@ -16,7 +16,7 @@ public class ShooterEnemy : Enemy
     // Serialized fields for adjusting enemy behavior in the Unity Editor
     [SerializeField] public float DistanceToStop = 5f;      // Distance at which the enemy stops approaching the target
     [SerializeField] public float RetreatDistance = 3f;     // Distance at which the enemy starts retreating from the target
-    public bool OverrideUpdate = true;                      // Flag to override the Update method
+    public bool OverrideUpdate = false;                      // Flag to override the Update method
     [SerializeField] public float TimeBetweenShots = 1f;   // Time between shots
     [SerializeField] public float StartTimeBetweenShots;    // Initial time between shots
 
@@ -42,7 +42,7 @@ public class ShooterEnemy : Enemy
         if (OverrideUpdate)
         {
             // Move towards or away from the target based on distance
-            transform.position = Vector2.MoveTowards(transform.position, target.position, (-speed) * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, target.position, (-speed * 2) * Time.deltaTime);
 
             if (target == null)
             {
@@ -70,6 +70,9 @@ public class ShooterEnemy : Enemy
     
     /*
     * Summary: Coroutine to handle shooting at intervals
+     * Note on IEnumerator special methods that can pause their execution and return control to Unity,
+     * allowing other code to run before continuing from where they left off.
+     * Coroutines are often used for tasks such as animation, timed actions, or anything that requires delays or sequential execution over multiple frames.
     */
     private IEnumerator ShootCoroutine()
     {
@@ -108,8 +111,17 @@ public class ShooterEnemy : Enemy
     * **************DYNAMIC BINDING*****************************
     * Summary: Override of the Attack method to instantiate enemy bullets
     */
+
     protected override void Attack()
     {
-        Instantiate(EnemyBullet, transform.position, Quaternion.identity); // Instantiate enemy bullet at enemy's position
+        if (OverrideUpdate)
+        {
+            Instantiate(EnemyBullet, transform.position, Quaternion.identity); // Instantiate enemy bullet at enemy's position
+        }
+        else
+        {
+            base.Attack();
+        }
     }
+
 }
