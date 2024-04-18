@@ -10,7 +10,7 @@ using UnityEngine;
 * Summary: Class that handles bullet destruction/collision behavior  
 * 
 * Member variables: 
-* Game object with tags "Obstalce" or "obstacle" <- this is buildable  
+* Game object with tags "Obstacle" or "obstacle" <- this is buildable  
 *
 */ 
 public class BulletCollisionHandler : MonoBehaviour
