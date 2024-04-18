@@ -1,4 +1,8 @@
-/* Implementation here is Singleton.
+/* 
+* Filename: SceneChanger.cs
+* Developer: Matthew K
+* Purpose: Accurately change the scenes in the game when the player reaches the end of the level
+* Implementation here is Singleton.
 * The reason why we need it here is because we don't want multiple instances of a SceneManager.
 * That can cause chaos with changing scenes, so we want to make sure there's only one active at a time.
 *
@@ -27,7 +31,7 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
-            Debug.Log("Destroyed the object");
+            //Debug.Log("Destroyed the object");
             Destroy(gameObject);
             return; //Exit early to rpevent further execution 
         }
@@ -37,10 +41,10 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Trigger Activated!!");
+            //Debug.Log("Trigger Activated!!");
             /****************Added by K for enemy kill count check*****************/ 
             killedCount = Enemy.enemiesKilledCount;
-            Debug.Log($"Enemies killed = {killedCount}"); 
+            //Debug.Log($"Enemies killed = {killedCount}"); 
             /****************End K's code******************************************/ 
 
             NextSceneCalculator calculator = new NextSceneCalculator();

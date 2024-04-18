@@ -21,26 +21,40 @@ using UnityEngine.SceneManagement;
 public class HealthBarManager : MonoBehaviour
 {
     /* Observer Pattern: 
-    
+    Why use this pattern?
+        - This pattern defines a one-to-many dependency between objects to allow for multiple different observers to get updated on changes that occur within the subject.
+        When one object state changes, all dependent objects get notified automatically. There is no need to create a new object in every class that needs to access the 
+        Subject's data because there can be multiple subscribers to the same event. This greatly decreases the amount of dependencies between communicating classes 
+        and for them to stay loosely coupled. For a health bar, this is important because there are lots of objects that depend on its data. 
+    Would something else have worked better? 
+        - For my part of the project, no. I really enjoy how simple the Observer pattern is to implement and how low the coupling is between classes. It also allows me to integrate 
+        code into other people's classes without worrying if it will break their code. 
+    When would be a bad time to use this pattern?
+        - This pattern does not scale well once the amount of Observers and Subjects increase. Managing subscriptions, notifications, and updates between classes can cause 
+        unneeded complexity. Therefore this pattern would not be good to use on large scale projects or classes.
     */
-    public static event Action<int> OnHealthChanged; 
+    public static event Action<int> OnHealthChanged; // delegate signiture, all subscribers must follow same format
     public int maxHealth = 100;
     public int minHealth = 0;
     public int currentHealth = 100;
     public bool playerDead;
     public HealthBar healthBar;
-    public HotdogAnimatorController player; 
+    public HotdogAnimatorController player;
+    public GameOver GameOverScr;
 
     /*
     * Summary: Initalizes health bar at the start of the game
     * Parameters: N/A
     * Returns: N/A
     */
-    protected virtual void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth, currentHealth);
+
+        // Observes the subject (Enemy.cs) and subscribes to the EnemyEffectHealth event using TakeDamage() as the handler for this event
         Enemy.EnemyEffectHealth += TakeDamage;
+        EnemyBullet.EnemyEffectHealth += TakeDamage;
     }
 
 
@@ -56,6 +70,7 @@ public class HealthBarManager : MonoBehaviour
         if (playerDead == true)
         {
             DeathAnimation();
+            GameOverScr.gameOver();
         }
     }
 
@@ -65,7 +80,7 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: currentHealth - current health of the player
     * Returns: true or false
     */
-    private bool IsPlayerDead(int currentHealth)
+    public virtual bool IsPlayerDead(int currentHealth)
     {
         if (currentHealth == 0)
         {
@@ -91,7 +106,9 @@ public class HealthBarManager : MonoBehaviour
         if (playerDead == false)
         {
             currentHealth -= damage;
-            // Notify observers that the health has changed
+            // Notify observers(those who subscribed to OnHealthChanged event) that the health has changed
+            // Passing currentHealth to observers so they can pass it to their methods
+            // The ?. operator is a null-conditional operator, meaning the event will only be invoked if != null
             OnHealthChanged?.Invoke(currentHealth);
         } 
         else 
@@ -103,7 +120,7 @@ public class HealthBarManager : MonoBehaviour
 
 
     /*
-    * Summary: Increases the players health when they contact an enemy
+    * Summary: Increases the players health when they contact an power up
     * Parameters: addHealth - how much the health bar will increase
     * Returns: N/A
     */
@@ -164,5 +181,15 @@ public class HealthBarManager : MonoBehaviour
         #else
         Application.Quit();
         #endif
+    }
+
+    /*
+    * Summary: Unsubscribes from EnemyEffectHealth event 
+    * Parameters: N/A
+    * Returns: N/A
+    */
+    public void OnDestroy()
+    {
+        Enemy.EnemyEffectHealth -= TakeDamage;
     }
 }

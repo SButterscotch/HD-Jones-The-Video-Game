@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d904a707f885a44f2a9e39525102fb1b, type: 3}
   m_Name: HealthBuff
   m_EditorClassIdentifier: 
-  amount: 3
+  amount: 10

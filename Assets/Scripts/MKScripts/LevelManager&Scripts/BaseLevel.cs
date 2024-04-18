@@ -1,3 +1,10 @@
+/*
+* Filename: BaseLevel.cs
+* Developer: Matthew K
+* Purpose: Implement Dynamic/Static Binding as well as having an individual script for each level
+*/
+
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
