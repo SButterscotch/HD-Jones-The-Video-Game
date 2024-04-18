@@ -1,6 +1,6 @@
 README - Prefab
 
-Prefab: KP
+Prefab: KP - Video: https://youtu.be/lWmPnMaUyfY
 
 Purpose: The prefab is used by the object spawner used to spawn power-ups. The spawner uses the designed prefab as an element in its list that is spawned.
 
@@ -13,6 +13,7 @@ Effect: When the power up is collided with, the player will gain a special power
 Implementation: Using the spawn script, the prefab is placed in the spawnPoint gameObject, that is used by the spawnlocations to place individual power ups in specific locations. 
 
 Further Use: Placed throughout the levels in specially picked locations, will be merged with other team members code to have effect on the player. 
+
 
 
 
