@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.TestTools;
 
+/* Tests final boss's speed*/ 
 public class FinalBossSpeed
 {
     //Assign 

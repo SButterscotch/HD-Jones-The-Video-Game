@@ -2,9 +2,20 @@ using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement; 
 
+/**************For FinalBoss Weapon****************/ 
+//Test speed of bullet 
 public class BulletSpeedTest
 {
+
+    [SetUp]
+    public void Setup()
+    {
+        // load dummy scene
+        SceneManager.LoadScene("KTestingScene");
+    }
+
     [UnityTest]
     public IEnumerator TestBulletSpeed()
     {

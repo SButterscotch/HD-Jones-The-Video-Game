@@ -19,6 +19,9 @@ public class PowerBar : MonoBehaviour
     private PrivatePowerData privatePowerData; 
     [SerializeField] private Slider slider; 
     [SerializeField] private Image fill;
+    private float pubCurrentPower;
+    public HotdogAnimatorController player; 
+    [SerializeField] private GameObject powerUpBar;
     
 
     /*
@@ -28,7 +31,7 @@ public class PowerBar : MonoBehaviour
     */
     public void Start() 
     { 
-        privatePowerData = new PrivatePowerData(slider, fill); // Pass references to slider and fill
+        privatePowerData = new PrivatePowerData(slider, fill, powerUpBar); // Pass references to slider and fill
         privatePowerData.SetUpPowerBar();
     }
 
@@ -38,12 +41,35 @@ public class PowerBar : MonoBehaviour
     * Parameters: N/A
     * Returns: N/A
     */
-    public void CallPrivateMethodFromOutside()
+    public void CallCountdownFromOutside()
     {
         privatePowerData.CountdownPowerUp();
     }
 
-    // TALK ABOUT PCD !!!!!!!!!!!!
+
+    /*
+    * Summary: Public method to access currentPower from PrivatePowerData
+    * Parameters: N/A
+    * Returns: privatePowerData.GetCurrentPowerFromInside(); 
+    */
+    public float GetCurrentPowerFromOutside()
+    {
+        return privatePowerData.GetCurrentPowerFromInside();
+    }
+
+    /* Private Class Data Pattern:
+    Why use this pattern?
+        - This pattern allows for great encapsulation of methods and attributes so they cannot be directly accessed or changed. All methods must be accessed through a public
+        itteration of the private class. This added layer of security ensure the integrity of the state of the power bar. It also reduces the coupling between classes because 
+        changes made on the inside of the private class will not effect the external interface.
+    Would something else have worked better? 
+        - Yes, I think the Observer pattern would have worked better for this scenario. It has been challenging to update other classes because of data I need to broadcast is 
+        hidden. It has also been annoying to create tests for anything in this class.
+    When would be a bad time to use this pattern?
+        - This would be a bad example to use this pattern. There are multiple instances that will end up depending on this class, which will increase the amount of public
+        instances I have to make for this class. This just adds complexity and maintance that could be avoided with other patterns.
+    */
+
 
     /*
     * Summary: Initializes max and min power bar values, allows the player to view the power bar, and starts the countdown
@@ -60,17 +86,18 @@ public class PowerBar : MonoBehaviour
         private float currentPower = 100f;
         private float decreasePower = 1f;
         private GameObject powerUpBar;
-        private Gradient gradient;
+        private Gradient gradient = new Gradient(); // Initialize gradient
 
 
         /*
         * Summary: Public class to initialize the slider and fill objects
         * Member methods: N/A
         */
-        public PrivatePowerData(Slider slider, Image fill)
+        public PrivatePowerData(Slider slider, Image fill, GameObject powerUpBar)
         {
             this.slider = slider;
             this.fill = fill;
+            this.powerUpBar = powerUpBar;
         }
 
 
@@ -87,9 +114,9 @@ public class PowerBar : MonoBehaviour
                 slider.maxValue = maxPower;
                 slider.value = currentPower; 
                 fill.color = gradient.Evaluate(1f); 
+                // Initially disable the power-up bar so it's not viewable
+                powerUpBar.SetActive(false);
             }
-            // Initially disable the power-up bar so it's not viewable
-            powerUpBar.SetActive(false);
         }
 
 
@@ -123,5 +150,17 @@ public class PowerBar : MonoBehaviour
         {
             powerUpBar.SetActive(value);
         }
+
+
+        /*
+        * Summary: Method to return the value for currentPower
+        * Parameters: N/A
+        * Returns: N/A
+        */
+        public float GetCurrentPowerFromInside()
+        {
+            return currentPower;
+        }
+
     }
 }

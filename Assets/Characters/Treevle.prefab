@@ -180,8 +180,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  Distance: 20
   DistanceBetween: 1
-  speed: 5
+  speed: 7
+  rb: {fileID: 0}
+  EnemyHealth: 3
   enemyNoise: {fileID: 6150064688583503263}
   championSound: {fileID: 3951344987978285449}
   bulletsToDestroy: 2

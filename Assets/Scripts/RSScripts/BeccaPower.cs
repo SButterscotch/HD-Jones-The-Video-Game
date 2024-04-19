@@ -16,6 +16,7 @@ public class BeccaPower : MonoBehaviour
 {
     public PowerBar powerBar = new PowerBar(); // needed for PowerBarManager to work, needs a definition to assign the powerup bar to each powerup
     private HealthBarManager healthBarManager;
+    public HotdogAnimatorController player; 
   
     //[SerializeField] private AudioSource audioSource;
     //[SerializeField] private AudioClip audioClip;
@@ -25,7 +26,7 @@ public class BeccaPower : MonoBehaviour
     * Parameters: other - collider object
     * Returns: N/A
     */
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
@@ -38,7 +39,7 @@ public class BeccaPower : MonoBehaviour
             powerBar = other.GetComponent<PowerBar>();
             if (powerBar != null)
             {
-                powerBar.CallPrivateMethodFromOutside();
+                powerBar.CallCountdownFromOutside();
             }
         } 
     }

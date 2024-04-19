@@ -1,0 +1,25 @@
+Stress: Tests how fast we can spawn before reaching a low FPS - turned into a stress test of the speed of how fast Unity can spawn!
+
+Boundary:
+
+1: Max powerup spawn <=4
+2: Min powerup spawn >=2
+3: Boundary of spawn outside
+4: Boundary of spawn inside
+5: Time stops when we pause
+6: Time starts when we unpause
+7: All powerups are gone when there are none left on screen
+8: All powerups show up when we start
+9: Menu changes scenes when play is pressed
+10: Powerup disappears when ran into
+11: Powerups don't disappear when we don't run into (10 sec of running around)
+12: Powerups disappear when enemies touch 
+13: Max health doesn't increase past maximum set when we keep running into powerups *can't tell*
+14: Max speed doesn't increase ^^
+15: Min health doesn't decrease past min set *can't tell*
+16: Min speed doesn't decrease past min set *can't tell*
+17: Powerups don't increase enemies health **
+18: Powerups don't decrease enemies health **
+19: Powerups don't increase enemies speed **
+20: Powerups don't decrease enemies speed **
+
