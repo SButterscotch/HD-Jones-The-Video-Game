@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Bullet
+  - TestBullet
+  - Obstacle
+  - Boundary
+  - PowerUp
+  - Weapon
+  - obstacle
+  - FinalBoss
+<<<<<<< HEAD
+  - Audio
+=======
+  - PowerBar
+  - EnemyBullet
+>>>>>>> fc29fc50c01fd4b2b9503d923df8bfefae3c89a2
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3573895007
+    locked: 0
+  - name: Foreground
+    uniqueID: 1912242597
+    locked: 0
+  - name: PowerUp
+    uniqueID: 1440527595
+    locked: 0
+  - name: Pause
+    uniqueID: 109201845
+    locked: 0
