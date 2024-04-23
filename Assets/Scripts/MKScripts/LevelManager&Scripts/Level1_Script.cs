@@ -11,7 +11,7 @@ public class Level1 : BaseLevel
     public AudioClip popupSound;
     private AudioSource audioSource;
 
-    protected override void StartLevel() { // removed override here
+    protected void StartLevel() { // removed override here
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = popupSound;
         audioSource.Play();

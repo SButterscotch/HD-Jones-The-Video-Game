@@ -47,7 +47,7 @@ public class BaseLevel : MonoBehaviour
         StartLevel();
     }
 
-    protected virtual void StartLevel() //virtual goes here
+    protected void StartLevel() //virtual goes here
     {
         Debug.Log("BASE LEVEL Starting Level");
 
