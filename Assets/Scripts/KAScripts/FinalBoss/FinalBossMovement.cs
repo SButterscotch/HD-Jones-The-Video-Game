@@ -16,7 +16,7 @@ using System.Collections;
 */ 
 public class FinalBossMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f; // Movement speed
+    [SerializeField] public float moveSpeed = 5f; // Movement speed
     [SerializeField] private Transform topPoint; // Top point on the screen
     [SerializeField] private Transform bottomPoint; // Bottom point on the screen
     [SerializeField] private float bottomPointY = -5f; // Y-coordinate of the bottom point

@@ -1,14 +1,20 @@
+/*
+* Filename: Level1_Script.cs
+* Developer: Matthew K
+* Purpose: Individual script for Level 1 with dynamic binding
+*/
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 public class Level1 : BaseLevel
 {
-    public Text popupText;
-    protected override void StartLevel() {
-        
-        if (popupText != null) {
-            popupText.gameObject.SetActive(true);
-        }
+    public AudioClip popupSound;
+    private AudioSource audioSource;
+
+    protected override void StartLevel() { // removed override here
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = popupSound;
+        audioSource.Play();
         Debug.Log("Initializing Level 1");
     }
 

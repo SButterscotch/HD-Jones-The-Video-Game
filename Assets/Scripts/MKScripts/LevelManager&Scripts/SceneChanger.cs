@@ -1,10 +1,15 @@
-/* Implementation here is Singleton.
+/* 
+* Filename: SceneChanger.cs
+* Developer: Matthew K
+* Purpose: Accurately change the scenes in the game when the player reaches the end of the level
+* Implementation here is Singleton.
 * The reason why we need it here is because we don't want multiple instances of a SceneManager.
 * That can cause chaos with changing scenes, so we want to make sure there's only one active at a time.
 *
-*
+* Implemented private class for changing scenes.
 */
 
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,6 +20,8 @@ public class SceneChanger : MonoBehaviour
 
     public string nextScene;
 
+    public static int killedCount; //Retrieves Enemy.cs enemiesKilledCount variable 
+
     private void Awake()
     {
         // Ensure only one instance exists
@@ -24,27 +31,9 @@ public class SceneChanger : MonoBehaviour
         }
         else
         {
+            //Debug.Log("Destroyed the object");
             Destroy(gameObject);
-        }
-
-        // Your existing scene change logic can remain here
-        string currentScene = SceneManager.GetActiveScene().name;
-
-        if (currentScene == "Level1")
-        {
-            nextScene = "Level2";
-        }
-        else if (currentScene == "Level2")
-        {
-            nextScene = "Level3";
-        }
-        else if (currentScene == "Level3")
-        {
-            nextScene = "Level4";
-        }
-        else if (currentScene == "Level4")
-        {
-            nextScene = "MainMenu"; // You can change this to your final menu/credits scene
+            return; //Exit early to rpevent further execution 
         }
     }
 
@@ -52,8 +41,51 @@ public class SceneChanger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Trigger Activated!!");
-            SceneManager.LoadScene(nextScene);
+            //Debug.Log("Trigger Activated!!");
+            /****************Added by K for enemy kill count check*****************/ 
+            killedCount = Enemy.enemiesKilledCount;
+            //Debug.Log($"Enemies killed = {killedCount}"); 
+            /****************End K's code******************************************/ 
+
+            NextSceneCalculator calculator = new NextSceneCalculator();
+            string nextScene = calculator.CalculateNextScene(killedCount);
+            if (!string.IsNullOrEmpty(nextScene))
+            {
+                Debug.Log("Loading next scene: " + nextScene);
+                SceneManager.LoadScene(nextScene);
+            }
+            else
+            {
+                Debug.LogWarning("No next scene found or condition not met.");
+            }
+        }
+    } 
+
+    private class NextSceneCalculator {
+        public string CalculateNextScene(int killedCount) // Kill Count Added by K
+        {
+            string currentScene = SceneManager.GetActiveScene().name;
+
+            if (currentScene == "Level1" && killedCount > 0)
+            {
+                return "Level2";
+            }
+            else if (currentScene == "Level2" && killedCount > 4)
+            {
+                return "Level3";
+            }
+            else if (currentScene == "Level3" && killedCount > 7)
+            {
+                return "Level4";
+            }
+            else if (currentScene == "Level4")
+            {
+                return "MainMenu";
+            }
+            else
+            {
+                return ""; // No next scene found or condition not met
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4737771785095599026}
   - component: {fileID: 7877781457376963360}
   - component: {fileID: 8579230947976945671}
+  - component: {fileID: -8564540790144301993}
   m_Layer: 0
   m_Name: FBWeapon
   m_TagString: Untagged
@@ -108,6 +109,21 @@ MonoBehaviour:
   _bulletLifespan: 4
   bulletPrefab: {fileID: 3105283455844647785, guid: 657fb0f9d5f87484eb6890a9c86657e3, type: 3}
   firePoint: {fileID: 8688275678466660287}
+--- !u!114 &-8564540790144301993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137146871322303848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b3d5a2240adc34d876beb3b122fdec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minAngle: 0
+  maxAngle: 360
+  swivelSpeed: 30
 --- !u!1 &6707299683347114223
 GameObject:
   m_ObjectHideFlags: 0

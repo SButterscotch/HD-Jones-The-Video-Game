@@ -23,7 +23,12 @@ public class RelishBullet : Bullet
     private int currentBounces = 0; // Current number of bounces
 
 
-    /* 
+    /**************DYNAMIC BINDING*****************************
+    /* When OnTriggerEnter2D() is called on an instance of a subclass, the decision about 
+    /* which implementation (or "flavor" of the function) to execute is made at runtime. 
+    /* The object's actual type is the sublass, the overriden version of OnTriggerEnter2D in the 
+    /* RelishBullet subclass. This allows for polymorphic code, allowing different "versions" of 
+    /* bullets to have different behavior. 
     * Summary: Override method to shoot a bullet that bounces off things a set number of times 
     * 
     * Parameters: "other" game object with 2D collider     
@@ -36,6 +41,7 @@ public class RelishBullet : Bullet
         {
             // Apply damage to the enemy
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            //CountEnemiesShot(); //Update enemyShotCount 
             Destroy(other.gameObject);
 
             // Proceed with destroying the bullet as usual

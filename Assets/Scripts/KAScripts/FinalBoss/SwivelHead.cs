@@ -15,9 +15,9 @@ using UnityEngine;
 */ 
 public class SwivelBetweenAngles : MonoBehaviour
 {
-    [SerializeField] private float minAngle = 100f; // Minimum angle
-    [SerializeField] private float maxAngle = 240f; // Maximum angle
-    [SerializeField] private float swivelSpeed = 30f; // Swivel speed in degrees per second
+    [SerializeField] public float minAngle = 100f; // Minimum angle
+    [SerializeField] public float maxAngle = 240f; // Maximum angle
+    [SerializeField] public float swivelSpeed = 30f; // Swivel speed in degrees per second
 
     private bool swivelingClockwise = true; // Flag to track swiveling direction
 

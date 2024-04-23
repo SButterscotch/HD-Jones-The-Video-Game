@@ -13,7 +13,12 @@ TagManager:
   - Weapon
   - obstacle
   - FinalBoss
+<<<<<<< HEAD
   - Audio
+=======
+  - PowerBar
+  - EnemyBullet
+>>>>>>> fc29fc50c01fd4b2b9503d923df8bfefae3c89a2
   layers:
   - Default
   - TransparentFX
@@ -56,6 +61,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1912242597
+    locked: 0
+  - name: PowerUp
+    uniqueID: 1440527595
     locked: 0
   - name: Pause
     uniqueID: 109201845

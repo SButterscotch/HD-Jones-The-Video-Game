@@ -1,3 +1,10 @@
+/*
+* Filename: BaseLevel.cs
+* Developer: Matthew K
+* Purpose: Implement Dynamic/Static Binding as well as having an individual script for each level
+*/
+
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,7 +44,6 @@ public class BaseLevel : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // This method will be called whenever a scene is loaded
-        // You can perform any necessary initialization here
         StartLevel();
     }
 

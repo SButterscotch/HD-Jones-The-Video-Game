@@ -16,6 +16,10 @@ using UnityEngine;
 public class FBWeapon : MonoBehaviour
 {
     // Private class and other data
+    /*********PCD Pattern*****************
+    /* _firespeed, _roundsPerMinute, _canFire, _bulletVelocity, _obstacleTags, and _bulletLifespan 
+    /* are declared as private but exposed to the Unity inspector so they can be configured in he Editor. 
+    */  
     [SerializeField] protected float _fireSpeed = 0.5f; // Fire speed in seconds
     [SerializeField] private float _roundsPerMinute = 120f; // Rounds per minute
     public bool _canFire = true; // Indicates whether the weapon can fire
@@ -39,7 +43,10 @@ public class FBWeapon : MonoBehaviour
         InvokeRepeating(nameof(AutoFire), 0f, _fireSpeed);
     }
 
-    /* 
+    /*********************DYNAMIC BINDING****************************
+    /* This method is an instance of a subclass and it's exeuction is made at runtime 
+    /* the object's actual type is the sublass, the overridden version of Fire() in the AutomaticWeapon 
+    /* subclass. This allows for polymorphic code, allowing for unique behavior in each Fire() function. 
     * Summary: Function used for dynamic binding in subclasses, fires bullets 
     * 
     * Parameters: None   
@@ -57,7 +64,7 @@ public class FBWeapon : MonoBehaviour
                 rb.velocity = _bulletVelocity * (-transform.right);
             }
             // Destroy bullet after lifespan
-            Destroy(bullet, _bulletLifespan); 
+            //Destroy(bullet, _bulletLifespan); 
 
             _canFire = false;
             Invoke(nameof(ResetFire), _fireSpeed);

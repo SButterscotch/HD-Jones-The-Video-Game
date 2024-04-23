@@ -171,10 +171,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7732719492711189966, guid: e2044cdd41ac1894d9406537a4aba16b, type: 3}
       propertyPath: m_Name
-      value: TopDownShooter Variant
+      value: TopDownSidetoSideStraightShooter Variant
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5533759065405398369, guid: e2044cdd41ac1894d9406537a4aba16b, type: 3}
+    - {fileID: 1685737761066613822, guid: e2044cdd41ac1894d9406537a4aba16b, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1508426804023286233, guid: e2044cdd41ac1894d9406537a4aba16b, type: 3}
