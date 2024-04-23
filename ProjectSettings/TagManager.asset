@@ -13,12 +13,8 @@ TagManager:
   - Weapon
   - obstacle
   - FinalBoss
-<<<<<<< HEAD
-  - Audio
-=======
   - PowerBar
   - EnemyBullet
->>>>>>> fc29fc50c01fd4b2b9503d923df8bfefae3c89a2
   layers:
   - Default
   - TransparentFX

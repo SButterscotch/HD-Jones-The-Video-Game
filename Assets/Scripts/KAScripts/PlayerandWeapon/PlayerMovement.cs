@@ -18,16 +18,7 @@ using UnityEngine;
 */ 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public float moveSpeed = 5f;
-
-    //Meghan Initialization
-    AudioManager audioManager;
-
-    //Meghan Function
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    [SerializeField] public float moveSpeed = 5f; 
 
     public Rigidbody2D rb; 
 
@@ -44,10 +35,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     //Works like Update, called a bunch of times per second but fixed on timer and good for physics, more reliable 
-    void FixedUpdate() {
-        //Meghan code line
-        audioManager.PlaySFX(audioManager.Walking);
-        
+    void FixedUpdate() { 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); //constant movement speed 
     }
 }
