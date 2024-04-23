@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] AudioSource Musicsource;
+    [Header("----Audio Sources----")]
+    [SerializeField] AudioSource MusicSource;
+    [SerializeField] AudioSource SfxSource;
 
-
+    [Header("----Audio Clips----")]
     public AudioClip Background;
+    public AudioClip Shoot;
+    public AudioClip Monster;
+    public AudioClip Victory;
+    public AudioClip Death;
+    public AudioClip Button;
+    public AudioClip Walking;
 
 
     //play between scenes
@@ -18,7 +26,13 @@ public class AudioManager : MonoBehaviour
     //Function to start music one
     private void Start()
     {
-        Musicsource.clip = Background;
-        Musicsource.Play();
+        MusicSource.clip = Background;
+        MusicSource.Play();
+    }
+
+    //Function to play sound effects
+    public void PlaySFX(AudioClip clip)
+    {
+        SfxSource.PlayOneShot(clip);
     }
 }

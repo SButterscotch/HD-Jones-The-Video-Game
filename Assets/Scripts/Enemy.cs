@@ -13,44 +13,24 @@ public class Enemy : MonoBehaviour
     private Rigidbody2D rb;
     private int EnemyHealth = 3;
     private Vector3 InitialScale;
-    //Meghan codeline
-    public AudioSource enemyNoise;
-    public AudioSource championSound;
+    //Meghan Initialization
+    AudioManager audioManager;
     public static int totalEnemies; //Total number of enemies in the scene
     private static int enemiesDefeated; //Number of enemies defeated
-    
 
+
+    //Meghan Function
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
         InitialScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
-        //Meghan code
-        AudioSource[] audioSources = GetComponents<AudioSource>();
-        if (audioSources.Length >= 2)
-        {
-            enemyNoise = audioSources[0];
-            championSound = audioSources[1];
-        }
     }
-
-    //Meghan code
-    private void OnDestroy()
-    {
-        // Decrement totalEnemies when an enemy is destroyed
-        totalEnemies--;
-
-        // Check if all enemies are defeated
-        if (totalEnemies == 0)
-        {
-            // Play the champion sound
-            if (championSound != null)
-            {
-                championSound.Play();
-            }
-        }
-    }
-
+  
     private void Update()
     {
         //get the target

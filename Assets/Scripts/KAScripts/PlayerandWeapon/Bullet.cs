@@ -11,6 +11,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/*Summary: Meghan Nulf sound initializing for bullets when they shoot and contact enemies
+ * 
+ * Member Variables:
+ * bullet sound, monster death
+
 /* 
 * Summary: Parent class for customizing bullets and handling their collisions       
 * 
@@ -22,6 +28,15 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] protected float speed = 4f; //How fast the bullet can move 
     [SerializeField] protected float bulletTimetoLive = 3f; //how long the bullet lives before it's destroyed
+
+    //Meghan Initialization
+    AudioManager audioManager;
+
+    //Meghan Function
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     protected virtual void Start()
     {
@@ -57,7 +72,9 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.GetComponent<Enemy>() != null)
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            enemy.HitByBullet(); 
+            enemy.HitByBullet();
+            //Meghan code line
+            audioManager.PlaySFX(audioManager.Monster);
             if (enemy.IsDestroyed()) 
             {
                 Destroy(other.gameObject); 
