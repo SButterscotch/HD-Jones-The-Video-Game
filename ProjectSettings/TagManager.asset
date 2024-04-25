@@ -15,6 +15,9 @@ TagManager:
   - FinalBoss
   - PowerBar
   - EnemyBullet
+  - HealthBar
+  - HealthBarFill
+  - PowerUpKetchup
   layers:
   - Default
   - TransparentFX

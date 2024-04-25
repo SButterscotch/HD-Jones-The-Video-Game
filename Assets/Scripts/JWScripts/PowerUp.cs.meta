@@ -3,7 +3,9 @@ guid: 817d99129523b425db7c005f44827106
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - powerupEffect: {fileID: 11400000, guid: c28e4635c41864211bb82e2d9c93e152, type: 2}
+  - healthBarManager: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

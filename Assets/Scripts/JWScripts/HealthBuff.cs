@@ -16,7 +16,7 @@ public class HealthBuff : PowerUpEffect
         }
         else
         {
-            target.GetComponent<HealthBarManager>().currentHealth += amount;
+            target.GetComponent<HealthBarManager>().currentHealth = 100; //Changed to = 100 doesn't have to be amount 
         }
         
     }

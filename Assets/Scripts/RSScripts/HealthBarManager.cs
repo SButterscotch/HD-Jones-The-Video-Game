@@ -131,6 +131,24 @@ public class HealthBarManager : MonoBehaviour
             currentHealth += addHealth;
             OnHealthChanged?.Invoke(currentHealth);
         }
+        Debug.Log($"Current health is {currentHealth}"); //Added to see if powerups worked - K 
+    }
+
+    //Added by Kay for powerups 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("PowerUpKetchup")) //For ketchup packets 
+        {
+            ApplyPowerUp();
+            //Destroy(other.gameObject);
+        }
+    }
+
+    public void ApplyPowerUp()
+    {
+        //currentHealth = 100; 
+        AddHealth(maxHealth - currentHealth);
+        //currentHealth = 100; //SetHealth(100, 100);
     }
 
     /*
@@ -138,7 +156,7 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: N/A
     * Returns: N/A
     */
-    private void DeathAnimation()
+    public void DeathAnimation()
     {
         // Access the Entity script to change the state to deadState
         HotdogAnimatorController player = GetComponent<HotdogAnimatorController>();
