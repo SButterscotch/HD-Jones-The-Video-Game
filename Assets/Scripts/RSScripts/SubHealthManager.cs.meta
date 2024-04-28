@@ -3,7 +3,11 @@ guid: 947bdae6b82b2a54c88a04e66532a9a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthBar: {instanceID: 0}
+  - player: {instanceID: 0}
+  - GameOverScr: {instanceID: 0}
+  - floatingText: {fileID: 5728197679112308899, guid: 2a3b5a511c7c29a41be922e8bdf2110c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

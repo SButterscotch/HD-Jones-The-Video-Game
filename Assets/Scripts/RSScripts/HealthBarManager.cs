@@ -44,6 +44,8 @@ public class HealthBarManager : MonoBehaviour
     public float tempHealth = 0;
     public bool touchPowerUp = false;
 
+    //public GameObject floatingText; 
+
     /*
     * Summary: Initalizes health bar at the start of the game
     * Parameters: N/A
@@ -141,11 +143,15 @@ public class HealthBarManager : MonoBehaviour
 
     }
 
+    //Added by K for power-ups 
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "PowerUp")
         {
+            
             AddHealth(); 
+            //Instantiate(floatingText, transform.position, Quaternion.identity);
             touchPowerUp = true;
             Debug.Log($"Current health is {currentHealth}"); 
         }
