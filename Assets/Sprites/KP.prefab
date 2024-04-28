@@ -144,6 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6237205308468063318}
   - component: {fileID: 5476050521187674440}
+  - component: {fileID: -4044728785145629454}
   m_Layer: 0
   m_Name: KP
   m_TagString: PowerUpKetchup
@@ -219,3 +220,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-4044728785145629454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4209849773419939751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817d99129523b425db7c005f44827106, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amp: 0
+  freq: 0
+  healthBarManager: {fileID: 0}

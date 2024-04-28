@@ -33,14 +33,16 @@ public class HealthBarManager : MonoBehaviour
         - This pattern does not scale well once the amount of Observers and Subjects increase. Managing subscriptions, notifications, and updates between classes can cause 
         unneeded complexity. Therefore this pattern would not be good to use on large scale projects or classes.
     */
-    public static event Action<int> OnHealthChanged; // delegate signiture, all subscribers must follow same format
+    public static event Action<float> OnHealthChanged; // delegate signiture, all subscribers must follow same format
     public int maxHealth = 100;
     public int minHealth = 0;
-    public int currentHealth = 100;
+    public float currentHealth = 100f;
     public bool playerDead;
     public HealthBar healthBar;
     public HotdogAnimatorController player;
     public GameOver GameOverScr;
+    public float tempHealth = 0;
+    public bool touchPowerUp = false;
 
     /*
     * Summary: Initalizes health bar at the start of the game
@@ -72,6 +74,13 @@ public class HealthBarManager : MonoBehaviour
             DeathAnimation();
             GameOverScr.gameOver();
         }
+
+        if (touchPowerUp == true)
+        {
+            currentHealth = 100f;
+            OnHealthChanged?.Invoke(currentHealth);
+            touchPowerUp = false;
+        }
     }
 
 
@@ -80,7 +89,7 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: currentHealth - current health of the player
     * Returns: true or false
     */
-    public virtual bool IsPlayerDead(int currentHealth)
+    public bool IsPlayerDead(float currentHealth)
     {
         if (currentHealth == 0)
         {
@@ -124,33 +133,23 @@ public class HealthBarManager : MonoBehaviour
     * Parameters: addHealth - how much the health bar will increase
     * Returns: N/A
     */
-    public void AddHealth(int addHealth)
+    public void AddHealth()
     {
-        if (currentHealth != 100)
-        {
-            currentHealth += addHealth;
-            OnHealthChanged?.Invoke(currentHealth);
-        }
-        Debug.Log($"Current health is {currentHealth}"); //Added to see if powerups worked - K 
+        tempHealth = maxHealth - currentHealth;
+        currentHealth += tempHealth;
+        OnHealthChanged?.Invoke(currentHealth);
+
     }
 
-    //Added by Kay for powerups 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PowerUpKetchup")) //For ketchup packets 
+        if (other.tag == "PowerUp")
         {
-            ApplyPowerUp();
-            //Destroy(other.gameObject);
+            AddHealth(); 
+            touchPowerUp = true;
+            Debug.Log($"Current health is {currentHealth}"); 
         }
     }
-
-    public void ApplyPowerUp()
-    {
-        //currentHealth = 100; 
-        AddHealth(maxHealth - currentHealth);
-        //currentHealth = 100; //SetHealth(100, 100);
-    }
-
     /*
     * Summary: Starts the death animation when the player dies
     * Parameters: N/A

@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 7.2000003
-    y: 53.600002
-    width: 1518.4
-    height: 755.2
+    x: 1920
+    y: 43
+    width: 1920
+    height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Game
   m_RootView: {fileID: 4}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
-  m_Maximized: 0
+  m_Maximized: 1
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -40,11 +40,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 469.6
-    width: 296
-    height: 235.6
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
+    y: 625
+    width: 374
+    height: 314
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -67,14 +67,14 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
-    x: 1222.4
+    x: 1546
     y: 0
-    width: 296
-    height: 705.2
+    width: 374
+    height: 939
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 122
+  controlID: 95
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -95,8 +95,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1518.4
-    height: 755.2
+    width: 1920
+    height: 989
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -120,7 +120,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1518.4
+    width: 1920
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -141,8 +141,8 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 735.2
-    width: 1518.4
+    y: 969
+    width: 1920
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -165,12 +165,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
-    width: 1518.4
-    height: 705.2
+    width: 1920
+    height: 939
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 121
+  controlID: 94
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -190,12 +190,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1222.4
-    height: 705.2
+    width: 1546
+    height: 939
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 55
+  controlID: 39
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,12 +215,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1222.4
-    height: 503.2
+    width: 1546
+    height: 671
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 56
+  controlID: 40
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -238,8 +238,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 199.2
-    height: 503.2
+    width: 252
+    height: 671
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
@@ -257,24 +257,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 199.2
+    x: 252
     y: 0
-    width: 1023.2
-    height: 503.2
+    width: 1294
+    height: 671
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 17}
+  m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 17}
   - {fileID: 19}
   - {fileID: 16}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -291,9 +291,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 503.2
-    width: 1222.4
-    height: 202
+    y: 671
+    width: 1546
+    height: 268
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 20}
@@ -320,8 +320,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 296
-    height: 469.6
+    width: 374
+    height: 625
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 22}
@@ -349,10 +349,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1229.6
-    y: 553.60004
-    width: 295
-    height: 214.6
+    x: 3466
+    y: 698
+    width: 373
+    height: 293
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -364,12 +364,12 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_Spl:
-    ID: 159
+    ID: 132
     splitterInitialOffset: 0
     currentActiveSplitter: -1
     realSizes:
-    - 108
-    - 36
+    - 167
+    - 56
     relativeSizes:
     - 0.75
     - 0.25
@@ -379,7 +379,7 @@ MonoBehaviour:
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 144
+    lastTotalSize: 223
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -407,10 +407,10 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1038
-      uniqueId: '[Andrew][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
+    - id: 1011
+      uniqueId: '[Andrew][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll][suite]'
       name: Andrew.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/Andrew.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -421,7 +421,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1028
       uniqueId: Andrew.dll/[Andrew][AnimationStressTest][suite]
@@ -588,10 +588,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1036
       parentUniqueId: Andrew.dll/[Andrew][RunningUpTestScript][suite]
-    - id: 1045
-      uniqueId: '[DTPlayMode][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
+    - id: 1018
+      uniqueId: '[DTPlayMode][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll][suite]'
       name: DTPlayMode.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/DTPlayMode.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -602,7 +602,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1041
       uniqueId: DTPlayMode.dll/[DTPlayMode][DTEnemySpawnStress][suite]
@@ -703,10 +703,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1043
       parentUniqueId: DTPlayMode.dll/[DTPlayMode][PlayerTargetTest][suite]
-    - id: 1052
-      uniqueId: '[JWPlayMode][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
+    - id: 1039
+      uniqueId: '[JWPlayMode][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll][suite]'
       name: JWPlayMode.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/JWPlayMode.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -717,7 +717,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1019
       uniqueId: JWPlayMode.dll/[JWPlayMode][JW10SecCheck][suite]
@@ -1049,10 +1049,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1037
       parentUniqueId: JWPlayMode.dll/[JWPlayMode][JWUnpauseTest][suite]
-    - id: 1059
-      uniqueId: '[MattPlayTests][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
+    - id: 1050
+      uniqueId: '[MattPlayTests][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll][suite]'
       name: MattPlayTests.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MattPlayTests.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -1063,7 +1063,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1053
       uniqueId: MattPlayTests.dll/[MattPlayTests][Level1toSampleScene][suite]
@@ -1231,10 +1231,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1057
       parentUniqueId: MattPlayTests.dll/[MattPlayTests][StressTestSceneSwitch][suite]
-    - id: 1066
-      uniqueId: '[MeghanTests][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
+    - id: 1057
+      uniqueId: '[MeghanTests][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll][suite]'
       name: MeghanTests.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/MeghanTests.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -1245,7 +1245,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1060
       uniqueId: MeghanTests.dll/[MeghanTests][MaxBoundMeg][suite]
@@ -1346,13 +1346,13 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1062
       parentUniqueId: MeghanTests.dll/[MeghanTests][MinBoundMeg][suite]
-    - id: 1073
-      uniqueId: '[PlayMode][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
+    - id: 1072
+      uniqueId: '[PlayMode][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll][suite]'
       name: PlayMode.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll
-      resultStatus: 2
-      duration: 0.3553609
-      messages: One or more child tests had errors
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/PlayMode.dll
+      resultStatus: 0
+      duration: 0
+      messages: 
       output: 
       stacktrace: 
       notRunnable: 0
@@ -1360,7 +1360,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1040
       uniqueId: PlayMode.dll/[PlayMode][BulletSpeedTest][suite]
@@ -1660,10 +1660,10 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1050
       parentUniqueId: PlayMode.dll/[PlayMode][SwivelHeadTest][suite]
-    - id: 1080
-      uniqueId: '[RebeccaPlayMode][C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
+    - id: 1084
+      uniqueId: '[RebeccaPlayMode][C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll][suite]'
       name: RebeccaPlayMode.dll
-      fullName: C:/Users/twins/Desktop/Git/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll
+      fullName: C:/Users/museb/OneDrive/Desktop/HD-Jones-The-Video-Game/Library/ScriptAssemblies/RebeccaPlayMode.dll
       resultStatus: 0
       duration: 0
       messages: 
@@ -1674,7 +1674,7 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1027
+      parentId: 1000
       parentUniqueId: '[Hotdog Jones_ The Video Game][suite]'
     - id: 1078
       uniqueId: RebeccaPlayMode.dll/[RebeccaPlayMode][NewTestScript][suite]
@@ -1867,7 +1867,7 @@ MonoBehaviour:
       had errors'
     m_ResultStacktrace: 
     m_TestListState:
-      scrollPos: {x: 0, y: 739.49506}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: d9171d23
       m_LastClickedID: 589109209
       m_ExpandedIDs: 6e75f684595ead91477d79931f52659530da069e294a29a24d8094a5ab820ea6ff9090a71c9c52b0137b68b2c99a2cc96a84e2e2d02bf3eb8e871bec9cefe00c2d5c060f9b840b1529c2581ac5ab181c56b59b2e4957903469dbd237b5959a3ca9428d4d89bff24e0fcf825643fc7772692c5173b5552f7d186f0a7fd980747fffffff7f
@@ -2030,14 +2030,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Animator
-    m_Image: {fileID: 1711060831702674872, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -1673928668082335149, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2560
-    y: 909
-    width: 2056
-    height: 442
+    x: 1920
+    y: 744
+    width: 1545
+    height: 247
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2053,14 +2053,14 @@ MonoBehaviour:
     - {fileID: -2897481995586346187, guid: 64b0181e42f308848b308795c2c130c1, type: 2}
     - {fileID: -2583308790556631551, guid: 2ffe0ad32d30be7448332419a5454a04, type: 2}
     m_ValueSerializationHelper:
-    - e00: 1
+    - e00: 0.614125
       e01: 0
       e02: 0
-      e03: 363.5
+      e03: 348.25793
       e10: 0
-      e11: 1
+      e11: 0.614125
       e12: 0
-      e13: 71.5
+      e13: 55.872063
       e20: 0
       e21: 0
       e22: 1
@@ -2086,9 +2086,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 2ffe0ad32d30be7448332419a5454a04, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 64b0181e42f308848b308795c2c130c1, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -2583308790556631551, guid: 2ffe0ad32d30be7448332419a5454a04, type: 2}
+  - m_Target: {fileID: -2897481995586346187, guid: 64b0181e42f308848b308795c2c130c1, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -2117,7 +2117,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Asset Store
-    m_Image: {fileID: -7444545952099596278, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
@@ -2151,14 +2151,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Scene
-    m_Image: {fileID: 8634526014445323508, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 206.40001
-    y: 84
-    width: 1021.2
-    height: 482.2
+    x: 2172
+    y: 73
+    width: 1292
+    height: 649
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2213,7 +2213,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 1
       id: unity-search-toolbar
       index: 1
@@ -2265,7 +2265,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Light Settings
       index: 1
@@ -2291,7 +2291,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Cloth Constraints
       index: 3
@@ -2304,7 +2304,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Cloth Collisions
       index: 4
@@ -2356,7 +2356,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Occlusion Culling
       index: 5
@@ -2369,7 +2369,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Physics Debugger
       index: 6
@@ -2382,7 +2382,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Scene Visibility
       index: 7
@@ -2395,7 +2395,7 @@ MonoBehaviour:
       collapsed: 0
       displayed: 0
       snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 25}
       snapCorner: 0
       id: Scene View/Particles
       index: 8
@@ -2504,9 +2504,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -144.00227, y: -77.33232, z: 0.00005276258}
+    m_Target: {x: -144.20795, y: -77.24675, z: 0.0012538851}
     speed: 2
-    m_Value: {x: -144.002, y: -77.33204, z: 0.000046302066}
+    m_Value: {x: -144.20795, y: -77.24675, z: 0.0012538851}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2556,9 +2556,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 0.8607475
+    m_Target: 0.7406343
     speed: 2
-    m_Value: 0.8613936
+    m_Value: 0.7406343
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2599,14 +2599,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Hierarchy
-    m_Image: {fileID: -3734745235275155857, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 7.2000003
-    y: 84
-    width: 198.2
-    height: 482.2
+    x: 1920
+    y: 73
+    width: 251
+    height: 650
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2619,24 +2619,24 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 146.79999}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e8f2ffff1af3ffffb6f3ffffaef4ffff8efaffffc866000052670000626c0000826d0000
+      m_ExpandedIDs: 8c5bfeff9a5bfeffd095feffac96fefffa97feff6899feffbcc2000026c3000044c3000070c30000aec30000fcc30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: KP
-        m_OriginalName: KP
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -15206
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -2662,14 +2662,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
-    m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 206.40001
-    y: 84
-    width: 1021.2
-    height: 482.2
+    x: 2172
+    y: 73
+    width: 1292
+    height: 650
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2686,7 +2686,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 820, y: 461.2}
+  m_TargetSize: {x: 1118, y: 629}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -2701,10 +2701,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -328
-    m_HBaseRangeMax: 328
-    m_VBaseRangeMin: -184.48001
-    m_VBaseRangeMax: 184.48001
+    m_HBaseRangeMin: -559
+    m_HBaseRangeMax: 559
+    m_VBaseRangeMin: -314.5
+    m_VBaseRangeMax: 314.5
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -2722,23 +2722,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1021.2
-      height: 461.2
-    m_Scale: {x: 1.25, y: 1.25}
-    m_Translation: {x: 510.6, y: 230.6}
+      width: 1292
+      height: 629
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 646, y: 314.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -408.48
-      y: -184.48001
-      width: 816.96
-      height: 368.96002
+      x: -646
+      y: -314.5
+      width: 1292
+      height: 629
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1276.5, y: 602.75}
+  m_LastWindowPixelSize: {x: 1292, y: 650}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -2760,14 +2760,14 @@ MonoBehaviour:
   m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
     m_Text: Project
-    m_Image: {fileID: -5179483145760003458, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 7.2000003
-    y: 587.2
-    width: 1221.4
-    height: 181
+    x: 1920
+    y: 744
+    width: 1545
+    height: 247
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2789,7 +2789,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Characters
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2797,16 +2797,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 65
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Characters
   m_LastFoldersGridSize: 65
-  m_LastProjectPath: C:\Users\twins\Desktop\Git\HD-Jones-The-Video-Game
+  m_LastProjectPath: C:\Users\museb\OneDrive\Desktop\HD-Jones-The-Video-Game
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 288.49982}
-    m_SelectedIDs: 7c6a0000
-    m_LastClickedID: 27260
-    m_ExpandedIDs: 00000000d0690000d2690000d4690000d6690000d8690000da690000dc690000de690000e0690000e2690000e4690000e6690000e8690000e46a0000ea6a000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: ac060000
+    m_LastClickedID: 1708
+    m_ExpandedIDs: 000000001806000040060000b406000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2834,7 +2834,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d0690000d2690000d4690000d6690000d8690000da690000dc690000de690000e0690000e2690000e4690000e6690000e8690000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2906,14 +2906,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Console
-    m_Image: {fileID: -4950941429401207979, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 7.2000003
-    y: 587.2
-    width: 1221.4
-    height: 181
+    x: 1920
+    y: 744
+    width: 1545
+    height: 247
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2940,14 +2940,14 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Inspector
-    m_Image: {fileID: -440750813802333266, guid: 0000000000000000d000000000000000, type: 0}
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1229.6
-    y: 84
-    width: 295
-    height: 448.6
+    x: 3466
+    y: 73
+    width: 373
+    height: 604
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -2965,7 +2965,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 352.80005
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:

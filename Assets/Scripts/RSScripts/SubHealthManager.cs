@@ -17,7 +17,7 @@ public class SubHealthManager : HealthBarManager
     * Parameters: currentHealth - current health of the player
     * Returns: true or false 
     */
-    public override bool IsPlayerDead(int currentHealth)
+    /*public override bool IsPlayerDead(int currentHealth)
     {
         // Changes the color of the health bar to blue when overriding HealthBarManager's IsPlayerDead
         //healthBar.fill.color = Color.blue;
@@ -29,5 +29,5 @@ public class SubHealthManager : HealthBarManager
         {
             return false;
         } 
-    }
+    }*/
 }

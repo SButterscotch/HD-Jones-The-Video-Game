@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817d99129523b425db7c005f44827106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerupEffect: {fileID: 11400000, guid: c28e4635c41864211bb82e2d9c93e152, type: 2}
   amp: 0.5
   freq: 1
+  healthBarManager: {fileID: 3018017491354332222, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
 --- !u!61 &2161043730370113649
 BoxCollider2D:
   m_ObjectHideFlags: 0

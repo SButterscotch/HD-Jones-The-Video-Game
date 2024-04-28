@@ -34,7 +34,7 @@ public class BeccaPower : MonoBehaviour
 
             // Destroy the powerup object
             Destroy(gameObject);
-            healthBarManager.AddHealth(5);
+            healthBarManager.AddHealth();
 
             powerBar = other.GetComponent<PowerBar>();
             if (powerBar != null)

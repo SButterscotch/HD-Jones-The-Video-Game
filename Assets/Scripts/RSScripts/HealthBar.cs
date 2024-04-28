@@ -13,13 +13,13 @@ public class HealthBar : MonoBehaviour
         SetHealth(100, 100); // Set initial health to 100
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
-    public void SetHealth(int maxHealth, int currentHealth)
+    public void SetHealth(int maxHealth, float currentHealth)
     {
         slider.maxValue = maxHealth;
         slider.value = currentHealth;
@@ -32,18 +32,14 @@ public class HealthBar : MonoBehaviour
     }
 
     // Added by K for powerups 
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("PowerUpKetchup"))
-        {
-            ApplyPowerUp();
-        }
-    }
-
-    public void ApplyPowerUp()
-    {
-        SetHealth(100, 100); // Reset health to 100
-    }
+    //public void OnTriggerEnter2D(Collider2D other)
+    //{
+    //    if (other.CompareTag("PowerUpKetchup"))
+    //    {
+    //        SetHealth(100);
+            //ApplyPowerUp();
+    //    }
+    //}
 }
 
 // /*
