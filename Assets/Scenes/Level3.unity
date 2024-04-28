@@ -7241,7 +7241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 7
   rb: {fileID: 2143182072}
-  floatingText: {fileID: 0}
+  floatingText: {fileID: 4417329578329349376, guid: 643e9a5192c4e4f408ee871e2c2b9e2f, type: 3}
 --- !u!95 &2143182067
 Animator:
   serializedVersion: 5
