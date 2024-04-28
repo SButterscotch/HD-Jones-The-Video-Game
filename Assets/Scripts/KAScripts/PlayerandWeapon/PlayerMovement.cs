@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb; 
 
+    public GameObject floatingText; 
     Vector2 movement; 
 
     //Good for registering input like the WASD keys 
@@ -32,10 +33,20 @@ public class PlayerMovement : MonoBehaviour
 
         movement.x += Input.acceleration.x; // Andrew: Added this components for haptic movement
         movement.y += Input.acceleration.y; // Andrew: Added this components for haptic movement
+
     }
 
     //Works like Update, called a bunch of times per second but fixed on timer and good for physics, more reliable 
     void FixedUpdate() { 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime); //constant movement speed 
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "PowerUp" || other.tag == "PowerUpKetchup")
+        {
+            Instantiate(floatingText, transform.position, Quaternion.identity);
+            Debug.Log($"Dynamic Text should pop up"); 
+        }
     }
 }
