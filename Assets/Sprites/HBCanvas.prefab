@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6531141746642292538}
   - component: {fileID: 8010539839107466654}
   - component: {fileID: 128579825898729207}
-  - component: {fileID: 3018017491354332222}
+  - component: {fileID: 552475946263928803}
   m_Layer: 5
   m_Name: HBCanvas
   m_TagString: Untagged
@@ -149,7 +149,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3018017491354332222
+--- !u!114 &552475946263928803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,10 +165,13 @@ MonoBehaviour:
   minHealth: 0
   currentHealth: 100
   playerDead: 0
-  healthBar: {fileID: 7533193540945385356}
+  healthBar: {fileID: 731564025938089624, guid: 42c87bf31186b7d4ab9a37cde79ca889, type: 3}
   player: {fileID: -2026614837291825069, guid: 80cc7690a69b44db8ac9fb41f0044247, type: 3}
   GameOverScr: {fileID: 0}
   tempHealth: 0
+  touchPowerUp: 0
+  activateDrBC: 0
+  drBCMode: {fileID: 0}
 --- !u!1 &2979375197913914421
 GameObject:
   m_ObjectHideFlags: 0

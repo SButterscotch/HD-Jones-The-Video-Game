@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
 
     // Rebecca's code for pattern
     public static event Action<int> EnemyEffectHealth;      // Event for notifying subscribers about the effect of enemy on player's health
+    [SerializeField] HealthBarManager healthBarManager;
+    [SerializeField] DrBCMode drBCMode;
 
     /*
     * Summary: Initializes the enemy by setting initial scale, getting Rigidbody2D component, finding the target (usually the player), and initializing audio sources.
@@ -153,6 +155,13 @@ public class Enemy : MonoBehaviour
     */
     protected virtual void Attack()
     {
-        EnemyEffectHealth?.Invoke(10); // Invoke event for player's health reduction
+        if (healthBarManager.drBC)
+        {
+            EnemyEffectHealth?.Invoke(0); // Pass no damage if Dr BC mode is activated
+        } 
+        else 
+        {
+            EnemyEffectHealth?.Invoke(10); // Invoke event for player's health reduction
+        }
     }
 }

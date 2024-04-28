@@ -187,6 +187,7 @@ MonoBehaviour:
   EnemyHealth: 3
   enemyNoise: {fileID: 6150064688583503263}
   championSound: {fileID: 3951344987978285449}
+  healthBarManager: {fileID: 552475946263928803, guid: 8c0708ac852b3774fba3083b46883161, type: 3}
   bulletsToDestroy: 2
 --- !u!82 &6150064688583503263
 AudioSource:

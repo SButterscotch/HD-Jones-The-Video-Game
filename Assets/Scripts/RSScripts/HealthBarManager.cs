@@ -6,7 +6,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Codice.Client.BaseCommands;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
 
@@ -43,6 +45,8 @@ public class HealthBarManager : MonoBehaviour
     public GameOver GameOverScr;
     public float tempHealth = 0;
     public bool touchPowerUp = false;
+    public bool drBC = false;
+    public DrBCMode drBCMode;
 
     /*
     * Summary: Initalizes health bar at the start of the game
@@ -53,7 +57,11 @@ public class HealthBarManager : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(maxHealth, currentHealth);
+        // Load the value of setDrBCMode based on what button the player pressed
+        int loadedBoolValue = PlayerPrefs.GetInt("setDrBCMode");
+        drBC = loadedBoolValue == 1 ? true : false;
 
+        Debug.Log($"it is {drBC} healthbar");
         // Observes the subject (Enemy.cs) and subscribes to the EnemyEffectHealth event using TakeDamage() as the handler for this event
         Enemy.EnemyEffectHealth += TakeDamage;
         EnemyBullet.EnemyEffectHealth += TakeDamage;
@@ -208,5 +216,8 @@ public class HealthBarManager : MonoBehaviour
     public void OnDestroy()
     {
         Enemy.EnemyEffectHealth -= TakeDamage;
+        drBCMode.setDrBCMode = false;
+        int boolValue = drBCMode.setDrBCMode ? 0 : 1;
+        PlayerPrefs.SetInt("setDrBCMode", boolValue);
     }
 }
